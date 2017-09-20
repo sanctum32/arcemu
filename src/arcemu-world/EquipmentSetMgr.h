@@ -39,7 +39,7 @@ namespace Arcemu
 		uint32 SetID;
 		std::string SetName;
 		std::string IconName;
-		std::tr1::array< uint32, 19 > ItemGUID;
+		std::array< uint32, 19 > ItemGUID;
 
 
 		EquipmentSet()

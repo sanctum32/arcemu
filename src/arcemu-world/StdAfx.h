@@ -62,12 +62,7 @@ template< class T, class U > T TO(U u) { return static_cast< T >(u); }
 #include <sstream>
 #include <string>
 #include <fstream>
-
-#ifdef WIN32
 #include <array>
-#else
-#include <tr1/array>
-#endif
 
 #include "DetourNavMeshQuery.h"
 #include "DetourNavMesh.h"

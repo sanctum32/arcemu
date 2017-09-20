@@ -109,7 +109,7 @@ namespace Arcemu
 		};
 
 		typedef std::vector<Gossip::Item> ItemList;
-		typedef HM_NAMESPACE::hash_map<Quest*, uint8> QuestList;
+		typedef std::unordered_map<Quest*, uint8> QuestList;
 
 		class SERVER_DECL Menu
 		{

@@ -481,7 +481,7 @@ public:
 	bool HasAccessoryWithGUID( uint64 guid );
 
 private:
-	std::tr1::array< VehicleSeat*, MAX_VEHICLE_SEATS > seats;
+	std::array< VehicleSeat*, MAX_VEHICLE_SEATS > seats;
 	std::vector< uint64 > installed_accessories;
 	uint32 creature_entry;
 	Unit *owner;

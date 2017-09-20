@@ -262,53 +262,14 @@ enum MsTimeVariables
 /*
 	TEST SUPPORT FOR TR1
 	*/
-#ifdef HAS_CXX0X
 #include <unordered_map>
 #include <unordered_set>
 #define HM_NAMESPACE ::std
-#define hash_map unordered_map
-#define hash_multimap unordered_multimap
-#define hash_set unordered_set
-#define hash_multiset tr1::unordered_multiset
-#elif COMPILER == COMPILER_GNU && __GNUC__ >= 3
-#include <ext/hash_map>
-#include <ext/hash_set>
-#define HM_NAMESPACE __gnu_cxx
-namespace __gnu_cxx
-{
-	template<> struct hash<unsigned long long>
-	{
-		size_t operator()(const unsigned long long & __x) const { return (size_t)__x; }
-	};
-	template<typename T> struct hash<T*>
-	{
-		size_t operator()(T* const & __x) const { return (size_t)__x; }
-	};
-	//support for std::strings as keys to hash maps
-	template<> struct hash< ::std::string>
-	{
-		size_t operator()(const ::std::string & keyval) const
-		{
-			return hash<const char*>()(keyval.c_str());
-		}
-	};
-};
-#else
-#define HM_NAMESPACE ::stdext
-#include <hash_map>
-#include <hash_set>
-#endif
-
-
 
 /*#ifdef _STLPORT_VERSION
 #define HM_NAMESPACE std
-using std::hash_map;
-using std::hash_set;
 #elif COMPILER == COMPILER_MICROSOFT && _MSC_VER >= 1300
 #define HM_NAMESPACE stdext
-using stdext::hash_map;
-using stdext::hash_set;
 #define ENABLE_SHITTY_STL_HACKS 1
 
 // hacky stuff for vc++
@@ -329,12 +290,8 @@ typedef char TCHAR;
 
 #elif COMPILER == COMPILER_INTEL
 #define HM_NAMESPACE std
-using std::hash_map;
-using std::hash_set;
 #elif defined(HAS_TR1)
 #define HM_NAMESPACE std
-#define hash_map std::tr1::unordered_map
-#define hash_set std::tr1::unordered_set
 /*using std::unordered_map;
 using std::unordered_set;/
 #elif COMPILER == COMPILER_GNU && __GNUC__ >= 3
