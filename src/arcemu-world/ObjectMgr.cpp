@@ -530,7 +530,7 @@ PlayerInfo* ObjectMgr::GetPlayerInfoByName(const char* name)
 #ifdef ENABLE_ACHIEVEMENTS
 void ObjectMgr::LoadCompletedAchievements()
 {
-	QueryResult* result = WorldDatabase.Query("SELECT achievement FROM character_achievement GROUP BY achievement");
+	QueryResult* result = CharacterDatabase.Query("SELECT achievement FROM character_achievement GROUP BY achievement");
 
 	if(!result)
 		return;
@@ -652,7 +652,7 @@ void ObjectMgr::LoadPlayerCreateInfo()
 		}
 
 		QueryResult* bars_sql = WorldDatabase.Query(
-		                            "SELECT * FROM playercreateinfo_bars WHERE class=%u", pPlayerCreateInfo->class_);
+		                            "SELECT * FROM playercreateinfo_bars WHERE class=%u and race=%u", pPlayerCreateInfo->class_, pPlayerCreateInfo->race);
 
 		if(bars_sql)
 		{
