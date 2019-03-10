@@ -809,7 +809,6 @@ bool Player::Create(WorldPacket & data)
 	// Gold Starting Amount
 	SetGold(sWorld.GoldStartAmount);
 
-
 	for(uint8 x = 0; x < 7; x++)
 		SetFloatValue(PLAYER_FIELD_MOD_DAMAGE_DONE_PCT + x, 1.00);
 

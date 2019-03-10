@@ -20,25 +20,57 @@
 #include "Setup.h"
 #include "../Common/EasyFunctions.h"
 
-class ScourgeGryphonOne : public GossipScript
+class QuestInServiceOfLichKing : public QuestScript
+{
+public:
+	void OnQuestStart(Player* mTarget, QuestLogEntry* /*qLogEntry*/)
+	{
+		// Play first sound
+		mTarget->PlaySound(14734);
+
+		// Play second sound after 22.5 seconds
+		sEventMgr.AddEvent(mTarget, &Player::PlaySound, (uint32)14735, EVENT_UNK, 22500, 1, EVENT_FLAG_DO_NOT_EXECUTE_IN_WORLD_CONTEXT);
+
+		// Play third sound after 48.5 seconds
+		sEventMgr.AddEvent(mTarget, &Player::PlaySound, (uint32)14736, EVENT_UNK, 48500, 1, EVENT_FLAG_DO_NOT_EXECUTE_IN_WORLD_CONTEXT);
+	}
+};
+
+class GossipScourgeGryphon : public GossipScript
 {
 	public:
 		void GossipHello(Object* pObject, Player* plr)
 		{
-			TaxiPath* path = sTaxiMgr.GetTaxiPath(1053);
-			plr->TaxiStart(path, 26308, 0);
+			if (plr->HasQuest(12670) || plr->HasFinishedQuest(12670))
+			{
+				if (TaxiPath* path = sTaxiMgr.GetTaxiPath(pObject->GetEntry() == 29488 ? 1053 : 1054))
+					plr->TaxiStart(path, 26308, 0);
+			}
 		}
 };
 
-class ScourgeGryphonTwo : public GossipScript
+// QuestID for Praparation for the Battle
+enum QUEST_12842_ENUM
 {
-	public:
-		void GossipHello(Object* pObject, Player* plr)
-		{
-			TaxiPath* path = sTaxiMgr.GetTaxiPath(1054);
-			plr->TaxiStart(path, 26308, 0);
-		}
+	QUEST_PREPARATION					= 12842,
+
+	SPELL_RUNE_I						= 53341, // Spell Rune of Cinderglacier
+	SPELL_RUNE_II						= 53343, // Spell Rune of Razorice
+	SPELL_PREPERATION_FOR_BATTLE_CREDIT = 54586
 };
+
+bool PreparationForBattleEffect(uint32 effectIndex, Spell* pSpell)
+{
+	Player* pCaster = pSpell->p_caster;
+	if (pCaster == nullptr)
+		return false;
+
+	// Apply spell if caster has quest and still heven't completed it yet
+	if (pCaster->HasQuest(QUEST_PREPARATION) && !pCaster->HasFinishedQuest(QUEST_PREPARATION))
+		pCaster->CastSpell(pCaster, SPELL_PREPERATION_FOR_BATTLE_CREDIT, true);
+
+	return true;
+}
 
 #define CN_INITIATE_1				29519
 #define CN_INITIATE_2				29565
@@ -88,14 +120,18 @@ class AcherusSoulPrison : GameObjectAIScript
 		}
 };
 
-
-
 void SetupDeathKnight(ScriptMgr* mgr)
 {
-	GossipScript* SGO = new ScourgeGryphonOne();
-	mgr->register_gossip_script(29488, SGO);
-	GossipScript* SGT = new ScourgeGryphonTwo();
-	mgr->register_gossip_script(29501, SGT);
+	// Quest 12593
+	mgr->register_quest_script(12593, new QuestInServiceOfLichKing);
+
+	// Quest 12842
+	mgr->register_dummy_spell(SPELL_RUNE_I, &PreparationForBattleEffect);
+	mgr->register_dummy_spell(SPELL_RUNE_II, &PreparationForBattleEffect);
+
+	mgr->register_gossip_script(29488, new GossipScourgeGryphon);
+	mgr->register_gossip_script(29501, new GossipScourgeGryphon);
+
 
 	mgr->register_gameobject_script(191588, &AcherusSoulPrison::Create);
 	mgr->register_gameobject_script(191577, &AcherusSoulPrison::Create);
@@ -109,5 +145,4 @@ void SetupDeathKnight(ScriptMgr* mgr)
 	mgr->register_gameobject_script(191587, &AcherusSoulPrison::Create);
 	mgr->register_gameobject_script(191589, &AcherusSoulPrison::Create);
 	mgr->register_gameobject_script(191590, &AcherusSoulPrison::Create);
-
 }

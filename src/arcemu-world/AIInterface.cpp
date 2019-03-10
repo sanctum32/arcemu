@@ -4571,3 +4571,38 @@ void AIInterface::MoveTeleport(float x, float y, float z, float o /*= 0*/)
 	m_currentMoveSpline.clear();
 	m_Unit->SetPosition(x, y, z, o);
 }
+
+void AIInterface::MoveJump(float x, float y, float z, float horizontal, float vertical, float o /*= 0.0f*/)
+{
+	HandleEvent(EVENT_FORCEREDIRECTED, nullptr, 0);
+	m_splinePriority = SPLINE_PRIORITY_REDIRECTION;
+
+	//Clear current spline
+	m_currentMoveSpline.clear();
+	m_currentMoveSplineIndex = 1;
+	m_currentSplineUpdateCounter = 0;
+	m_currentSplineTotalMoveTime = 0;
+	m_currentSplineFinalOrientation = 0;
+
+	m_splinetrajectoryTime = 0;
+	m_splinetrajectoryVertical = vertical;
+
+	SetRun();
+	m_runSpeed *= 3;
+	//lets say vertical being 7.5 would give us 100% of our speed towards target
+	//anything higher gets a proportional loss of speed
+	//this is for spells which knock you up high, but for a short distance
+	float speedmod = vertical / 7.5;
+	m_runSpeed /= speedmod;
+
+
+	AddSpline(m_Unit->GetPositionX(), m_Unit->GetPositionY(), m_Unit->GetPositionZ());
+	AddSpline(x, y, z);
+
+	AddSplineFlag(SPLINEFLAG_TRAJECTORY);
+
+	SendMoveToPacket();
+
+	//fix run speed
+	UpdateSpeeds();
+}
