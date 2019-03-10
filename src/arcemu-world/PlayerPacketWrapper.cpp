@@ -274,7 +274,7 @@ void Player::SendInstanceDifficulty(uint32 difficulty)
 	WorldPacket data(SMSG_INSTANCE_DIFFICULTY, 8);
 
 	data << uint32(difficulty);
-	data << uint32(0);
+	data << uint32(difficulty == MODE_HEROIC || difficulty == MODE_HEROIC_10MEN || difficulty == MODE_HEROIC_25MEN);
 
 	m_session->SendPacket(&data);
 }
