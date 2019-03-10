@@ -375,8 +375,8 @@ class MoonScriptCreatureAI : public CreatureAIScript
 		void					Despawn(uint32 pDelay = 0, uint32 pRespawnTime = 0);
 
 		//Spells
-		SpellDesc*				AddSpell(uint32 pSpellId, TargetType pTargetType, float pChance, float pCastTime, int32 pCooldown, float pMinRange = 0, float pMaxRange = 0, bool pStrictRange = false, const char* pText = NULL, TextType pTextType = Text_Yell, uint32 pSoundId = 0, const char* pAnnouncement = NULL);
-		SpellDesc*				AddSpellFunc(SpellFunc pFnc, TargetType pTargetType, float pChance, float pCastTime, int32 pCooldown, float pMinRange = 0, float pMaxRange = 0, bool pStrictRange = false, const char* pText = NULL, TextType pTextType = Text_Yell, uint32 pSoundId = 0, const char* pAnnouncement = NULL);
+		SpellDesc*				AddSpell(uint32 pSpellId, TargetType pTargetType, float pChance, float pCastTime, int32 pCooldown, float pMinRange = 0, float pMaxRange = 0, bool pStrictRange = false, const char* pText = nullptr, TextType pTextType = Text_Yell, uint32 pSoundId = 0, const char* pAnnouncement = nullptr);
+		SpellDesc*				AddSpellFunc(SpellFunc pFnc, TargetType pTargetType, float pChance, float pCastTime, int32 pCooldown, float pMinRange = 0, float pMaxRange = 0, bool pStrictRange = false, const char* pText = nullptr, TextType pTextType = Text_Yell, uint32 pSoundId = 0, const char* pAnnouncement = nullptr);
 		void					CastSpell(SpellDesc* pSpell);
 		void					CastSpellNowNoScheduling(SpellDesc* pSpell);
 		SpellDesc*				FindSpellById(uint32 pSpellId);
@@ -503,7 +503,7 @@ class MoonScriptBossAI : public MoonScriptCreatureAI
 		//Basic Interface
 		SpellDesc*		AddPhaseSpell(int32 pPhase, SpellDesc* pSpell);
 		int32			GetPhase();
-		void			SetPhase(int32 pPhase, SpellDesc* pPhaseChangeSpell = NULL);
+		void			SetPhase(int32 pPhase, SpellDesc* pPhaseChangeSpell = nullptr);
 		void			SetEnrageInfo(SpellDesc* pSpell, int32 pTriggerMilliseconds);
 
 		//Reimplemented Events

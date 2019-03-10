@@ -100,7 +100,7 @@ class AnomalusAI : public MoonScriptBossAI
 				ResetTimer(mSummonTimer, IsHeroic() ? 14000 : 18000);
 			};
 
-			if(mRift == true && (GetLinkedCreature() == NULL || ! GetLinkedCreature()->IsAlive()))
+			if(mRift == true && (GetLinkedCreature() == nullptr || ! GetLinkedCreature()->IsAlive()))
 			{
 				RemoveAura(47748);
 				mRift = false;
@@ -117,7 +117,7 @@ class AnomalusAI : public MoonScriptBossAI
 			Announce("Anomalus opens a Chaotic Rift!");
 			//we are linked with CN_CHAOTIC_RIFT.
 			CreatureAIScript* chaoticRift = SpawnCreature(CN_CHAOTIC_RIFT, _unit->GetPositionX() + 13.5f, _unit->GetPositionY(), _unit->GetPositionZ(), _unit->GetOrientation(), false);
-			if(chaoticRift != NULL)
+			if(chaoticRift != nullptr)
 			{
 				SetLinkedCreature(chaoticRift);
 				chaoticRift->SetLinkedCreature(this);
@@ -284,7 +284,7 @@ class TelestraBossAI : public MoonScriptBossAI
 			AddEmote(Event_OnCombatStart, "You know what they say about curiosity. ", Text_Yell, 13319);
 			AddEmote(Event_OnDied, "Damn the... luck.", Text_Yell, 13320);
 			AddEmote(Event_OnTargetDied, "Death becomes you!", Text_Yell, 13324);
-			mAddArray[0] = mAddArray[1] = mAddArray[2] = NULL;
+			mAddArray[0] = mAddArray[1] = mAddArray[2] = nullptr;
 		};
 
 		void AIUpdate()
@@ -310,7 +310,7 @@ class TelestraBossAI : public MoonScriptBossAI
 				for(int i = 0; i < 3; ++i)
 				{
 					mAddArray[i] = _unit->GetMapMgr()->GetInterface()->SpawnCreature(CN_TELESTRA_FIRE + i, FormSpawns[i].x, FormSpawns[i].y, FormSpawns[i].z, FormSpawns[i].o, true, true, 0, 0);
-					if(mAddArray[i] != NULL)
+					if(mAddArray[i] != nullptr)
 						++mAddCount;
 				}
 
@@ -320,10 +320,10 @@ class TelestraBossAI : public MoonScriptBossAI
 			{
 				for(int i = 0; i < 3; ++i)
 				{
-					if(mAddArray[i] != NULL)
+					if(mAddArray[i] != nullptr)
 					{
 						mAddArray[i]->Despawn(1000, 0);
-						mAddArray[i] = NULL;
+						mAddArray[i] = nullptr;
 						--mAddCount;
 					}
 				}
@@ -353,10 +353,10 @@ class TelestraBossAI : public MoonScriptBossAI
 		{
 			for(int i = 0; i < 3; ++i)
 			{
-				if(mAddArray[i] != NULL)
+				if(mAddArray[i] != nullptr)
 				{
 					mAddArray[i]->Despawn(1000, 0);
-					mAddArray[i] = NULL;
+					mAddArray[i] = nullptr;
 				}
 			}
 
@@ -370,10 +370,10 @@ class TelestraBossAI : public MoonScriptBossAI
 		{
 			for(int i = 0; i < 3; ++i)
 			{
-				if(mAddArray[i] != NULL)
+				if(mAddArray[i] != nullptr)
 				{
 					mAddArray[i]->Despawn(1000, 0);
-					mAddArray[i] = NULL;
+					mAddArray[i] = nullptr;
 				}
 			}
 
@@ -694,7 +694,7 @@ class NexusScript : public MoonInstanceScript
 
 			if(pData == State_Finished)
 			{
-				GameObject* pSphere = NULL;
+				GameObject* pSphere = nullptr;
 
 				switch(pIndex)
 				{
@@ -711,7 +711,7 @@ class NexusScript : public MoonInstanceScript
 						return;
 				};
 
-				if(pSphere != NULL)
+				if(pSphere != nullptr)
 					pSphere->RemoveFlag(GAMEOBJECT_FLAGS, GO_FLAG_UNCLICKABLE);
 			};
 		};
@@ -779,11 +779,11 @@ class NexusScript : public MoonInstanceScript
 			if(mCSCount == 3)   // release last boss
 			{
 				Creature* pKeristrasza = GetCreatureByGuid(mKeristraszaGUID);
-				if(pKeristrasza == NULL)
+				if(pKeristrasza == nullptr)
 					return;
 
 				KeristraszaAI* pKeristraszaAI = TO< KeristraszaAI* >(pKeristrasza->GetScript());
-				if(pKeristraszaAI == NULL)
+				if(pKeristraszaAI == nullptr)
 					return;
 
 				pKeristraszaAI->Release();

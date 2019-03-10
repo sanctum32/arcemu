@@ -145,7 +145,7 @@ class HallsOfLightningScript : public MoonInstanceScript
 
 			(*Iter).second.mState = State_Finished;
 
-			GameObject* pDoors = NULL;
+			GameObject* pDoors = nullptr;
 			switch(pVictim->GetEntry())
 			{
 				case CN_GENERAL_BJARNGRIM:

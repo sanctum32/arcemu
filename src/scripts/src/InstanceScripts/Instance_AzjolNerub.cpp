@@ -77,7 +77,7 @@ public:
 		void OnDied(Unit* pKiller)
 		{
 			GameObject* Doors = GetNearestGameObject(192395);
-			if(Doors != NULL)
+			if(Doors != nullptr)
 				Doors->Despawn(0, 0);
 
 			ParentClass::OnDied(pKiller);

@@ -66,7 +66,7 @@ class ZerekethAI : public MoonScriptBossAI
 		void OnDied(Unit* mKiller)
 		{
 			//despawn voids
-			Creature* creature = NULL;
+			Creature* creature = nullptr;
 			for(set<Object*>::iterator itr = _unit->GetInRangeSetBegin(); itr != _unit->GetInRangeSetEnd();)
 			{
 				Object* obj = *itr;
@@ -109,7 +109,7 @@ class ZerekethAI : public MoonScriptBossAI
 			set< Object* >::iterator Itr = _unit->GetInRangePlayerSetBegin();
 			for(; Itr != _unit->GetInRangePlayerSetEnd(); Itr++)
 			{
-				Player* RandomTarget = NULL;
+				Player* RandomTarget = nullptr;
 				if(!(*Itr)->IsPlayer())
 					continue;
 				RandomTarget = TO< Player* >(*Itr);
@@ -138,7 +138,7 @@ class ZerekethAI : public MoonScriptBossAI
 				VoidZone->Despawn();
 				return;
 			}
-			RTarget = NULL;
+			RTarget = nullptr;
 			VoidZone->Despawn(60000, 0);
 		}
 
@@ -221,9 +221,9 @@ class DalliahTheDoomsayerAI : public MoonScriptBossAI
 
 		void OnDied(Unit* mKiller)
 		{
-			GameObject* door2 = NULL;
+			GameObject* door2 = nullptr;
 			door2 = GetNearestGameObject(184319);
-			if(door2 != NULL)
+			if(door2 != nullptr)
 				door2->SetByte(GAMEOBJECT_BYTES_1, 0, 0);
 
 			ParentClass::OnDied(mKiller);
@@ -264,9 +264,9 @@ class WrathScryerSoccothratesAI : public MoonScriptBossAI
 
 		void OnDied(Unit* mKiller)
 		{
-			GameObject* door1 = NULL;
+			GameObject* door1 = nullptr;
 			door1 = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(199.969f, 118.5837f, 22.379f, 184318);
-			if(door1 != NULL)
+			if(door1 != nullptr)
 				door1->SetByte(GAMEOBJECT_BYTES_1, 0, 0);
 
 			ParentClass::OnDied(mKiller);
@@ -367,16 +367,16 @@ class WardenMellicharAI : public MoonScriptBossAI
 			Phase_Timer = -1;
 			SetPhase(0);
 			Spawncounter = 0;
-			NPC_orb1 = NULL;
-			NPC_orb2 = NULL;
-			NPC_orb3 = NULL;
-			NPC_orb4 = NULL;
-			NPC_orb5 = NULL;
-			shield = NULL;
-			orb1 = NULL;
-			orb2 = NULL;
-			orb3 = NULL;
-			orb4 = NULL;
+			NPC_orb1 = nullptr;
+			NPC_orb2 = nullptr;
+			NPC_orb3 = nullptr;
+			NPC_orb4 = nullptr;
+			NPC_orb5 = nullptr;
+			shield = nullptr;
+			orb1 = nullptr;
+			orb2 = nullptr;
+			orb3 = nullptr;
+			orb4 = nullptr;
 		}
 
 		void OnCombatStart(Unit* mTarget)
@@ -666,31 +666,31 @@ class WardenMellicharAI : public MoonScriptBossAI
 			if(NPC_orb1)
 			{
 				NPC_orb1->Despawn(0);
-				NPC_orb1 = NULL;
+				NPC_orb1 = nullptr;
 			}
 
 			if(NPC_orb2)
 			{
 				NPC_orb2->Despawn(0);
-				NPC_orb2 = NULL;
+				NPC_orb2 = nullptr;
 			}
 
 			if(NPC_orb3)
 			{
 				NPC_orb3->Despawn(0);
-				NPC_orb3 = NULL;
+				NPC_orb3 = nullptr;
 			}
 
 			if(NPC_orb4)
 			{
 				NPC_orb4->Despawn(0);
-				NPC_orb4 = NULL;
+				NPC_orb4 = nullptr;
 			}
 
 			if(NPC_orb5)
 			{
 				NPC_orb5->Despawn(0);
-				NPC_orb5 = NULL;
+				NPC_orb5 = nullptr;
 			}
 
 		}

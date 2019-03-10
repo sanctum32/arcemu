@@ -131,7 +131,7 @@ public:
 			GetUnit()->SendChatMessageAlternateEntry(4275, CHAT_MSG_MONSTER_YELL, LANG_UNIVERSAL, "Who dares interfere with the Sons of Arugal?");
 			GetUnit()->PlaySoundToSet(5791);
 
-			MoonScriptCreatureAI* voidwalker = NULL;
+			MoonScriptCreatureAI* voidwalker = nullptr;
 			// Spawn 4 x Arugal's Voidwalkers
 			for(int x = 1; x < 5; x++)
 			{
@@ -139,7 +139,7 @@ public:
 				if(voidwalker)
 				{
 					voidwalker->AggroNearestPlayer();
-					voidwalker = NULL;
+					voidwalker = nullptr;
 				}
 			}
 
@@ -243,7 +243,7 @@ class RightLever: public GameObjectAIScript
 		void OnActivate(Player* pPlayer)
 		{
 			GameObject* CellDoor = pPlayer->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(-252.696f, 2114.22f, 82.8052f, RIGHT_CELL);
-			if(CellDoor != NULL)
+			if(CellDoor != nullptr)
 			{
 				if(CellDoor->GetState() == 1)
 					CellDoor->SetState(0);
@@ -262,7 +262,7 @@ class MiddleLever: public GameObjectAIScript
 		void OnActivate(Player* pPlayer)
 		{
 			GameObject* CellDoor = pPlayer->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(-249.22f, 2123.1f, 82.8052f, MIDDLE_CELL);
-			if(CellDoor != NULL)
+			if(CellDoor != nullptr)
 			{
 				if(CellDoor->GetState() == 1)
 					CellDoor->SetState(0);
@@ -281,7 +281,7 @@ class LeftLever: public GameObjectAIScript
 		void OnActivate(Player* pPlayer)
 		{
 			GameObject* CellDoor = pPlayer->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(-245.598f, 2132.32f, 82.8052f, LEFT_CELL);
-			if(CellDoor != NULL)
+			if(CellDoor != nullptr)
 			{
 				if(CellDoor->GetState() == 1)
 					CellDoor->SetState(0);

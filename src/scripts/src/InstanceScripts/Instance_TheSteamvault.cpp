@@ -101,10 +101,10 @@ class COILFANGENGINEERAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -238,10 +238,10 @@ class COILFANGORACLEAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -373,10 +373,10 @@ class COILFANGWARRIORAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -517,10 +517,10 @@ class COILFANGSIRENAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -666,10 +666,10 @@ class BOGOVERLORDAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -801,10 +801,10 @@ class COILFANGSORCERESSAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -976,10 +976,10 @@ class COILFANGLEPERAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -1104,10 +1104,10 @@ class COILFANGSLAVEMASTERAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -1231,10 +1231,10 @@ class COILFANGWATERELEMENTALAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -1366,10 +1366,10 @@ class COILFANGMYRMIDONAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -1503,10 +1503,10 @@ class TIDALSURGERAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -1622,10 +1622,10 @@ class STEAMRIGGERMECHANICAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -1741,10 +1741,10 @@ class STEAMSURGERAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -1918,10 +1918,10 @@ class HydromancerThespiaAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -1955,7 +1955,7 @@ class HydromancerThespiaAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime)
 					{
 						_unit->setAttackTimer(spells[i].attackstoptimer, false);
@@ -1972,7 +1972,7 @@ class HydromancerThespiaAI : public CreatureAIScript
 			if(!maxdist2cast) maxdist2cast = 100.0f;
 			if(!maxhp2cast) maxhp2cast = 100;
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				std::vector<Unit*> TargetTable;		/* From M4ksiu - Big THX to Capt who helped me with std stuff to make it simple and fully working <3 */
 				/* If anyone wants to use this function, then leave this note!										 */
@@ -1980,7 +1980,7 @@ class HydromancerThespiaAI : public CreatureAIScript
 				{
 					if(((spells[i].targettype == TARGET_RANDOM_FRIEND && isFriendly(_unit, (*itr))) || (spells[i].targettype != TARGET_RANDOM_FRIEND && isHostile(_unit, (*itr)) && (*itr) != _unit)) && (*itr)->IsUnit())  // isAttackable(_unit, (*itr)) &&
 					{
-						Unit* RandomTarget = NULL;
+						Unit* RandomTarget = nullptr;
 						RandomTarget = TO_UNIT(*itr);
 
 						if(RandomTarget->isAlive() && _unit->GetDistance2dSq(RandomTarget) >= mindist2cast * mindist2cast && _unit->GetDistance2dSq(RandomTarget) <= maxdist2cast * maxdist2cast && ((RandomTarget->GetHealthPct() >= minhp2cast && RandomTarget->GetHealthPct() <= maxhp2cast && spells[i].targettype == TARGET_RANDOM_FRIEND) || (_unit->GetAIInterface()->getThreatByPtr(RandomTarget) > 0 && isHostile(_unit, RandomTarget))))
@@ -2054,7 +2054,7 @@ class SteamriggerMechanicAI : public CreatureAIScript
 			_unit->GetAIInterface()->ResetUnitToFollow();
 			_unit->GetAIInterface()->SetUnitToFollowAngle(0.0f);
 
-			if(_unit->GetCurrentSpell() != NULL)
+			if(_unit->GetCurrentSpell() != nullptr)
 				_unit->GetCurrentSpell()->cancel();
 		}
 
@@ -2151,7 +2151,7 @@ class MekgineerSteamriggerAI : public CreatureAIScript
 		{
 			for(int i = 0; i < nrspells; i++)
 				spells[i].casttime = 0;
-			spells[3].casttime = (uint32)time(NULL) + spells[3].cooldown;
+			spells[3].casttime = (uint32)time(nullptr) + spells[3].cooldown;
 
 			GnomeCounter = 0;
 
@@ -2204,7 +2204,7 @@ class MekgineerSteamriggerAI : public CreatureAIScript
 		{
 			for(size_t i = 0; i < Gnomes.size(); i++)
 			{
-				Creature* Gnome = NULL;
+				Creature* Gnome = nullptr;
 				Gnome = TO_CREATURE(Gnomes[i]);
 				if(!Gnome)
 					continue;
@@ -2235,7 +2235,7 @@ class MekgineerSteamriggerAI : public CreatureAIScript
 		{
 			if(Gnomes.size())
 			{
-				Unit* Gnome = NULL;
+				Unit* Gnome = nullptr;
 				for(std::vector<Unit*>::iterator itr = Gnomes.begin(); itr < Gnomes.end(); ++itr)
 				{
 					Gnome = *itr;
@@ -2248,7 +2248,7 @@ class MekgineerSteamriggerAI : public CreatureAIScript
 					if(Gnome->GetAIInterface()->getNextTarget())
 						continue;
 
-					if(Gnome->GetAIInterface()->getUnitToFollow() == NULL)
+					if(Gnome->GetAIInterface()->getUnitToFollow() == nullptr)
 					{
 						Gnome->GetAIInterface()->SetUnitToFollow(_unit);
 						Gnome->GetAIInterface()->SetFollowDistance(15.0f);
@@ -2256,13 +2256,13 @@ class MekgineerSteamriggerAI : public CreatureAIScript
 
 					if(_unit->GetDistance2dSq(Gnome) > 250.0f)
 					{
-						if(Gnome->GetCurrentSpell() != NULL)
+						if(Gnome->GetCurrentSpell() != nullptr)
 							Gnome->GetCurrentSpell()->cancel();
 
 						continue;
 					}
 
-					if(Gnome->GetCurrentSpell() == NULL)
+					if(Gnome->GetCurrentSpell() == nullptr)
 					{
 						Gnome->GetAIInterface()->StopMovement(1);
 						Gnome->CastSpell(_unit, REPAIR, false);	// core problem? casted on self (and effect is applied on caster instead of _unit)
@@ -2270,7 +2270,7 @@ class MekgineerSteamriggerAI : public CreatureAIScript
 				}
 			}
 
-			uint32 t = (uint32)time(NULL);
+			uint32 t = (uint32)time(nullptr);
 			if(t > spells[3].casttime)
 			{
 				_unit->SendChatMessage(CHAT_MSG_MONSTER_YELL, LANG_UNIVERSAL, "Have fun dyin', cupcake!");
@@ -2283,7 +2283,7 @@ class MekgineerSteamriggerAI : public CreatureAIScript
 
 			if((_unit->GetHealthPct() <= 75 && GnomeCounter == 0) || (_unit->GetHealthPct() <= 50 && GnomeCounter == 1) || (_unit->GetHealthPct() <= 25 && GnomeCounter == 2))
 			{
-				Unit* Gnome = NULL;
+				Unit* Gnome = nullptr;
 				for(int i = 0; i < 3; i++)
 				{
 					Gnome = _unit->GetMapMgr()->GetInterface()->SpawnCreature(CN_STEAMRIGGER_MECHANIC, SpawnCoords[i].x, SpawnCoords[i].y, SpawnCoords[i].z, SpawnCoords[i].o, true, false, _unit->GetFaction(), 50);
@@ -2310,10 +2310,10 @@ class MekgineerSteamriggerAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -2347,7 +2347,7 @@ class MekgineerSteamriggerAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime)
 					{
 						_unit->setAttackTimer(spells[i].attackstoptimer, false);
@@ -2364,7 +2364,7 @@ class MekgineerSteamriggerAI : public CreatureAIScript
 			if(!maxdist2cast) maxdist2cast = 100.0f;
 			if(!maxhp2cast) maxhp2cast = 100;
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				std::vector<Unit*> TargetTable;		/* From M4ksiu - Big THX to Capt who helped me with std stuff to make it simple and fully working <3 */
 				/* If anyone wants to use this function, then leave this note!										 */
@@ -2372,7 +2372,7 @@ class MekgineerSteamriggerAI : public CreatureAIScript
 				{
 					if(((spells[i].targettype == TARGET_RANDOM_FRIEND && isFriendly(_unit, (*itr))) || (spells[i].targettype != TARGET_RANDOM_FRIEND && isHostile(_unit, (*itr)) && (*itr) != _unit)) && (*itr)->IsUnit())  // isAttackable(_unit, (*itr)) &&
 					{
-						Unit* RandomTarget = NULL;
+						Unit* RandomTarget = nullptr;
 						RandomTarget = TO_UNIT(*itr);
 
 						if(RandomTarget->isAlive() && _unit->GetDistance2dSq(RandomTarget) >= mindist2cast * mindist2cast && _unit->GetDistance2dSq(RandomTarget) <= maxdist2cast * maxdist2cast && ((RandomTarget->GetHealthPct() >= minhp2cast && RandomTarget->GetHealthPct() <= maxhp2cast && spells[i].targettype == TARGET_RANDOM_FRIEND) || (_unit->GetAIInterface()->getThreatByPtr(RandomTarget) > 0 && isHostile(_unit, RandomTarget))))
@@ -2531,12 +2531,12 @@ class WarlordKalitreshAI : public CreatureAIScript
 			for(int i = 0; i < nrspells; i++)
 				spells[i].casttime = 0;
 
-			RagePhaseTimer = (uint32)time(NULL) + RandomUInt(15) + 10;
+			RagePhaseTimer = (uint32)time(nullptr) + RandomUInt(15) + 10;
 			DistillerNumber = 0;
 			EnrageTimer = 0;
 			RagePhase = 0;
 
-			GameObject* Gate = NULL;
+			GameObject* Gate = nullptr;
 			Gate = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(-95.774361f, -439.608612f, 3.382976f, 183049);
 			if(Gate)
 				Gate->SetState(1);
@@ -2582,7 +2582,7 @@ class WarlordKalitreshAI : public CreatureAIScript
 
 		void OnCombatStop(Unit* mTarget)
 		{
-			GameObject* Gate = NULL;
+			GameObject* Gate = nullptr;
 			Gate = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(-95.774361f, -439.608612f, 3.382976f, 183049);
 			if(Gate)
 				Gate->SetState(0);
@@ -2599,7 +2599,7 @@ class WarlordKalitreshAI : public CreatureAIScript
 			if(_unit->FindAura(36453))
 				_unit->RemoveAura(36453);
 
-			Unit* pDistiller = NULL;
+			Unit* pDistiller = nullptr;
 			pDistiller = GetClosestDistiller();
 			if(pDistiller)
 			{
@@ -2623,13 +2623,13 @@ class WarlordKalitreshAI : public CreatureAIScript
 
 		void AIUpdate()
 		{
-			uint32 t = (uint32)time(NULL);
+			uint32 t = (uint32)time(nullptr);
 			if(t > RagePhaseTimer)
 			{
 				if(EnrageTimer != 0)
 					EnrageTimer++;
 
-				Unit* pDistiller = NULL;
+				Unit* pDistiller = nullptr;
 				pDistiller = GetClosestDistiller();
 				if(!pDistiller || (pDistiller->HasFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_ATTACKABLE_9) && RagePhase != 0))
 				{
@@ -2714,10 +2714,10 @@ class WarlordKalitreshAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -2751,7 +2751,7 @@ class WarlordKalitreshAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime)
 					{
 						_unit->setAttackTimer(spells[i].attackstoptimer, false);
@@ -2768,7 +2768,7 @@ class WarlordKalitreshAI : public CreatureAIScript
 			if(!maxdist2cast) maxdist2cast = 100.0f;
 			if(!maxhp2cast) maxhp2cast = 100;
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				std::vector<Unit*> TargetTable;		/* From M4ksiu - Big THX to Capt who helped me with std stuff to make it simple and fully working <3 */
 				/* If anyone wants to use this function, then leave this note!										 */
@@ -2776,7 +2776,7 @@ class WarlordKalitreshAI : public CreatureAIScript
 				{
 					if(((spells[i].targettype == TARGET_RANDOM_FRIEND && isFriendly(_unit, (*itr))) || (spells[i].targettype != TARGET_RANDOM_FRIEND && isHostile(_unit, (*itr)) && (*itr) != _unit)) && (*itr)->IsUnit())  // isAttackable(_unit, (*itr)) &&
 					{
-						Unit* RandomTarget = NULL;
+						Unit* RandomTarget = nullptr;
 						RandomTarget = TO_UNIT(*itr);
 
 						if(RandomTarget->isAlive() && _unit->GetDistance2dSq(RandomTarget) >= mindist2cast * mindist2cast && _unit->GetDistance2dSq(RandomTarget) <= maxdist2cast * maxdist2cast && ((RandomTarget->GetHealthPct() >= minhp2cast && RandomTarget->GetHealthPct() <= maxhp2cast && spells[i].targettype == TARGET_RANDOM_FRIEND) || (_unit->GetAIInterface()->getThreatByPtr(RandomTarget) > 0 && isHostile(_unit, RandomTarget))))
@@ -2817,8 +2817,8 @@ class WarlordKalitreshAI : public CreatureAIScript
 		Unit* GetClosestDistiller()
 		{
 			float distance = 50.0f;
-			Unit* pDistiller = NULL;
-			Unit* Unit2Check = NULL;
+			Unit* pDistiller = nullptr;
+			Unit* Unit2Check = nullptr;
 
 			for(int i = 1; i < 5; i++)
 			{

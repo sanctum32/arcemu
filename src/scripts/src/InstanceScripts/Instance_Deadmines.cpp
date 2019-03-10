@@ -92,32 +92,32 @@ public:
 		case GO_DEFIAS_CANNON:
 			{
 				GameObject* pDoor4 = GetGameObjectByGuid(mIronCladDoor_GUID);
-				if(pDoor4!=NULL && pDoor4->GetState()!=2)
+				if(pDoor4!=nullptr && pDoor4->GetState()!=2)
 					pDoor4->SetState(2);
 			}break;
 		case GO_FACTORY_DOOR_LEVER:
 			{
 				GameObject* pDoor5 = GetGameObjectByGuid(mFactoryDoor_GUID);
-				if(pDoor5!=NULL)
+				if(pDoor5!=nullptr)
 					pDoor5->SetState(pDoor5->GetState()==State_Inactive ? State_Active : State_Inactive);
 			}break;
 		case GO_IRONCLAD_LEVER:
 			{
 				GameObject* pDoor6 = GetGameObjectByGuid(mFactoryDoor_GUID);
 				//Door can be opened by lever if state isn't 2
-				if(pDoor6!=NULL && pDoor6->GetState()!=2)
+				if(pDoor6!=nullptr && pDoor6->GetState()!=2)
 					pDoor6->SetState(pDoor6->GetState() == State_Inactive ? State_Active : State_Inactive);
 			}break;
 		case GO_SNEED_DOOR_LEVER:
 			{
 				GameObject* pDoor7 = FindClosestGameObjectOnMap(GO_HEAVY_DOOR, Doors[1].x, Doors[1].y, Doors[1].z);
-				if(pDoor7!=NULL)
+				if(pDoor7!=nullptr)
 					pDoor7->SetState(pDoor7->GetState() == State_Inactive ? State_Active : State_Inactive);
 			}break;
 		case GO_GILNID_DOOR_LEVER:
 			{
 				GameObject* pDoor8 = FindClosestGameObjectOnMap(GO_HEAVY_DOOR, Doors[0].x, Doors[0].y, Doors[0].z);
-				if(pDoor8!=NULL)
+				if(pDoor8!=nullptr)
 					pDoor8->SetState(pDoor8->GetState() == State_Inactive ? State_Active : State_Inactive);
 			}break;
 		}
@@ -130,7 +130,7 @@ public:
 		case NPC_RHAHK_ZOR:
 			{
 				GameObject* pDoor1 = GetGameObjectByGuid(mFactoryDoor_GUID);
-				if(pDoor1!=NULL)
+				if(pDoor1!=nullptr)
 					pDoor1->SetState(State_Active);
 			}break;
 		case NPC_SNEEDS_SHREDDER:
@@ -139,13 +139,13 @@ public:
 		case NPC_GILNID:
 			{
 				GameObject* pDoor2 = FindClosestGameObjectOnMap(GO_HEAVY_DOOR, Doors[0].x, Doors[0].y, Doors[0].z);
-				if(pDoor2!=NULL)
+				if(pDoor2!=nullptr)
 					pDoor2->SetState(State_Active);
 			}break;
 		case NPC_SNEED:
 			{
 				GameObject* pDoor3 = FindClosestGameObjectOnMap(GO_HEAVY_DOOR, Doors[1].x, Doors[1].y, Doors[1].z);
-				if(pDoor3!=NULL)
+				if(pDoor3!=nullptr)
 					pDoor3->SetState(State_Active);
 			}break;
 		}
@@ -335,7 +335,7 @@ public:
 			for(int x = 0; x < 2; x++)
 			{
 				MoonScriptCreatureAI* Guard = SpawnCreature(636);
-				if( Guard != NULL ){
+				if( Guard != nullptr ){
 					Guard->SetDespawnWhenInactive(true);
 					Guard->GetUnit()->m_noRespawn = true;
 				}

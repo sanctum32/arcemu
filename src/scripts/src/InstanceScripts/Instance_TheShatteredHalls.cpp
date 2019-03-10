@@ -88,10 +88,10 @@ class FELORCCONVERTAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -211,10 +211,10 @@ class SHATTEREDHANDHEATHENAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -341,10 +341,10 @@ class SHATTEREDHANDLEGIONNAIREAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -472,10 +472,10 @@ class SHATTEREDHANDSAVAGEAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -625,10 +625,10 @@ class SHADOWMOONACOLYTEAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -761,10 +761,10 @@ class SHATTEREDHANDASSASSINAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -876,10 +876,10 @@ class SHATTEREDHANDGLADIATORAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -991,10 +991,10 @@ class SHATTEREDHANDHOUNDMASTERAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -1124,10 +1124,10 @@ class SHATTEREDHANDREAVERAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -1242,7 +1242,7 @@ class SHATTEREDHANDSENTRYAI : public CreatureAIScript
 		{
 			if(_unit->GetAIInterface()->getNextTarget() && _unit->GetCurrentSpell())
 			{
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				target = _unit->GetAIInterface()->getNextTarget();
 				if(_unit->GetDistance2dSq(target) > 225.0f && RandomUInt(4) == 1)
 				{
@@ -1257,10 +1257,10 @@ class SHATTEREDHANDSENTRYAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -1384,7 +1384,7 @@ class SHATTEREDHANDSHARPSHOOTERAI : public CreatureAIScript
 			if(_unit->GetAIInterface()->getNextTarget() && _unit->GetDistance2dSq(_unit->GetAIInterface()->getNextTarget()) <= 900.0f)
 			{
 				_unit->GetAIInterface()->setCurrentAgent(AGENT_SPELL);
-				if(_unit->GetCurrentSpell() == NULL)
+				if(_unit->GetCurrentSpell() == nullptr)
 				{
 					uint32 Chance = RandomUInt(100);
 					if(Chance <= 70)
@@ -1494,10 +1494,10 @@ class SHATTEREDHANDBRAWLERAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -1575,7 +1575,7 @@ class ShadowmoonDarkcasterAI : public CreatureAIScript
 
 		ShadowmoonDarkcasterAI(Creature* pCreature) : CreatureAIScript(pCreature)
 		{
-			Unit* GrandWarlock = NULL;
+			Unit* GrandWarlock = nullptr;
 			GrandWarlock = _unit->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(178.811996f, 292.377991f, -8.190210f, 16807);
 			if(GrandWarlock)
 			{
@@ -1586,7 +1586,7 @@ class ShadowmoonDarkcasterAI : public CreatureAIScript
 
 		void OnCombatStart(Unit* mTarget)
 		{
-			Unit* GrandWarlock = NULL;
+			Unit* GrandWarlock = nullptr;
 			GrandWarlock = _unit->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(178.811996f, 292.377991f, -8.190210f, 16807);
 			if(GrandWarlock)
 			{
@@ -1621,14 +1621,14 @@ class ShadowmoonDarkcasterAI : public CreatureAIScript
 
 		void OnDied(Unit* mKiller)
 		{
-			Creature* GrandWarlock = NULL;
+			Creature* GrandWarlock = nullptr;
 			GrandWarlock = _unit->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(178.811996f, 292.377991f, -8.190210f, 16807);
 			if(GrandWarlock)	// any emotes needed?
 			{
 				uint32 Counter = 0;
 				for(int i = 0; i < 3; i++)
 				{
-					Unit* Servant = NULL;
+					Unit* Servant = nullptr;
 					Servant = _unit->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(Darkcasters[i].x, Darkcasters[i].y, Darkcasters[i].z, 17694);
 					if(!Servant)
 						continue;
@@ -1797,7 +1797,7 @@ class GrandWarlockNethekurseAI : public CreatureAIScript
 
 				Started = true;
 
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				target = FindTarget();
 				if(target)
 				{
@@ -1811,9 +1811,9 @@ class GrandWarlockNethekurseAI : public CreatureAIScript
 				return;
 			}
 
-			uint32 t = (uint32)time(NULL);
+			uint32 t = (uint32)time(nullptr);
 			// not sure if this should work like that
-			if(t > spells[2].casttime && _unit->GetHealthPct() <= 20 && _unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(t > spells[2].casttime && _unit->GetHealthPct() <= 20 && _unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				_unit->setAttackTimer(2500, false);
 
@@ -1832,10 +1832,10 @@ class GrandWarlockNethekurseAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -1866,7 +1866,7 @@ class GrandWarlockNethekurseAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime)
 					{
 						_unit->setAttackTimer(spells[i].attackstoptimer, false);
@@ -1883,7 +1883,7 @@ class GrandWarlockNethekurseAI : public CreatureAIScript
 			if(!maxdist2cast) maxdist2cast = 100.0f;
 			if(!maxhp2cast) maxhp2cast = 100;
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				std::vector<Unit*> TargetTable;		/* From M4ksiu - Big THX to Capt who helped me with std stuff to make it simple and fully working <3 */
 				/* If anyone wants to use this function, then leave this note!										 */
@@ -1891,7 +1891,7 @@ class GrandWarlockNethekurseAI : public CreatureAIScript
 				{
 					if(((spells[i].targettype == TARGET_RANDOM_FRIEND && isFriendly(_unit, (*itr))) || (spells[i].targettype != TARGET_RANDOM_FRIEND && isHostile(_unit, (*itr)) && (*itr) != _unit)) && (*itr)->IsUnit())  // isAttackable(_unit, (*itr)) &&
 					{
-						Unit* RandomTarget = NULL;
+						Unit* RandomTarget = nullptr;
 						RandomTarget = TO_UNIT(*itr);
 
 						if(RandomTarget->isAlive() && _unit->GetDistance2dSq(RandomTarget) >= mindist2cast * mindist2cast && _unit->GetDistance2dSq(RandomTarget) <= maxdist2cast * maxdist2cast && ((RandomTarget->GetHealthPct() >= minhp2cast && RandomTarget->GetHealthPct() <= maxhp2cast && spells[i].targettype == TARGET_RANDOM_FRIEND) || (_unit->GetAIInterface()->getThreatByPtr(RandomTarget) > 0 && isHostile(_unit, RandomTarget))))
@@ -1932,7 +1932,7 @@ class GrandWarlockNethekurseAI : public CreatureAIScript
 		// A bit rewritten FindTarget function
 		Unit* FindTarget()
 		{
-			Unit* target = NULL;
+			Unit* target = nullptr;
 			float distance = 50.0f;
 
 			Unit* pUnit;
@@ -2034,10 +2034,10 @@ class BloodGuardPorungAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -2063,7 +2063,7 @@ class BloodGuardPorungAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime)
 					{
 						_unit->setAttackTimer(spells[i].attackstoptimer, false);
@@ -2102,7 +2102,7 @@ class WarbringerOmroggAI : public MoonScriptCreatureAI
 			AddSpellFunc(&SpellFunc_Warbringer_BurningMaul, Target_Self, 100, 0, 30);
 			mBlastWave = AddSpell(WARBRINGER_OMROGG_BLAST_WAVE, Target_Self, 0, 1, 0);
 			mBlastWaveTimer = mSpeechTimer = mSpeechId = mAggroShiftTimer = INVALIDATE_TIMER;
-			mRightHead = mLeftHead = NULL;
+			mRightHead = mLeftHead = nullptr;
 		}
 
 		void OnCombatStart(Unit* pTarget)
@@ -2112,16 +2112,16 @@ class WarbringerOmroggAI : public MoonScriptCreatureAI
 			mBlastWaveTimer = mSpeechTimer = mSpeechId = INVALIDATE_TIMER;
 			mLeftHead = SpawnCreature(19523);
 			mRightHead = SpawnCreature(19524);
-			if(mLeftHead != NULL)
+			if(mLeftHead != nullptr)
 			{
 				mLeftHead->GetUnit()->GetAIInterface()->SetUnitToFollow(_unit);
 			}
-			if(mRightHead != NULL)
+			if(mRightHead != nullptr)
 			{
 				mRightHead->GetUnit()->GetAIInterface()->SetUnitToFollow(_unit);
 			}
 
-			if(mLeftHead == NULL || mRightHead == NULL)
+			if(mLeftHead == nullptr || mRightHead == nullptr)
 				return;
 
 			switch(RandomUInt(2))
@@ -2149,22 +2149,22 @@ class WarbringerOmroggAI : public MoonScriptCreatureAI
 			ParentClass::OnCombatStop(pTarget);
 			if(IsAlive())
 			{
-				if(mLeftHead != NULL)
+				if(mLeftHead != nullptr)
 				{
 					mLeftHead->Despawn(1000);
-					mLeftHead = NULL;
+					mLeftHead = nullptr;
 				}
-				if(mRightHead != NULL)
+				if(mRightHead != nullptr)
 				{
 					mRightHead->Despawn(1000);
-					mRightHead = NULL;
+					mRightHead = nullptr;
 				}
 			}
 		}
 
 		void OnTargetDied(Unit* pTarget)
 		{
-			if(mLeftHead == NULL || mRightHead == NULL || mSpeechTimer != INVALIDATE_TIMER)
+			if(mLeftHead == nullptr || mRightHead == nullptr || mSpeechTimer != INVALIDATE_TIMER)
 				return;
 
 			switch(RandomUInt(1))
@@ -2183,15 +2183,15 @@ class WarbringerOmroggAI : public MoonScriptCreatureAI
 		void OnDied(Unit* pKiller)
 		{
 			ParentClass::OnDied(pKiller);
-			if(mLeftHead == NULL || mRightHead == NULL)
+			if(mLeftHead == nullptr || mRightHead == nullptr)
 				return;
 
 			mLeftHead->Emote("This all... your fault!", Text_Yell, 10311);
 			mLeftHead->Despawn(1000);
-			mLeftHead = NULL;
+			mLeftHead = nullptr;
 			mRightHead->RegisterAIUpdateEvent(3000);
 			mRightHead->Despawn(4000);
-			mRightHead = NULL;
+			mRightHead = nullptr;
 		}
 
 		void AIUpdate()
@@ -2202,7 +2202,7 @@ class WarbringerOmroggAI : public MoonScriptCreatureAI
 			{
 				bool ResetSpeech = true;
 				RemoveTimer(mSpeechTimer);
-				if(mLeftHead != NULL && mRightHead != NULL)
+				if(mLeftHead != nullptr && mRightHead != nullptr)
 				{
 					switch(mSpeechId)
 					{
@@ -2258,13 +2258,13 @@ class WarbringerOmroggAI : public MoonScriptCreatureAI
 		void ShiftAggro()
 		{
 			Unit* pTarget = GetBestPlayerTarget(TargetFilter_NotCurrent);
-			if(pTarget != NULL)
+			if(pTarget != nullptr)
 			{
 				ClearHateList();
 				_unit->GetAIInterface()->setNextTarget(pTarget);
 				_unit->GetAIInterface()->modThreatByPtr(pTarget, 1000);
 
-				if(mLeftHead == NULL || mRightHead == NULL || mSpeechTimer != INVALIDATE_TIMER)
+				if(mLeftHead == nullptr || mRightHead == nullptr || mSpeechTimer != INVALIDATE_TIMER)
 					return;
 
 				switch(RandomUInt(6))
@@ -2313,8 +2313,8 @@ class WarbringerOmroggAI : public MoonScriptCreatureAI
 
 void SpellFunc_Warbringer_BurningMaul(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	WarbringerOmroggAI* Warbringer = (pCreatureAI) ? TO< WarbringerOmroggAI* >(pCreatureAI) : NULL;
-	if(Warbringer != NULL)
+	WarbringerOmroggAI* Warbringer = (pCreatureAI) ? TO< WarbringerOmroggAI* >(pCreatureAI) : nullptr;
+	if(Warbringer != nullptr)
 	{
 		Warbringer->CastSpell(Warbringer->mBlastWave);
 		Warbringer->mBlastWaveTimer = Warbringer->AddTimer(RandomUInt(5) + 5);
@@ -2344,13 +2344,13 @@ public:
 		void Destroy()
 		{
 			Unit* pUnit = ForceCreatureFind(CN_WARBRINGER_OMROGG);
-			if(pUnit != NULL && TO_CREATURE(pUnit)->GetScript() != NULL)
+			if(pUnit != nullptr && TO_CREATURE(pUnit)->GetScript() != nullptr)
 			{
 				WarbringerOmroggAI* pAI = TO< WarbringerOmroggAI* >(TO_CREATURE(pUnit)->GetScript());
 				if(pAI->mLeftHead == (MoonScriptCreatureAI*)(this))
-					pAI->mLeftHead = NULL;
+					pAI->mLeftHead = nullptr;
 				if(pAI->mRightHead == (MoonScriptCreatureAI*)(this))
-					pAI->mRightHead = NULL;
+					pAI->mRightHead = nullptr;
 			}
 		}
 };
@@ -2407,7 +2407,7 @@ class WarchiefKargathBladefistAI : public CreatureAIScript
 
 			RegisterAIUpdateEvent(_unit->GetBaseAttackTime(MELEE));
 
-			spells[0].casttime = (uint32)time(NULL) + 30;
+			spells[0].casttime = (uint32)time(nullptr) + 30;
 		}
 
 		void OnTargetDied(Unit* mTarget)
@@ -2447,8 +2447,8 @@ class WarchiefKargathBladefistAI : public CreatureAIScript
 
 		void AIUpdate()
 		{
-			uint32 t = (uint32)time(NULL);
-			if(t > spells[0].casttime && _unit->GetAIInterface()->getNextTarget() && _unit->GetCurrentSpell() == NULL)
+			uint32 t = (uint32)time(nullptr);
+			if(t > spells[0].casttime && _unit->GetAIInterface()->getNextTarget() && _unit->GetCurrentSpell() == nullptr)
 			{
 				_unit->setAttackTimer(1500, false);
 

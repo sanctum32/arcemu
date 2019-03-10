@@ -149,7 +149,7 @@ class ObsidianSanctumScript : public MoonInstanceScript
 			};
 
 			Creature* pSartharion = GetCreature(BOSS_SARTHARION);
-			if(pSartharion == NULL)
+			if(pSartharion == nullptr)
 				return;
 
 			pSartharion->CastSpell(pSartharion, pSpellEntry, true);
@@ -159,7 +159,7 @@ class ObsidianSanctumScript : public MoonInstanceScript
 		Creature* GetCreature(uint8 pData)
 		{
 			if(pData >= OS_DATA_END)   // impossible tho
-				return NULL;
+				return nullptr;
 
 			return GetCreatureByGuid(m_creatureGuid[pData]);
 		};
@@ -167,7 +167,7 @@ class ObsidianSanctumScript : public MoonInstanceScript
 
 void SpellFunc_FlameTsunami(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	if(pCreatureAI != NULL)
+	if(pCreatureAI != nullptr)
 	{
 		pCreatureAI->GetUnit()->SendChatMessage(CHAT_MSG_RAID_BOSS_EMOTE, LANG_UNIVERSAL, "The lava surrounding Sartharion churns!");
 
@@ -189,7 +189,7 @@ void SpellFunc_FlameTsunami(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI,
 		};
 
 		uint32 RndSide = rand() % 2;
-		Creature* Tsunami = NULL;
+		Creature* Tsunami = nullptr;
 
 		for(int i = 0; i < 3; ++i)
 		{
@@ -198,24 +198,24 @@ void SpellFunc_FlameTsunami(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI,
 				case 0:
 					Tsunami = pCreatureAI->GetUnit()->GetMapMgr()->GetInterface()->SpawnCreature(CN_FLAME_TSUNAMI, TSUNAMI_SPAWN[i].x, TSUNAMI_SPAWN[i].y, TSUNAMI_SPAWN[i].z, TSUNAMI_SPAWN[i].o, true, true, 0, 0);
 
-					if(Tsunami != NULL)
+					if(Tsunami != nullptr)
 						Tsunami->GetAIInterface()->MoveTo(TSUNAMI_MOVE[i].x, TSUNAMI_MOVE[i].y, TSUNAMI_MOVE[i].z, TSUNAMI_MOVE[i].o);
 					break;
 				case 1:
 					Tsunami = pCreatureAI->GetUnit()->GetMapMgr()->GetInterface()->SpawnCreature(CN_FLAME_TSUNAMI, TSUNAMI_SPAWN[i + 3].x, TSUNAMI_SPAWN[i + 3].y, TSUNAMI_SPAWN[i + 3].z, TSUNAMI_SPAWN[i + 3].o, true, true, 0, 0);
 
-					if(Tsunami != NULL)
+					if(Tsunami != nullptr)
 						Tsunami->GetAIInterface()->MoveTo(TSUNAMI_MOVE[i + 3].x, TSUNAMI_MOVE[i + 3].y, TSUNAMI_MOVE[i + 3].z, TSUNAMI_MOVE[i + 3].o);
 			};
 
-			Tsunami = NULL;
+			Tsunami = nullptr;
 		};
 	};
 };
 
 void SpellFunc_LavaSpawn(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	if(pCreatureAI == NULL)
+	if(pCreatureAI == nullptr)
 		return;
 
 	for(int i = 0; i < 2; ++i)
@@ -250,7 +250,7 @@ public:
 			for(int i = 0; i < OS_DATA_END - 1; i++)
 			{
 				m_bDrakes[i] = false;
-				m_cDrakes[i] = NULL;
+				m_cDrakes[i] = nullptr;
 			}
 
 			mDrakeTimer = 0;
@@ -305,7 +305,7 @@ public:
 
 		void CheckDrakes()
 		{
-			if(mInstance == NULL)
+			if(mInstance == nullptr)
 				return;
 
 			m_iDrakeCount = 0;
@@ -313,7 +313,7 @@ public:
 			for(uint8 i = 0; i < (OS_DATA_END - 1); ++i)
 			{
 				m_cDrakes[i] = mInstance->GetCreature(i);
-				if(m_cDrakes[i] != NULL && m_cDrakes[i]->isAlive())
+				if(m_cDrakes[i] != nullptr && m_cDrakes[i]->isAlive())
 				{
 					m_bDrakes[i] = true;
 					m_iDrakeCount++;
@@ -324,7 +324,7 @@ public:
 
 		void CallTenebron()
 		{
-			if(m_cDrakes[DRAKE_TENEBRON] != NULL && m_cDrakes[DRAKE_TENEBRON]->isAlive())
+			if(m_cDrakes[DRAKE_TENEBRON] != nullptr && m_cDrakes[DRAKE_TENEBRON]->isAlive())
 			{
 				Emote("Tenebron! The eggs are yours to protect as well!", Text_Yell, 14106);
 				m_cDrakes[DRAKE_TENEBRON]->GetAIInterface()->MoveTo(3254.606689f, 531.867859f, 66.898163f, 4.215994f);
@@ -334,7 +334,7 @@ public:
 
 		void CallShadron()
 		{
-			if(m_cDrakes[DRAKE_SHADRON] != NULL && m_cDrakes[DRAKE_SHADRON]->isAlive())
+			if(m_cDrakes[DRAKE_SHADRON] != nullptr && m_cDrakes[DRAKE_SHADRON]->isAlive())
 			{
 				Emote("Shadron! The clutch is in danger! Assist me!", Text_Yell, 14104);
 				m_cDrakes[DRAKE_SHADRON]->GetAIInterface()->MoveTo(3254.606689f, 531.867859f, 66.898163f, 4.215994f);
@@ -344,7 +344,7 @@ public:
 
 		void CallVesperon()
 		{
-			if(m_cDrakes[DRAKE_VESPERON] != NULL && m_cDrakes[DRAKE_VESPERON]->isAlive())
+			if(m_cDrakes[DRAKE_VESPERON] != nullptr && m_cDrakes[DRAKE_VESPERON]->isAlive())
 			{
 				Emote("Vesperon! Come to me, all is at risk!", Text_Yell, 14105);
 				m_cDrakes[DRAKE_VESPERON]->GetAIInterface()->MoveTo(3254.606689f, 531.867859f, 66.898163f, 4.215994f);

@@ -106,10 +106,10 @@ class AlzzinTheWildshaper : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -231,10 +231,10 @@ class CaptainKromcrush : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -356,10 +356,10 @@ class ChoRushTheObserver : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -499,10 +499,10 @@ class GuardFengus : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -633,10 +633,10 @@ class GuardMolDar : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -766,10 +766,10 @@ class GuardSlipKik : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -899,10 +899,10 @@ class Hydrospawn : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -1008,10 +1008,10 @@ class MassiveGeyser : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				spell.casttime--;
 
 				if(m_spellcheck)
@@ -1134,10 +1134,10 @@ class IllyanaRavenoak : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -1268,10 +1268,10 @@ class Immolthar : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -1377,10 +1377,10 @@ class EyeOfImmolThar : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				spell.casttime--;
 
 				if(m_spellcheck)
@@ -1484,10 +1484,10 @@ class KingGordok : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -1609,10 +1609,10 @@ class Lethtendris : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -1717,10 +1717,10 @@ class LordHelNurath : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 
 				if(m_spellcheck)
 				{
@@ -1832,10 +1832,10 @@ class MagisterKalendris : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -1956,10 +1956,10 @@ class PrinceTortheldrin : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -2089,10 +2089,10 @@ class Pusillin : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -2214,10 +2214,10 @@ class SkarrTheUnbreakable : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -2351,10 +2351,10 @@ class TendrisWarpwood : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -2476,10 +2476,10 @@ class ZevrimThornhoof : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -2619,10 +2619,10 @@ class GordokMageLord : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -2744,10 +2744,10 @@ class GordokReaver : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -2878,10 +2878,10 @@ class GordokBrute : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -3003,10 +3003,10 @@ class FelLash : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;

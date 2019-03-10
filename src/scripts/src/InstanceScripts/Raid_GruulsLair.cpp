@@ -49,11 +49,11 @@ public:
 
 void SpellFunc_LairBrute_Charge(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	LairBruteAI* pBruteAI = (pCreatureAI != NULL) ? TO< LairBruteAI* >(pCreatureAI) : NULL;
-	if(pBruteAI != NULL)
+	LairBruteAI* pBruteAI = (pCreatureAI != nullptr) ? TO< LairBruteAI* >(pCreatureAI) : nullptr;
+	if(pBruteAI != nullptr)
 	{
 		Unit* pCurrentTarget = pBruteAI->GetUnit()->GetAIInterface()->getNextTarget();
-		if(pCurrentTarget != NULL && pCurrentTarget != pTarget)
+		if(pCurrentTarget != nullptr && pCurrentTarget != pTarget)
 		{
 			pBruteAI->GetUnit()->GetAIInterface()->AttackReaction(pTarget, 500);
 			pBruteAI->GetUnit()->GetAIInterface()->setNextTarget(pTarget);
@@ -128,10 +128,10 @@ public:
 			for(int i = 0; i < 4; ++i)
 			{
 				Unit* pAdd = ForceCreatureFind(Adds[i]);
-				if(pAdd != NULL && pAdd->isAlive())
+				if(pAdd != nullptr && pAdd->isAlive())
 				{
 					Unit* pTarget = GetBestPlayerTarget();
-					if(pTarget != NULL)
+					if(pTarget != nullptr)
 					{
 						pAdd->GetAIInterface()->AttackReaction(pTarget, 200);
 					}
@@ -158,7 +158,7 @@ public:
 			ParentClass::OnDied(mKiller);
 
 			GameObject* pDoor = mKiller->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(95.26f, 251.836f, 0.47f, 183817);
-			if(pDoor != NULL)
+			if(pDoor != nullptr)
 			{
 				pDoor->SetState(0);
 			}
@@ -219,8 +219,8 @@ public:
 
 void SpellFunc_Maulgar_Enrage(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	HighKingMaulgarAI* pMaulgarAI = (pCreatureAI != NULL) ? TO< HighKingMaulgarAI* >(pCreatureAI) : NULL;
-	if(pMaulgarAI != NULL)
+	HighKingMaulgarAI* pMaulgarAI = (pCreatureAI != nullptr) ? TO< HighKingMaulgarAI* >(pCreatureAI) : nullptr;
+	if(pMaulgarAI != nullptr)
 	{
 		pMaulgarAI->ApplyAura(HIGH_KING_MAULGAR_FLURRY);
 		pMaulgarAI->SetDisplayWeapon(false, false);
@@ -260,7 +260,7 @@ public:
 		{
 			ParentClass::OnDied(mKiller);
 			Creature* pMaulgar = TO_CREATURE(ForceCreatureFind(CN_HIGH_KING_MAULGAR, 143.048996f, 192.725998f, -11.114700f));
-			if(pMaulgar != NULL && pMaulgar->isAlive() && pMaulgar->GetScript())
+			if(pMaulgar != nullptr && pMaulgar->isAlive() && pMaulgar->GetScript())
 			{
 				HighKingMaulgarAI* pMaulgarAI = TO< HighKingMaulgarAI* >(pMaulgar->GetScript());
 				pMaulgarAI->OnAddDied();
@@ -272,7 +272,7 @@ public:
 			ParentClass::AIUpdate();
 
 			Unit* pTarget = _unit->GetAIInterface()->getNextTarget();
-			if(pTarget != NULL)
+			if(pTarget != nullptr)
 			{
 				if(GetRangeToUnit(pTarget) <= 40.0f)
 				{
@@ -303,7 +303,7 @@ public:
 		{
 			ParentClass::OnDied(mKiller);
 			Creature* pMaulgar = TO_CREATURE(ForceCreatureFind(CN_HIGH_KING_MAULGAR, 143.048996f, 192.725998f, -11.114700f));
-			if(pMaulgar != NULL && pMaulgar->isAlive() && pMaulgar->GetScript())
+			if(pMaulgar != nullptr && pMaulgar->isAlive() && pMaulgar->GetScript())
 			{
 				HighKingMaulgarAI* pMaulgarAI = TO< HighKingMaulgarAI* >(pMaulgar->GetScript());
 				pMaulgarAI->OnAddDied();
@@ -331,7 +331,7 @@ public:
 		{
 			ParentClass::OnDied(mKiller);
 			Creature* pMaulgar = TO_CREATURE(ForceCreatureFind(CN_HIGH_KING_MAULGAR, 143.048996f, 192.725998f, -11.114700f));
-			if(pMaulgar != NULL && pMaulgar->isAlive() && pMaulgar->GetScript())
+			if(pMaulgar != nullptr && pMaulgar->isAlive() && pMaulgar->GetScript())
 			{
 				HighKingMaulgarAI* pMaulgarAI = TO< HighKingMaulgarAI* >(pMaulgar->GetScript());
 				pMaulgarAI->OnAddDied();
@@ -420,7 +420,7 @@ public:
 		{
 			ParentClass::OnDied(mKiller);
 			Creature* pMaulgar = TO_CREATURE(ForceCreatureFind(CN_HIGH_KING_MAULGAR, 143.048996f, 192.725998f, -11.114700f));
-			if(pMaulgar != NULL && pMaulgar->isAlive() && pMaulgar->GetScript())
+			if(pMaulgar != nullptr && pMaulgar->isAlive() && pMaulgar->GetScript())
 			{
 				HighKingMaulgarAI* pMaulgarAI = TO< HighKingMaulgarAI* >(pMaulgar->GetScript());
 				pMaulgarAI->OnAddDied();
@@ -486,7 +486,7 @@ public:
 			mGrowthStacks = 0;
 
 			GameObject* pGate = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(166.897f, 368.226f, 16.9209f, 184662);
-			if(pGate != NULL)
+			if(pGate != nullptr)
 				pGate->SetState(1);
 		}
 
@@ -495,7 +495,7 @@ public:
 			ParentClass::OnCombatStop(pTarget);
 
 			GameObject* pGate = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(166.897f, 368.226f, 16.9209f, 184662);
-			if(pGate != NULL)
+			if(pGate != nullptr)
 				pGate->SetState(0);
 		}
 
@@ -504,7 +504,7 @@ public:
 			ParentClass::OnDied(mKiller);
 
 			GameObject* pGate = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(166.897f, 368.226f, 16.9209f, 184662);
-			if(pGate != NULL)
+			if(pGate != nullptr)
 				pGate->SetState(0);
 		}
 
@@ -534,7 +534,7 @@ public:
 				else if(IsTimerFinished(mHurtfulTimer))
 				{
 					Unit* pCurrentTarget = _unit->GetAIInterface()->getNextTarget();
-					if(pCurrentTarget != NULL)
+					if(pCurrentTarget != nullptr)
 					{
 						Unit* pTarget = pCurrentTarget;
 						for(set< Object* >::iterator itr = _unit->GetInRangePlayerSetBegin(); itr != _unit->GetInRangePlayerSetEnd(); ++itr)
@@ -595,8 +595,8 @@ public:
 
 void SpellFunc_Gruul_GroundSlam(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	GruulTheDragonkillerAI* pGruul = (pCreatureAI != NULL) ? TO< GruulTheDragonkillerAI* >(pCreatureAI) : NULL;
-	if(pGruul != NULL)
+	GruulTheDragonkillerAI* pGruul = (pCreatureAI != nullptr) ? TO< GruulTheDragonkillerAI* >(pCreatureAI) : nullptr;
+	if(pGruul != nullptr)
 	{
 		pGruul->CastSpellNowNoScheduling(pGruul->mGroundSlam);
 		pGruul->CastSpell(pGruul->mGroundSlam2);
@@ -606,8 +606,8 @@ void SpellFunc_Gruul_GroundSlam(SpellDesc* pThis, MoonScriptCreatureAI* pCreatur
 
 void SpellFunc_Gruul_Stoned(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	GruulTheDragonkillerAI* pGruul = (pCreatureAI != NULL) ? TO< GruulTheDragonkillerAI* >(pCreatureAI) : NULL;
-	if(pGruul != NULL)
+	GruulTheDragonkillerAI* pGruul = (pCreatureAI != nullptr) ? TO< GruulTheDragonkillerAI* >(pCreatureAI) : nullptr;
+	if(pGruul != nullptr)
 	{
 		UnitArray TargetArray = pGruul->GetInRangePlayers();
 		if(TargetArray.size() > 0)
@@ -625,8 +625,8 @@ void SpellFunc_Gruul_Stoned(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI,
 
 void SpellFunc_Gruul_Shatter(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	GruulTheDragonkillerAI* pGruul = (pCreatureAI != NULL) ? TO< GruulTheDragonkillerAI* >(pCreatureAI) : NULL;
-	if(pGruul != NULL)
+	GruulTheDragonkillerAI* pGruul = (pCreatureAI != nullptr) ? TO< GruulTheDragonkillerAI* >(pCreatureAI) : nullptr;
+	if(pGruul != nullptr)
 	{
 		pGruul->CastSpell(pGruul->mShatter2);	// Spell to script
 		UnitArray TargetArray = pGruul->GetInRangePlayers();

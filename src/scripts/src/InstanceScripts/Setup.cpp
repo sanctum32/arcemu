@@ -100,7 +100,7 @@ BOOL APIENTRY DllMain(HANDLE hModule, DWORD  ul_reason_for_call, LPVOID lpReserv
 
 SP_AI_Spell::SP_AI_Spell()
 {
-	info					= NULL;
+	info					= nullptr;
 	targettype				= 0;
 	instant					= false;
 	perctrigger				= 0.0f;

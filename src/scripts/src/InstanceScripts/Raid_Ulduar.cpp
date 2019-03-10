@@ -47,7 +47,7 @@ class UlduarTeleporterAI : public GameObjectAIScript
 
 		void OnActivate(Player* player)
 		{
-			GossipMenu* menu = NULL;
+			GossipMenu* menu = nullptr;
 			objmgr.CreateGossipMenuForPlayer(&menu, _gameobject->GetGUID(), 0, player);
 
 			menu->AddItem(Arcemu::Gossip::ICON_CHAT, "Expedition Base Camp.", 0);

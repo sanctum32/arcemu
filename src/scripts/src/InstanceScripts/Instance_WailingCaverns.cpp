@@ -322,8 +322,8 @@ class DofNaralexGossip : public GossipScript
 		}
 		void GossipSelectOption(Object* pObject, Player* Plr, uint32 Id, uint32 IntId, const char* Code)
 		{
-			Creature* pCreature = (pObject->IsCreature()) ? TO_CREATURE(pObject) : NULL;
-			if(pCreature == NULL)
+			Creature* pCreature = (pObject->IsCreature()) ? TO_CREATURE(pObject) : nullptr;
+			if(pCreature == nullptr)
 				return;
 
 			switch(IntId)
@@ -431,7 +431,7 @@ public:
 
 		void Moccasin()
 		{
-			MoonScriptCreatureAI* Moccasin = NULL;
+			MoonScriptCreatureAI* Moccasin = nullptr;
 			Moccasin = SpawnCreature(5762, 134.249207f, 242.194839f, -98.375496f, 3.325373f);
 			Moccasin = SpawnCreature(5762, 124.917931f, 255.066635f, -97.796837f, 4.176745f);
 			Moccasin = SpawnCreature(5762, 113.077148f, 258.880157f, -97.190590f, 4.688039f);
@@ -439,7 +439,7 @@ public:
 
 		void Ectoplasm()
 		{
-			MoonScriptCreatureAI* Ectoplasm = NULL;
+			MoonScriptCreatureAI* Ectoplasm = nullptr;
 			Ectoplasm = SpawnCreature(5763, 134.249207f, 242.194839f, -98.375496f, 3.325373f);
 			Ectoplasm = SpawnCreature(5763, 124.917931f, 255.066635f, -97.796837f, 4.176745f);
 			Ectoplasm = SpawnCreature(5763, 113.077148f, 258.880157f, -97.190590f, 4.688039f);

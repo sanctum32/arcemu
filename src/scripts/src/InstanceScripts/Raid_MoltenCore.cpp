@@ -67,7 +67,7 @@ class CoreRagerAI : public CreatureAIScript
 
 		void SpellCast(uint32 val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())//_unit->getAttackTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())//_unit->getAttackTarget())
 			{
 				//Unit* target = _unit->GetAIInterface()->GetNextTarget();
 				if(m_mangle)
@@ -137,7 +137,7 @@ class SulfuronAI : public CreatureAIScript
 
 		void SpellCast(uint32 val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())//_unit->getAttackTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())//_unit->getAttackTarget())
 			{
 				//Unit* target = _unit->GetAIInterface()->GetNextTarget();
 
@@ -265,7 +265,7 @@ class RagnarosAI : public CreatureAIScript
 
 		void SpellCast(uint32 val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())//_unit->getAttackTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())//_unit->getAttackTarget())
 			{
 				Unit* target = _unit->GetAIInterface()->getNextTarget();
 
@@ -697,7 +697,7 @@ public:
 		MOONSCRIPT_FACTORY_FUNCTION(FireswornAI, MoonScriptCreatureAI);
 		FireswornAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
-			mGarr = NULL;
+			mGarr = nullptr;
 
 			//Spells
 			AddSpell(FIRESWORN_IMMOLATE, Target_Current, 10, 0, 0, 0, 40);
@@ -782,7 +782,7 @@ public:
 
 void SpellFunc_ShazzrahBlinkArcaneExplosions(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	ShazzrahAI* Shazzrah = (pCreatureAI) ? TO< ShazzrahAI* >(pCreatureAI) : NULL;
+	ShazzrahAI* Shazzrah = (pCreatureAI) ? TO< ShazzrahAI* >(pCreatureAI) : nullptr;
 	if(Shazzrah)
 	{
 		//Teleport blink, then cast 4 arcane explosions

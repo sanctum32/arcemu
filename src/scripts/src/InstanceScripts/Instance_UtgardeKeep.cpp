@@ -189,7 +189,7 @@ class UtgardeKeepScript : public MoonInstanceScript
 
 						if(pData == State_Finished)
 						{
-							GameObject* pGO = NULL;
+							GameObject* pGO = nullptr;
 							for(int i = 0; i < 2; ++i)
 							{
 								pGO = GetGameObjectByGuid(mIngvarDoors[i]);
@@ -206,7 +206,7 @@ class UtgardeKeepScript : public MoonInstanceScript
 
 		void HandleForge()
 		{
-			GameObject* pGO = NULL;
+			GameObject* pGO = nullptr;
 			pGO = GetGameObjectByGuid(m_fmData[ mUtgardeData[UTGARDE_FORGE_MASTER] - 1 ].mBellow);
 			if(pGO)
 				pGO->SetState(pGO->GetState() == 1 ? 0 : 1);
@@ -477,8 +477,8 @@ public:
 			AddEmote(Event_OnCombatStart, "Dalronn! See if you can muster the nerve to join my attack!", Text_Yell, 13229);
 
 			mReplyTimer = INVALIDATE_TIMER;
-			pDalronn = NULL;
-			pDalronnGhost = NULL;
+			pDalronn = nullptr;
+			pDalronnGhost = nullptr;
 		};
 
 		void OnCombatStart(Unit* pTarget)
@@ -491,7 +491,7 @@ public:
 
 		void AIUpdate()
 		{
-			if(IsTimerFinished(mReplyTimer) && pDalronn != NULL)
+			if(IsTimerFinished(mReplyTimer) && pDalronn != nullptr)
 			{
 				pDalronn->Emote("By all means, don't assess the situation, you halfwit! Just jump into the fray!", Text_Yell, 13199);
 				RemoveTimer(mReplyTimer);
@@ -502,7 +502,7 @@ public:
 
 		void OnDied(Unit* pKiller)
 		{
-			if(pDalronn != NULL && pDalronn->IsAlive())
+			if(pDalronn != nullptr && pDalronn->IsAlive())
 			{
 				Emote("Not... over... yet.", Text_Yell, 0);
 				pDalronn->Emote("Skarvald, you incompetent slug! Return and make yourself useful!", Text_Yell, 13203);
@@ -510,16 +510,16 @@ public:
 				_unit->SetUInt64Value(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_SELECTABLE);
 
 			}
-			else if(pDalronn != NULL && !pDalronn->IsAlive())
+			else if(pDalronn != nullptr && !pDalronn->IsAlive())
 			{
 				Emote("A warrior's death.", Text_Yell, 13231);
 
 				pDalronnGhost = GetNearestCreature(CN_DALRONN_GHOST);
 
-				if(pDalronnGhost != NULL)
+				if(pDalronnGhost != nullptr)
 				{
 					pDalronnGhost->Despawn(1000, 0);
-					pDalronnGhost = NULL;
+					pDalronnGhost = nullptr;
 				}
 			}
 
@@ -528,7 +528,7 @@ public:
 
 		void OnCombatStop(Unit* pTarget)
 		{
-			if(pDalronn != NULL)
+			if(pDalronn != nullptr)
 			{
 				if(pDalronn->IsAlive())
 					MoveToSpawnOrigin();
@@ -536,10 +536,10 @@ public:
 					SpawnCreature(CN_DALRONN, pDalronn->GetUnit()->GetSpawnX(), pDalronn->GetUnit()->GetSpawnY(), pDalronn->GetUnit()->GetSpawnZ(), pDalronn->GetUnit()->GetSpawnO());
 			};
 
-			if(pDalronnGhost != NULL && pDalronnGhost->IsAlive())
+			if(pDalronnGhost != nullptr && pDalronnGhost->IsAlive())
 			{
 				pDalronnGhost->Despawn();
-				pDalronnGhost = NULL;
+				pDalronnGhost = nullptr;
 			}
 		};
 
@@ -567,8 +567,8 @@ public:
 				AddSpell(DEBILITATE, Target_RandomPlayer, 25, 0, 12);
 				mSummonTimer = AddTimer(15000);
 			}
-			pSkarvald = NULL;
-			pSkarvaldGhost = NULL;
+			pSkarvald = nullptr;
+			pSkarvaldGhost = nullptr;
 		};
 
 		void OnCombatStart(Unit* pTarget)
@@ -592,23 +592,23 @@ public:
 
 		void OnDied(Unit* pKiller)
 		{
-			if(pSkarvald != NULL && pSkarvald->IsAlive())
+			if(pSkarvald != nullptr && pSkarvald->IsAlive())
 			{
 				Emote("See... you... soon.", Text_Yell, 0);
 				pSkarvald->Emote("Pagh! What sort of necromancer lets death stop him? I knew you were worthless!", Text_Yell, 13233);
 				SpawnCreature(CN_DALRONN_GHOST, true);
 				_unit->SetUInt64Value(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_SELECTABLE);
 			}
-			else if(pSkarvald != NULL && !pSkarvald->IsAlive())
+			else if(pSkarvald != nullptr && !pSkarvald->IsAlive())
 			{
 				Emote("There's no... greater... glory.", Text_Yell, 13201);
 
 				pSkarvaldGhost = GetNearestCreature(CN_SKARVALD_GHOST);
 
-				if(pSkarvaldGhost != NULL)
+				if(pSkarvaldGhost != nullptr)
 				{
 					pSkarvaldGhost->Despawn(1000, 0);
-					pSkarvaldGhost = NULL;
+					pSkarvaldGhost = nullptr;
 				}
 			}
 
@@ -617,7 +617,7 @@ public:
 
 		void OnCombatStop(Unit* pTarget)
 		{
-			if(pSkarvald != NULL)
+			if(pSkarvald != nullptr)
 			{
 				if(pSkarvald->IsAlive())
 					MoveToSpawnOrigin();
@@ -625,10 +625,10 @@ public:
 					SpawnCreature(CN_DALRONN, pSkarvald->GetUnit()->GetSpawnX(), pSkarvald->GetUnit()->GetSpawnY(), pSkarvald->GetUnit()->GetSpawnZ(), pSkarvald->GetUnit()->GetSpawnO());
 			};
 
-			if(pSkarvaldGhost != NULL && pSkarvaldGhost->IsAlive())
+			if(pSkarvaldGhost != nullptr && pSkarvaldGhost->IsAlive())
 			{
 				pSkarvaldGhost->Despawn();
-				pSkarvaldGhost = NULL;
+				pSkarvaldGhost = nullptr;
 			}
 		};
 
@@ -653,7 +653,7 @@ public:
 			_unit->SetUInt64Value(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_ATTACKABLE_9);
 
 			Player* pTarget = GetNearestPlayer();
-			if(pTarget != NULL)
+			if(pTarget != nullptr)
 				_unit->GetAIInterface()->AttackReaction(pTarget, 50, 0);
 
 			ParentClass::OnLoad();
@@ -684,7 +684,7 @@ public:
 			_unit->SetUInt64Value(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_ATTACKABLE_9);
 
 			Player* pTarget = GetNearestPlayer();
-			if(pTarget != NULL)
+			if(pTarget != nullptr)
 				_unit->GetAIInterface()->AttackReaction(pTarget, 50, 0);
 
 			ParentClass::OnLoad();
@@ -706,9 +706,9 @@ public:
 
 void SpellFunc_KelesethFrostTomb(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	if(pCreatureAI != NULL)
+	if(pCreatureAI != nullptr)
 	{
-		if(pTarget == NULL || !pTarget->IsPlayer() || pTarget->IsDead())
+		if(pTarget == nullptr || !pTarget->IsPlayer() || pTarget->IsDead())
 			return;
 
 		pCreatureAI->GetUnit()->CastSpell(pTarget, FROST_TOMB_SPELL, true);
@@ -720,7 +720,7 @@ void SpellFunc_KelesethFrostTomb(SpellDesc* pThis, MoonScriptCreatureAI* pCreatu
 
 void SpellFunc_KelesethAddSummon(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	if(pCreatureAI != NULL)
+	if(pCreatureAI != nullptr)
 	{
 		for(uint32 i = 0; i < 5; ++i)
 			pCreatureAI->SpawnCreature(KELESETH_SKELETON_ADD, 163.376f + i + 4, 252.901f - i + 5, 42.868f, 0, true);
@@ -775,13 +775,13 @@ public:
 		void AIUpdate()
 		{
 			ParentClass::AIUpdate();
-			if(plr == NULL || plr->IsDead() || !plr->HasAura(FROST_TOMB_SPELL))
+			if(plr == nullptr || plr->IsDead() || !plr->HasAura(FROST_TOMB_SPELL))
 				Despawn();
 		};
 
 		void OnDied(Unit* pKilled)
 		{
-			if(plr != NULL && plr->HasAura(FROST_TOMB_SPELL))
+			if(plr != nullptr && plr->HasAura(FROST_TOMB_SPELL))
 				plr->RemoveAura(FROST_TOMB_SPELL);
 
 			ParentClass::OnDied(pKilled);
@@ -808,7 +808,7 @@ public:
 		void OnLoad()
 		{
 			Player* pTarget = GetNearestPlayer();
-			if(pTarget != NULL)
+			if(pTarget != nullptr)
 				_unit->GetAIInterface()->AttackReaction(pTarget, 50, 0);
 
 			ParentClass::OnLoad();
@@ -852,14 +852,14 @@ public:
 
 void SpellFunc_ShadowAxe(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	if(pCreatureAI != NULL)
+	if(pCreatureAI != nullptr)
 	{
-		if(pTarget == NULL || !pTarget->IsPlayer() || pTarget->IsDead())
+		if(pTarget == nullptr || !pTarget->IsPlayer() || pTarget->IsDead())
 			return;
 
 		Creature* pShadowAxe = pTarget->GetMapMgr()->GetInterface()->SpawnCreature(CN_SHADOW_AXE, pTarget->GetPositionX(), pTarget->GetPositionY(), pTarget->GetPositionZ(), pTarget->GetOrientation(), true, false, 0, 0);
 
-		if(pShadowAxe == NULL)
+		if(pShadowAxe == nullptr)
 			return;
 
 		pShadowAxe->CastSpell(pShadowAxe, SHADOW_AXE_SPELL, true);
@@ -927,7 +927,7 @@ public:
 		void OnLoad()
 		{
 			Player* pTarget = GetNearestPlayer();
-			if(pTarget != NULL)
+			if(pTarget != nullptr)
 				_unit->GetAIInterface()->AttackReaction(pTarget, 50, 0);
 		};
 

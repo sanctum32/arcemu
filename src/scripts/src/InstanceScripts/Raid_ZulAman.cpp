@@ -158,7 +158,7 @@ public:
 
 			if(IsTimerFinished(mSummonTime))
 			{
-				MoonScriptCreatureAI* Eagle = NULL;
+				MoonScriptCreatureAI* Eagle = nullptr;
 				// Spawn 3 Soaring Eagles
 				for(int x = 0; x < 3; x++)
 				{
@@ -170,7 +170,7 @@ public:
 						Eagle->SetDespawnWhenInactive(true);
 					}
 				}
-				Eagle = NULL;
+				Eagle = nullptr;
 				Emote("Feed, me bruddahs!", Text_Yell, 12019);
 				// Restart the timer
 				ResetTimer(mSummonTime, 120000);
@@ -231,7 +231,7 @@ public:
 			AddEmote(Event_OnTargetDied, "You cant fight da power...", Text_Yell, 12026);
 			AddEmote(Event_OnTargetDied, "You all gonna fail...", Text_Yell, 12027);
 			AddEmote(Event_OnDied, "Chaga... choka'jinn.", Text_Yell, 12028);
-			mLynx = NULL;
+			mLynx = nullptr;
 		}
 
 		void OnCombatStart(Unit* pTarget)
@@ -239,7 +239,7 @@ public:
 			mTotemTimer = AddTimer(5000); // Just to make the Timer ID
 			SplitCount = 1;
 			MaxHealth = _unit->GetUInt32Value(UNIT_FIELD_MAXHEALTH);
-			mLynx = NULL;
+			mLynx = nullptr;
 
 			ParentClass::OnCombatStart(pTarget);
 		}
@@ -272,13 +272,13 @@ public:
 			{
 				if(IsTimerFinished(mTotemTimer))
 				{
-					MoonScriptCreatureAI* Totem = NULL;
+					MoonScriptCreatureAI* Totem = nullptr;
 					Totem = SpawnCreature(CN_TOTEM, (_unit->GetPositionX() + RandomFloat(3) - 3), (_unit->GetPositionY() + RandomFloat(3) - 3), _unit->GetPositionZ(), 0, true);
 					if(Totem)
 					{
 						Totem->Despawn(60000); // Despawn in 60 seconds
 						Totem->AggroNearestPlayer();
-						Totem = NULL;
+						Totem = nullptr;
 					}
 					switch(GetPhase())
 					{
@@ -315,7 +315,7 @@ public:
 			if(mLynx)
 			{
 				mLynx->Despawn(0, 0);
-				mLynx = NULL;
+				mLynx = nullptr;
 				Emote("Spirit, come back to me!", Text_Yell, 12022);
 			}
 

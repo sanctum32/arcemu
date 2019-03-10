@@ -187,7 +187,7 @@ class OldHilsbradInstance : public MoonInstanceScript
 				qle->UpdatePlayerFields();
 			};
 
-			GameObject* pGO = NULL;
+			GameObject* pGO = nullptr;
 			for(uint8 i = 0; i < 21; i++)
 			{
 				pGO = SpawnGameObject(GO_FIRE, Fires[i].x, Fires[i].y, Fires[i].z, Fires[i].o);

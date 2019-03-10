@@ -120,7 +120,7 @@ public:
 				Attempt to get a Fel Crystal and move to it if not in range.
 				Once in range we get the FelCrystal to cast Mana Rage on Selin
 			*/
-			Unit* FelCrystal = NULL;
+			Unit* FelCrystal = nullptr;
 			PreventActions(false);
 
 			FelCrystal = FindFelCrystal();
@@ -128,7 +128,7 @@ public:
 			if(!FelCrystal || !FelCrystal->isAlive())
 			{
 				PreventActions(true);
-				FelCrystal = NULL;
+				FelCrystal = nullptr;
 				return;
 			}
 
@@ -136,7 +136,7 @@ public:
 			if(_unit->GetDistance2dSq(FelCrystal) > 100)
 			{
 				MoveTo(FelCrystal->GetPositionX(), FelCrystal->GetPositionY(), FelCrystal->GetPositionZ());
-				FelCrystal = NULL;
+				FelCrystal = nullptr;
 				return;
 			}
 
@@ -157,7 +157,7 @@ public:
 			if(GetManaPercent() >= 100)
 				PreventActions(true);
 
-			FelCrystal = NULL;
+			FelCrystal = nullptr;
 		}
 
 		void PreventActions(bool Allow)
@@ -174,12 +174,12 @@ public:
 			/*
 				Find a FelCrystal
 			*/
-			Unit* FC = NULL;
+			Unit* FC = nullptr;
 			for(int x = 0; x < 5; x++)
 			{
 				FC = _unit->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(FelCrystals[x].x, FelCrystals[x].y, FelCrystals[x].z, FelCrystals[x].addition);
 				if(!FC || !FC->isAlive() || FC->GetInstanceID() != _unit->GetInstanceID())
-					FC = NULL;
+					FC = nullptr;
 				else
 					break;
 			}

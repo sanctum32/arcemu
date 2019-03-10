@@ -329,10 +329,10 @@ class RageWinterchillAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -362,7 +362,7 @@ class RageWinterchillAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime)
 					{
 						_unit->setAttackTimer(spells[i].attackstoptimer, false);
@@ -379,7 +379,7 @@ class RageWinterchillAI : public CreatureAIScript
 			if(!maxdist2cast) maxdist2cast = 100.0f;
 			if(!maxhp2cast) maxhp2cast = 100;
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				std::vector<Unit*> TargetTable;		/* From M4ksiu - Big THX to Capt who helped me with std stuff to make it simple and fully working <3 */
 				/* If anyone wants to use this function, then leave this note!										 */
@@ -387,7 +387,7 @@ class RageWinterchillAI : public CreatureAIScript
 				{
 					if(((spells[i].targettype == TARGET_RANDOM_FRIEND && isFriendly(_unit, (*itr))) || (spells[i].targettype != TARGET_RANDOM_FRIEND && isHostile(_unit, (*itr)) && (*itr) != _unit)) && (*itr)->IsUnit())  // isAttackable(_unit, (*itr)) &&
 					{
-						Unit* RandomTarget = NULL;
+						Unit* RandomTarget = nullptr;
 						RandomTarget = TO_UNIT(*itr);
 
 						if(RandomTarget->isAlive() && _unit->GetDistance2dSq(RandomTarget) >= mindist2cast * mindist2cast && _unit->GetDistance2dSq(RandomTarget) <= maxdist2cast * maxdist2cast && ((RandomTarget->GetHealthPct() >= minhp2cast && RandomTarget->GetHealthPct() <= maxhp2cast && spells[i].targettype == TARGET_RANDOM_FRIEND) || (_unit->GetAIInterface()->getThreatByPtr(RandomTarget) > 0 && isHostile(_unit, RandomTarget))))
@@ -506,7 +506,7 @@ class AnetheronAI : public CreatureAIScript
 			for(int i = 0; i < nrspells; i++)
 				spells[i].casttime = 0;
 
-			uint32 t = (uint32)time(NULL);
+			uint32 t = (uint32)time(nullptr);
 			spells[4].casttime = t + spells[4].cooldown;
 
 			RegisterAIUpdateEvent(_unit->GetBaseAttackTime(MELEE));
@@ -552,7 +552,7 @@ class AnetheronAI : public CreatureAIScript
 
 		void AIUpdate()
 		{
-			uint32 t = (uint32)time(NULL);
+			uint32 t = (uint32)time(nullptr);
 			if(t > spells[4].casttime)
 			{
 				_unit->CastSpell(_unit, spells[4].info, spells[4].instant);
@@ -567,10 +567,10 @@ class AnetheronAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -610,7 +610,7 @@ class AnetheronAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime)
 					{
 						_unit->setAttackTimer(spells[i].attackstoptimer, false);
@@ -627,7 +627,7 @@ class AnetheronAI : public CreatureAIScript
 			if(!maxdist2cast) maxdist2cast = 100.0f;
 			if(!maxhp2cast) maxhp2cast = 100;
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				std::vector<Unit*> TargetTable;		/* From M4ksiu - Big THX to Capt who helped me with std stuff to make it simple and fully working <3 */
 				/* If anyone wants to use this function, then leave this note!										 */
@@ -635,7 +635,7 @@ class AnetheronAI : public CreatureAIScript
 				{
 					if(((spells[i].targettype == TARGET_RANDOM_FRIEND && isFriendly(_unit, (*itr))) || (spells[i].targettype != TARGET_RANDOM_FRIEND && isHostile(_unit, (*itr)) && (*itr) != _unit)) && (*itr)->IsUnit())  // isAttackable(_unit, (*itr)) &&
 					{
-						Unit* RandomTarget = NULL;
+						Unit* RandomTarget = nullptr;
 						RandomTarget = TO_UNIT(*itr);
 
 						if(RandomTarget->isAlive() && _unit->GetDistance2dSq(RandomTarget) >= mindist2cast * mindist2cast && _unit->GetDistance2dSq(RandomTarget) <= maxdist2cast * maxdist2cast && ((RandomTarget->GetHealthPct() >= minhp2cast && RandomTarget->GetHealthPct() <= maxhp2cast && spells[i].targettype == TARGET_RANDOM_FRIEND) || (_unit->GetAIInterface()->getThreatByPtr(RandomTarget) > 0 && isHostile(_unit, RandomTarget))))
@@ -796,10 +796,10 @@ class KazrogalAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -833,7 +833,7 @@ class KazrogalAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime)
 					{
 						_unit->setAttackTimer(spells[i].attackstoptimer, false);
@@ -851,7 +851,7 @@ class KazrogalAI : public CreatureAIScript
 			{
 				if(isHostile(_unit, (*itr)) && (*itr)->IsUnit())
 				{
-					Unit* Target = NULL;
+					Unit* Target = nullptr;
 					Target = TO_UNIT(*itr);
 
 					if(Target->isAlive() && Target->FindAura(MARK_OF_KAZROGAL) && (Target->GetPowerType() != POWER_TYPE_MANA || !Target->GetBaseMana()))
@@ -871,7 +871,7 @@ class KazrogalAI : public CreatureAIScript
 			if(!maxdist2cast) maxdist2cast = 100.0f;
 			if(!maxhp2cast) maxhp2cast = 100;
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				std::vector<Unit*> TargetTable;		/* From M4ksiu - Big THX to Capt who helped me with std stuff to make it simple and fully working <3 */
 				/* If anyone wants to use this function, then leave this note!										 */
@@ -879,7 +879,7 @@ class KazrogalAI : public CreatureAIScript
 				{
 					if(((spells[i].targettype == TARGET_RANDOM_FRIEND && isFriendly(_unit, (*itr))) || (spells[i].targettype != TARGET_RANDOM_FRIEND && isHostile(_unit, (*itr)) && (*itr) != _unit)) && (*itr)->IsUnit())  // isAttackable(_unit, (*itr)) &&
 					{
-						Unit* RandomTarget = NULL;
+						Unit* RandomTarget = nullptr;
 						RandomTarget = TO_UNIT(*itr);
 
 						if(RandomTarget->isAlive() && _unit->GetDistance2dSq(RandomTarget) >= mindist2cast * mindist2cast && _unit->GetDistance2dSq(RandomTarget) <= maxdist2cast * maxdist2cast && ((RandomTarget->GetHealthPct() >= minhp2cast && RandomTarget->GetHealthPct() <= maxhp2cast && spells[i].targettype == TARGET_RANDOM_FRIEND) || (_unit->GetAIInterface()->getThreatByPtr(RandomTarget) > 0 && isHostile(_unit, RandomTarget))))
@@ -987,7 +987,7 @@ class AzgalorAI : public CreatureAIScript
 			for(int i = 0; i < 3; i++)
 				spells[i].casttime = 0;
 
-			uint32 t = (uint32)time(NULL);
+			uint32 t = (uint32)time(nullptr);
 			spells[3].casttime = t + spells[3].cooldown;
 
 			RegisterAIUpdateEvent(_unit->GetBaseAttackTime(MELEE));
@@ -1036,7 +1036,7 @@ class AzgalorAI : public CreatureAIScript
 
 		void AIUpdate()
 		{
-			uint32 t = (uint32)time(NULL);
+			uint32 t = (uint32)time(nullptr);
 			if(t > spells[3].casttime)
 			{
 				CastSpellOnRandomTarget(3, spells[3].mindist2cast, spells[3].maxdist2cast, 0, 100);
@@ -1051,10 +1051,10 @@ class AzgalorAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -1084,7 +1084,7 @@ class AzgalorAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime && (i != 1 || (i == 1 && _unit->GetHealthPct() >= 20)))
 					{
 						_unit->setAttackTimer(spells[i].attackstoptimer, false);
@@ -1101,7 +1101,7 @@ class AzgalorAI : public CreatureAIScript
 			if(!maxdist2cast) maxdist2cast = 100.0f;
 			if(!maxhp2cast) maxhp2cast = 100;
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				std::vector<Unit*> TargetTable;		/* From M4ksiu - Big THX to Capt who helped me with std stuff to make it simple and fully working <3 */
 				/* If anyone wants to use this function, then leave this note!										 */
@@ -1109,7 +1109,7 @@ class AzgalorAI : public CreatureAIScript
 				{
 					if(((spells[i].targettype == TARGET_RANDOM_FRIEND && isFriendly(_unit, (*itr))) || (spells[i].targettype != TARGET_RANDOM_FRIEND && isHostile(_unit, (*itr)) && (*itr) != _unit)) && (*itr)->IsUnit())  // isAttackable(_unit, (*itr)) &&
 					{
-						Unit* RandomTarget = NULL;
+						Unit* RandomTarget = nullptr;
 						RandomTarget = TO_UNIT(*itr);
 
 						if(RandomTarget->isAlive() && _unit->GetDistance2dSq(RandomTarget) >= mindist2cast * mindist2cast && _unit->GetDistance2dSq(RandomTarget) <= maxdist2cast * maxdist2cast && ((RandomTarget->GetHealthPct() >= minhp2cast && RandomTarget->GetHealthPct() <= maxhp2cast && spells[i].targettype == TARGET_RANDOM_FRIEND) || (_unit->GetAIInterface()->getThreatByPtr(RandomTarget) > 0 && isHostile(_unit, RandomTarget))))
@@ -1235,7 +1235,7 @@ class DoomfireAI : public CreatureAIScript
 				{
 					if(RandomUInt(3) == 1)
 					{
-						Unit* NewTarget = NULL;
+						Unit* NewTarget = nullptr;
 						NewTarget = FindTarget();
 						if(NewTarget)
 						{
@@ -1271,7 +1271,7 @@ class DoomfireAI : public CreatureAIScript
 		// A bit rewritten FindTarget function
 		Unit* FindTarget()
 		{
-			Unit* target = NULL;
+			Unit* target = nullptr;
 			float distance = 15.0f;
 			float z_diff;
 
@@ -1431,7 +1431,7 @@ class ArchimondeAI : public CreatureAIScript
 			for(int i = 0; i < nrspells; i++)
 				spells[i].casttime = 0;
 
-			uint32 t = (uint32)time(NULL);
+			uint32 t = (uint32)time(nullptr);
 			spells[3].casttime = t + spells[3].cooldown;
 			spells[5].casttime = t + spells[5].cooldown;
 			spells[6].casttime = 0;
@@ -1460,7 +1460,7 @@ class ArchimondeAI : public CreatureAIScript
 						break;
 				}
 
-				uint32 t = (uint32)time(NULL);
+				uint32 t = (uint32)time(nullptr);
 				if(mTarget->IsPlayer() && _unit->isAlive() && !_unit->GetCurrentSpell() && t > spells[6].casttime)
 				{
 					uint32 SpellID = 0;
@@ -1507,15 +1507,15 @@ class ArchimondeAI : public CreatureAIScript
 		{
 			//_unit->GetAIInterface()->setCurrentAgent(AGENT_NULL);
 
-			uint32 t = (uint32)time(NULL);
-			if(t > spells[3].casttime && _unit->GetCurrentSpell() == NULL)
+			uint32 t = (uint32)time(nullptr);
+			if(t > spells[3].casttime && _unit->GetCurrentSpell() == nullptr)
 			{
 				_unit->CastSpell(_unit, spells[3].info, spells[3].instant);
 
 				spells[3].casttime = t + spells[3].cooldown;
 			}
 
-			else if(t > spells[5].casttime && _unit->GetCurrentSpell() == NULL)
+			else if(t > spells[5].casttime && _unit->GetCurrentSpell() == nullptr)
 			{
 				_unit->CastSpell(_unit, spells[5].info, spells[5].instant);
 
@@ -1529,7 +1529,7 @@ class ArchimondeAI : public CreatureAIScript
 							_unit->GetAIInterface()->setCurrentAgent(AGENT_SPELL);
 							_unit->GetAIInterface()->StopMovement(2000);
 
-							if (_unit->GetCurrentSpell() == NULL)
+							if (_unit->GetCurrentSpell() == nullptr)
 							{
 								CastSpellOnRandomTarget(4, spells[4].mindist2cast, spells[4].maxdist2cast, 0, 100);
 								return;
@@ -1543,10 +1543,10 @@ class ArchimondeAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -1577,7 +1577,7 @@ class ArchimondeAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime)
 					{
 						_unit->setAttackTimer(spells[i].attackstoptimer, false);
@@ -1594,7 +1594,7 @@ class ArchimondeAI : public CreatureAIScript
 			if(!maxdist2cast) maxdist2cast = 100.0f;
 			if(!maxhp2cast) maxhp2cast = 100;
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				std::vector<Unit*> TargetTable;		/* From M4ksiu - Big THX to Capt who helped me with std stuff to make it simple and fully working <3 */
 				/* If anyone wants to use this function, then leave this note!										 */
@@ -1602,7 +1602,7 @@ class ArchimondeAI : public CreatureAIScript
 				{
 					if(((spells[i].targettype == TARGET_RANDOM_FRIEND && isFriendly(_unit, (*itr))) || (spells[i].targettype != TARGET_RANDOM_FRIEND && isHostile(_unit, (*itr)) && (*itr) != _unit)) && (*itr)->IsUnit())  // isAttackable(_unit, (*itr)) &&
 					{
-						Unit* RandomTarget = NULL;
+						Unit* RandomTarget = nullptr;
 						RandomTarget = TO_UNIT(*itr);
 
 						if(RandomTarget->isAlive() && _unit->GetDistance2dSq(RandomTarget) >= mindist2cast * mindist2cast && _unit->GetDistance2dSq(RandomTarget) <= maxdist2cast * maxdist2cast && ((RandomTarget->GetHealthPct() >= minhp2cast && RandomTarget->GetHealthPct() <= maxhp2cast && spells[i].targettype == TARGET_RANDOM_FRIEND) || (_unit->GetAIInterface()->getThreatByPtr(RandomTarget) > 0 && isHostile(_unit, RandomTarget))))
@@ -1642,7 +1642,7 @@ class ArchimondeAI : public CreatureAIScript
 
 		bool FingerOfDeath()
 		{
-			Unit* NextTarget = NULL;
+			Unit* NextTarget = nullptr;
 
 			for(set<Object*>::iterator itr = _unit->GetInRangeSetBegin(); itr != _unit->GetInRangeSetEnd(); ++itr)
 			{

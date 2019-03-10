@@ -128,7 +128,7 @@ class TROLLGORE_AI : public CreatureAIScript
 				{
 					CreatureProto* cp = CreatureProtoStorage.LookupEntry(DRAKKARI_INVADER_ENTRY);
 					CreatureInfo* ci = CreatureNameStorage.LookupEntry(DRAKKARI_INVADER_ENTRY);
-					Creature* c = NULL;
+					Creature* c = nullptr;
 					if(cp && ci)
 					{
 						c = _unit->GetMapMgr()->CreateCreature(DRAKKARI_INVADER_ENTRY);
@@ -159,14 +159,14 @@ class TROLLGORE_AI : public CreatureAIScript
 				uint32 random_player = possible_targets[ Rand(uint32(possible_targets.size() - 1)) ];
 				return _unit->GetMapMgr()->GetPlayer(random_player);
 			}
-			return NULL;
+			return nullptr;
 		}
 
 		void CastScriptSpell(ScriptSpell* spell)
 		{
 			_unit->Root();
 			uint32 spellid = heroic ? spell->heroic_spellid : spell->normal_spellid;
-			Unit* spelltarget = NULL;
+			Unit* spelltarget = nullptr;
 			switch(spell->target)
 			{
 				case SPELL_TARGET_SELF:
@@ -176,7 +176,7 @@ class TROLLGORE_AI : public CreatureAIScript
 					break;
 				case SPELL_TARGET_GENERATE:
 					{
-						spelltarget = NULL;
+						spelltarget = nullptr;
 					}
 					break;
 				case SPELL_TARGET_CURRENT_ENEMY:
@@ -198,7 +198,7 @@ class TROLLGORE_AI : public CreatureAIScript
 		{
 			for(uint32 i = 0; i < spells.size(); ++i)
 			{
-				if(spells[ i ] != NULL)
+				if(spells[ i ] != nullptr)
 					delete spells[ i ];
 			};
 
@@ -404,14 +404,14 @@ class NOVOS_THE_SUMMONER_AI : public CreatureAIScript
 				uint32 random_player = possible_targets[ Rand(uint32(possible_targets.size() - 1)) ];
 				return _unit->GetMapMgr()->GetPlayer(random_player);
 			}
-			return NULL;
+			return nullptr;
 		}
 
 		void CastScriptSpell(ScriptSpell* spell)
 		{
 			_unit->Root();
 			uint32 spellid = heroic ? spell->heroic_spellid : spell->normal_spellid;
-			Unit* spelltarget = NULL;
+			Unit* spelltarget = nullptr;
 			switch(spell->target)
 			{
 				case SPELL_TARGET_SELF:
@@ -421,7 +421,7 @@ class NOVOS_THE_SUMMONER_AI : public CreatureAIScript
 					break;
 				case SPELL_TARGET_GENERATE:
 					{
-						spelltarget = NULL;
+						spelltarget = nullptr;
 					}
 					break;
 				case SPELL_TARGET_CURRENT_ENEMY:
@@ -451,7 +451,7 @@ class NOVOS_THE_SUMMONER_AI : public CreatureAIScript
 				mob_entry = 26627;
 				CreatureProto* cp = CreatureProtoStorage.LookupEntry(mob_entry);
 				CreatureInfo* ci = CreatureNameStorage.LookupEntry(mob_entry);
-				Creature* c = NULL;
+				Creature* c = nullptr;
 				if(cp && ci)
 				{
 					c = _unit->GetMapMgr()->CreateCreature(mob_entry);
@@ -485,7 +485,7 @@ class NOVOS_THE_SUMMONER_AI : public CreatureAIScript
 					}
 					CreatureProto* cp = CreatureProtoStorage.LookupEntry(mob_entry);
 					CreatureInfo* ci = CreatureNameStorage.LookupEntry(mob_entry);
-					Creature* c = NULL;
+					Creature* c = nullptr;
 					if(cp && ci)
 					{
 						c = _unit->GetMapMgr()->CreateCreature(mob_entry);
@@ -559,7 +559,7 @@ class NOVOS_THE_SUMMONER_AI : public CreatureAIScript
 		{
 			for(uint32 i = 0; i < spells.size(); ++i)
 			{
-				if(spells[ i ] != NULL)
+				if(spells[ i ] != nullptr)
 					delete spells[ i ];
 			};
 
@@ -659,14 +659,14 @@ class CRYSTAL_HANDLER_AI : public CreatureAIScript
 				uint32 random_player = possible_targets[ Rand(uint32(possible_targets.size() - 1)) ];
 				return _unit->GetMapMgr()->GetPlayer(random_player);
 			}
-			return NULL;
+			return nullptr;
 		}
 
 		void CastScriptSpell(ScriptSpell* spell)
 		{
 			_unit->Root();
 			uint32 spellid = heroic ? spell->heroic_spellid : spell->normal_spellid;
-			Unit* spelltarget = NULL;
+			Unit* spelltarget = nullptr;
 			switch(spell->target)
 			{
 				case SPELL_TARGET_SELF:
@@ -676,7 +676,7 @@ class CRYSTAL_HANDLER_AI : public CreatureAIScript
 					break;
 				case SPELL_TARGET_GENERATE:
 					{
-						spelltarget = NULL;
+						spelltarget = nullptr;
 					}
 					break;
 				case SPELL_TARGET_CURRENT_ENEMY:
@@ -698,7 +698,7 @@ class CRYSTAL_HANDLER_AI : public CreatureAIScript
 		{
 			for(uint32 i = 0; i < spells.size(); ++i)
 			{
-				if(spells[ i ] != NULL)
+				if(spells[ i ] != nullptr)
 					delete spells[ i ];
 			};
 
@@ -816,14 +816,14 @@ class KING_DRED_AI : public CreatureAIScript
 				uint32 random_player = possible_targets[ Rand(uint32(possible_targets.size() - 1)) ];
 				return _unit->GetMapMgr()->GetPlayer(random_player);
 			}
-			return NULL;
+			return nullptr;
 		}
 
 		void CastScriptSpell(ScriptSpell* spell)
 		{
 			_unit->Root();
 			uint32 spellid = heroic ? spell->heroic_spellid : spell->normal_spellid;
-			Unit* spelltarget = NULL;
+			Unit* spelltarget = nullptr;
 			switch(spell->target)
 			{
 				case SPELL_TARGET_SELF:
@@ -833,7 +833,7 @@ class KING_DRED_AI : public CreatureAIScript
 					break;
 				case SPELL_TARGET_GENERATE:
 					{
-						spelltarget = NULL;
+						spelltarget = nullptr;
 					}
 					break;
 				case SPELL_TARGET_CURRENT_ENEMY:
@@ -855,7 +855,7 @@ class KING_DRED_AI : public CreatureAIScript
 		{
 			for(uint32 i = 0; i < spells.size(); ++i)
 			{
-				if(spells[ i ] != NULL)
+				if(spells[ i ] != nullptr)
 					delete spells[ i ];
 			};
 
@@ -1039,14 +1039,14 @@ class THE_PROPHET_THARONJA : public CreatureAIScript
 				uint32 random_player = possible_targets[ Rand(uint32(possible_targets.size() - 1)) ];
 				return _unit->GetMapMgr()->GetPlayer(random_player);
 			}
-			return NULL;
+			return nullptr;
 		}
 
 		void CastScriptSpell(ScriptSpell* spell)
 		{
 			_unit->Root();
 			uint32 spellid = heroic ? spell->heroic_spellid : spell->normal_spellid;
-			Unit* spelltarget = NULL;
+			Unit* spelltarget = nullptr;
 			switch(spell->target)
 			{
 				case SPELL_TARGET_SELF:
@@ -1056,7 +1056,7 @@ class THE_PROPHET_THARONJA : public CreatureAIScript
 					break;
 				case SPELL_TARGET_GENERATE:
 					{
-						spelltarget = NULL;
+						spelltarget = nullptr;
 					}
 					break;
 				case SPELL_TARGET_CURRENT_ENEMY:
@@ -1078,7 +1078,7 @@ class THE_PROPHET_THARONJA : public CreatureAIScript
 		{
 			for(uint32 i = 0; i < spells.size(); ++i)
 			{
-				if(spells[ i ] != NULL)
+				if(spells[ i ] != nullptr)
 					delete spells[ i ];
 			};
 

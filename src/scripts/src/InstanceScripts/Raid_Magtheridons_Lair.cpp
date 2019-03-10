@@ -122,7 +122,7 @@ class MagtheridonTriggerAI : public CreatureAIScript
 			if(Phase <= 1 && !YellTimer)
 			{
 				// If Magtheridon can be found we let him yell one of six different texts
-				Unit* Magtheridon = NULL;
+				Unit* Magtheridon = nullptr;
 				Magtheridon = _unit->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(-22.657900f, 2.159050f, -0.345542f, 17257);
 				if(Magtheridon)
 				{
@@ -178,14 +178,14 @@ class MagtheridonTriggerAI : public CreatureAIScript
 				Unit* Channeler;
 				for(int i = 0; i < 5; i++)
 				{
-					Channeler = NULL;
+					Channeler = nullptr;
 					Channeler = _unit->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(Channelers[i].x, Channelers[i].y, Channelers[i].z, 17256);
 					if(!Channeler)
 						continue;
 					// If Channeler was found we push him at the end of our "list"
 					ChannelersTable.push_back(Channeler);
 					// If Magtheridon is spawned we tell channeler to cast spell on Pit Lord
-					Unit* Magtheridon = NULL;
+					Unit* Magtheridon = nullptr;
 					Magtheridon = _unit->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(-22.657900f, 2.159050f, -0.345542f, 17257);
 					if(Magtheridon && Channeler->isAlive() && !Channeler->GetAIInterface()->getNextTarget())
 					{
@@ -212,8 +212,8 @@ class MagtheridonTriggerAI : public CreatureAIScript
 					Unit* Channeler = ChannelersTable[i];
 					if(Channeler && !Channeler->IsInWorld())
 					{
-						ChannelersTable[i] = NULL;
-						Channeler = NULL;
+						ChannelersTable[i] = nullptr;
+						Channeler = nullptr;
 						continue;
 					}
 
@@ -228,8 +228,8 @@ class MagtheridonTriggerAI : public CreatureAIScript
 							BuffedChanneler = ChannelersTable[x];
 							if(BuffedChanneler && !BuffedChanneler->IsInWorld())
 							{
-								ChannelersTable[x] = NULL;
-								BuffedChanneler = NULL;
+								ChannelersTable[x] = nullptr;
+								BuffedChanneler = nullptr;
 								continue;
 							}
 
@@ -253,7 +253,7 @@ class MagtheridonTriggerAI : public CreatureAIScript
 			// If table is empty (0 channelers spawned) we remove banish and go to phase 2 at once
 			if(!ChannelersTable.size() && !Phase)
 			{
-				Unit* Magtheridon = NULL;
+				Unit* Magtheridon = nullptr;
 				Magtheridon = _unit->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(-22.657900f, 2.159050f, -0.345542f, 17257);
 				if(Magtheridon)
 				{
@@ -269,16 +269,16 @@ class MagtheridonTriggerAI : public CreatureAIScript
 			if(!EventStarted)
 			{
 				// We look for channeler that may be In Combat or was killed by that unit enemy
-				Unit* Channeler = NULL;
-				Unit* UnitTarget = NULL;
+				Unit* Channeler = nullptr;
+				Unit* UnitTarget = nullptr;
 				for(size_t i = 0; i < ChannelersTable.size(); i++)
 				{
 					// Safe check to prevent memory corruptions
 					Channeler = ChannelersTable[i];
 					if(Channeler && !Channeler->IsInWorld())
 					{
-						ChannelersTable[i] = NULL;
-						Channeler = NULL;
+						ChannelersTable[i] = nullptr;
+						Channeler = nullptr;
 						continue;
 					}
 
@@ -305,8 +305,8 @@ class MagtheridonTriggerAI : public CreatureAIScript
 						Channeler = ChannelersTable[i];
 						if(Channeler && !Channeler->IsInWorld())
 						{
-							ChannelersTable[i] = NULL;
-							Channeler = NULL;
+							ChannelersTable[i] = nullptr;
+							Channeler = nullptr;
 							continue;
 						}
 
@@ -318,7 +318,7 @@ class MagtheridonTriggerAI : public CreatureAIScript
 						}
 					}
 					// If Magtheridon is found we remove Banish aura from him
-					Unit* Magtheridon = NULL;
+					Unit* Magtheridon = nullptr;
 					Magtheridon = _unit->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(-22.657900f, 2.159050f, -0.345542f, 17257);
 					if(Magtheridon)
 						Magtheridon->RemoveAura(BANISH);
@@ -337,7 +337,7 @@ class MagtheridonTriggerAI : public CreatureAIScript
 					PhaseOneTimer++;
 					if(PhaseOneTimer == BANISH_TIMER - 2)
 					{
-						Unit* Magtheridon = NULL;
+						Unit* Magtheridon = nullptr;
 						Magtheridon = _unit->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(-22.657900f, 2.159050f, -0.345542f, 17257);
 						if(Magtheridon)
 						{
@@ -361,7 +361,7 @@ class MagtheridonTriggerAI : public CreatureAIScript
 					// Time runs out, phase switches and Magtheridon can get In Combat
 					if(PhaseOneTimer == BANISH_TIMER)
 					{
-						Unit* Magtheridon = NULL;
+						Unit* Magtheridon = nullptr;
 						Magtheridon = _unit->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(-22.657900f, 2.159050f, -0.345542f, 17257);
 						if(Magtheridon)
 						{
@@ -376,7 +376,7 @@ class MagtheridonTriggerAI : public CreatureAIScript
 					        PhaseOneTimer == 60 || PhaseOneTimer == 45 || PhaseOneTimer == 30 || PhaseOneTimer == 15)
 					{
 						// We check if any of channelers casts banish spell on Magtheridon and then we reset timer and setting
-						Unit* Magtheridon = NULL;
+						Unit* Magtheridon = nullptr;
 						Magtheridon = _unit->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(-22.657900f, 2.159050f, -0.345542f, 17257);
 						if(Magtheridon)
 						{
@@ -389,7 +389,7 @@ class MagtheridonTriggerAI : public CreatureAIScript
 							}
 						}
 						// Script creates vector "list" of alive channelers and counts those In Combat
-						Unit* Channeler = NULL;
+						Unit* Channeler = nullptr;
 						size_t AliveInCombat = 0;
 						std::vector <Unit*> AliveChannelers;
 						for(size_t i = 0; i < ChannelersTable.size(); i++)
@@ -397,8 +397,8 @@ class MagtheridonTriggerAI : public CreatureAIScript
 							Channeler = ChannelersTable[i];
 							if(Channeler && !Channeler->IsInWorld())
 							{
-								ChannelersTable[i] = NULL;
-								Channeler = NULL;
+								ChannelersTable[i] = nullptr;
+								Channeler = nullptr;
 								continue;
 							}
 
@@ -446,7 +446,7 @@ class ManticronCubeGO : public GameObjectAIScript
 	public:
 		ManticronCubeGO(GameObject*  pGameObject) : GameObjectAIScript(pGameObject)
 		{
-			Magtheridon = CubeTrigger = NULL;
+			Magtheridon = CubeTrigger = nullptr;
 		}
 
 		void OnActivate(Player*  pPlayer)
@@ -517,11 +517,11 @@ class ManticronCubeGO : public GameObjectAIScript
 				CubeTrigger->SetChannelSpellTargetGUID(0);
 				CubeTrigger->SetChannelSpellId(0);
 
-				Channeler = NULL;
+				Channeler = nullptr;
 			}
 
 			// If player still exists (is in world, alive and so on) we check if he has "channeling aura"
-			Aura* aura = NULL;
+			Aura* aura = nullptr;
 			if(Channeler)
 				aura = Channeler->FindAura(SHADOW_GRASP2);
 
@@ -534,16 +534,16 @@ class ManticronCubeGO : public GameObjectAIScript
 				// If player's channeling went over (and he was hit before) aura won't be removed when channeling ends - core bug
 				Channeler->RemoveAura(SHADOW_GRASP2);
 
-				Channeler = NULL;
+				Channeler = nullptr;
 			}
 
-			// Safe check to prevent crashes when Channeler was nulled
+			// Safe check to prevent crashes when Channeler was nullptred
 			if(!Channeler)
 			{
 				uint32 Counter = 0;
 				for(int i = 0; i < 5; i++)
 				{
-					Unit* GlobalCubeTrigger = NULL;
+					Unit* GlobalCubeTrigger = nullptr;
 					GlobalCubeTrigger = _gameobject->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(CubeTriggers[i].x, CubeTriggers[i].y, CubeTriggers[i].z, 17376);
 					if(GlobalCubeTrigger && GlobalCubeTrigger->GetChannelSpellId() == SHADOW_GRASP && CubeTrigger->GetUInt64Value(UNIT_FIELD_CHANNEL_OBJECT) == Magtheridon->GetGUID())
 						Counter++;
@@ -571,7 +571,7 @@ class ManticronCubeGO : public GameObjectAIScript
 			uint32 Counter = 0;
 			for(int i = 0; i < 5; i++)
 			{
-				Unit* GlobalCubeTrigger = NULL;
+				Unit* GlobalCubeTrigger = nullptr;
 				GlobalCubeTrigger = _gameobject->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(CubeTriggers[i].x, CubeTriggers[i].y, CubeTriggers[i].z, 17376);
 				if(GlobalCubeTrigger && GlobalCubeTrigger->GetChannelSpellId() == SHADOW_GRASP && CubeTrigger->GetUInt64Value(UNIT_FIELD_CHANNEL_OBJECT) == Magtheridon->GetGUID())
 					Counter++;
@@ -764,10 +764,10 @@ class HellfireWarderAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -797,7 +797,7 @@ class HellfireWarderAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime)
 					{
 						_unit->setAttackTimer(spells[i].attackstoptimer, false);
@@ -814,7 +814,7 @@ class HellfireWarderAI : public CreatureAIScript
 			if(!maxdist2cast) maxdist2cast = 100.0f;
 			if(!maxhp2cast) maxhp2cast = 100;
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				std::vector<Unit*> TargetTable;		/* From M4ksiu - Big THX to Capt who helped me with std stuff to make it simple and fully working <3 */
 				/* If anyone wants to use this function, then leave this note!										 */
@@ -822,7 +822,7 @@ class HellfireWarderAI : public CreatureAIScript
 				{
 					if(((spells[i].targettype == TARGET_RANDOM_FRIEND && isFriendly(_unit, (*itr))) || (spells[i].targettype != TARGET_RANDOM_FRIEND && isHostile(_unit, (*itr)) && (*itr) != _unit)) && (*itr)->IsUnit())  // isAttackable(_unit, (*itr)) &&
 					{
-						Unit* RandomTarget = NULL;
+						Unit* RandomTarget = nullptr;
 						RandomTarget = TO_UNIT(*itr);
 
 						if(RandomTarget->isAlive() && _unit->GetDistance2dSq(RandomTarget) >= mindist2cast * mindist2cast && _unit->GetDistance2dSq(RandomTarget) <= maxdist2cast * maxdist2cast && ((RandomTarget->GetHealthPct() >= minhp2cast && RandomTarget->GetHealthPct() <= maxhp2cast && spells[i].targettype == TARGET_RANDOM_FRIEND) || (_unit->GetAIInterface()->getThreatByPtr(RandomTarget) > 0 && isHostile(_unit, RandomTarget))))
@@ -956,7 +956,7 @@ class HellfireChannelerAI : public CreatureAIScript
 			if(_unit->isAlive())
 			{
 
-				Unit* Magtheridon = NULL;
+				Unit* Magtheridon = nullptr;
 				Magtheridon = _unit->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(-22.657900f, 2.159050f, -0.345542f, 17257);
 				if(Magtheridon && Magtheridon->HasFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_ATTACKABLE_9))
 				{
@@ -990,10 +990,10 @@ class HellfireChannelerAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -1023,7 +1023,7 @@ class HellfireChannelerAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime)
 					{
 						if(i == 2 && _unit->GetHealthPct() > 50)
@@ -1043,7 +1043,7 @@ class HellfireChannelerAI : public CreatureAIScript
 			if(!maxdist2cast) maxdist2cast = 100.0f;
 			if(!maxhp2cast) maxhp2cast = 100;
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				std::vector<Unit*> TargetTable;		/* From M4ksiu - Big THX to Capt who helped me with std stuff to make it simple and fully working <3 */
 				/* If anyone wants to use this function, then leave this note!										 */
@@ -1051,7 +1051,7 @@ class HellfireChannelerAI : public CreatureAIScript
 				{
 					if(((spells[i].targettype == TARGET_RANDOM_FRIEND && isFriendly(_unit, (*itr))) || (spells[i].targettype != TARGET_RANDOM_FRIEND && isHostile(_unit, (*itr)) && (*itr) != _unit)) && (*itr)->IsUnit())  // isAttackable(_unit, (*itr)) &&
 					{
-						Unit* RandomTarget = NULL;
+						Unit* RandomTarget = nullptr;
 						RandomTarget = TO_UNIT(*itr);
 
 						if(RandomTarget->isAlive() && _unit->GetDistance2dSq(RandomTarget) >= mindist2cast * mindist2cast && _unit->GetDistance2dSq(RandomTarget) <= maxdist2cast * maxdist2cast && ((RandomTarget->GetHealthPct() >= minhp2cast && RandomTarget->GetHealthPct() <= maxhp2cast && spells[i].targettype == TARGET_RANDOM_FRIEND) || (_unit->GetAIInterface()->getThreatByPtr(RandomTarget) > 0 && isHostile(_unit, RandomTarget))))
@@ -1158,10 +1158,10 @@ class BurningAbyssalAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -1191,7 +1191,7 @@ class BurningAbyssalAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime)
 					{
 						_unit->setAttackTimer(spells[i].attackstoptimer, false);
@@ -1208,7 +1208,7 @@ class BurningAbyssalAI : public CreatureAIScript
 			if(!maxdist2cast) maxdist2cast = 100.0f;
 			if(!maxhp2cast) maxhp2cast = 100;
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				std::vector<Unit*> TargetTable;		/* From M4ksiu - Big THX to Capt who helped me with std stuff to make it simple and fully working <3 */
 				/* If anyone wants to use this function, then leave this note!										 */
@@ -1216,7 +1216,7 @@ class BurningAbyssalAI : public CreatureAIScript
 				{
 					if(((spells[i].targettype == TARGET_RANDOM_FRIEND && isFriendly(_unit, (*itr))) || (spells[i].targettype != TARGET_RANDOM_FRIEND && isHostile(_unit, (*itr)) && (*itr) != _unit)) && (*itr)->IsUnit())  // isAttackable(_unit, (*itr)) &&
 					{
-						Unit* RandomTarget = NULL;
+						Unit* RandomTarget = nullptr;
 						RandomTarget = TO_UNIT(*itr);
 
 						if(RandomTarget->isAlive() && _unit->GetDistance2dSq(RandomTarget) >= mindist2cast * mindist2cast && _unit->GetDistance2dSq(RandomTarget) <= maxdist2cast * maxdist2cast && ((RandomTarget->GetHealthPct() >= minhp2cast && RandomTarget->GetHealthPct() <= maxhp2cast && spells[i].targettype == TARGET_RANDOM_FRIEND) || (_unit->GetAIInterface()->getThreatByPtr(RandomTarget) > 0 && isHostile(_unit, RandomTarget))))
@@ -1364,7 +1364,7 @@ class MagtheridonAI : public CreatureAIScript
 			if(_unit->HasFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_ATTACKABLE_9) || _unit->HasFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_ATTACKABLE_2))
 				return;
 
-			GameObject*  Gate = NULL;
+			GameObject*  Gate = nullptr;
 			for(int i = 0; i < 6; i++)
 			{
 				Gate = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(Columns[i].x, Columns[i].y, Columns[i].z, 184634 + i);
@@ -1443,7 +1443,7 @@ class MagtheridonAI : public CreatureAIScript
 			{
 				_unit->SendChatMessageAlternateEntry(17257, CHAT_MSG_EMOTE, LANG_UNIVERSAL, " begins to cast Blast Nova!");
 			}
-			if(timer_blastNova > 33 && _unit->GetCurrentSpell() == NULL && !aura)
+			if(timer_blastNova > 33 && _unit->GetCurrentSpell() == nullptr && !aura)
 			{
 				_unit->GetAIInterface()->StopMovement(3000);
 				_unit->setAttackTimer(3000, false);
@@ -1455,7 +1455,7 @@ class MagtheridonAI : public CreatureAIScript
 				return;
 			}
 
-			if(timer_enrage > 667 && _unit->GetCurrentSpell() == NULL && !aura)
+			if(timer_enrage > 667 && _unit->GetCurrentSpell() == nullptr && !aura)
 			{
 				_unit->CastSpell(_unit, dbcSpell.LookupEntry(ENRAGE), true);
 
@@ -1501,7 +1501,7 @@ class MagtheridonAI : public CreatureAIScript
 			{
 				_unit->SendChatMessageAlternateEntry(17257, CHAT_MSG_MONSTER_EMOTE, LANG_UNIVERSAL, " begins to cast Blast Nova!");
 			}
-			if(timer_blastNova > 33 && _unit->GetCurrentSpell() == NULL && !aura)
+			if(timer_blastNova > 33 && _unit->GetCurrentSpell() == nullptr && !aura)
 			{
 				_unit->GetAIInterface()->StopMovement(3000);
 				_unit->setAttackTimer(3000, false);
@@ -1513,7 +1513,7 @@ class MagtheridonAI : public CreatureAIScript
 				return;
 			}
 
-			if(timer_caveIn && (timer_caveIn != 1 || (_unit->GetCurrentSpell() == NULL && timer_caveIn == 1 && !aura)))
+			if(timer_caveIn && (timer_caveIn != 1 || (_unit->GetCurrentSpell() == nullptr && timer_caveIn == 1 && !aura)))
 			{
 				timer_caveIn++;
 				if(timer_caveIn == 2)
@@ -1530,7 +1530,7 @@ class MagtheridonAI : public CreatureAIScript
 
 				if(timer_caveIn == 3)
 				{
-					GameObject*  Gate = NULL;
+					GameObject*  Gate = nullptr;
 					for(int i = 0; i < 6; i++)
 					{
 						Gate = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(Columns[i].x, Columns[i].y, Columns[i].z, 184634 + i);
@@ -1558,7 +1558,7 @@ class MagtheridonAI : public CreatureAIScript
 				}
 			}
 
-			if(timer_enrage > 667 && _unit->GetCurrentSpell() == NULL && !aura)
+			if(timer_enrage > 667 && _unit->GetCurrentSpell() == nullptr && !aura)
 			{
 				_unit->CastSpell(_unit, dbcSpell.LookupEntry(ENRAGE), true);
 
@@ -1575,10 +1575,10 @@ class MagtheridonAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -1608,7 +1608,7 @@ class MagtheridonAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime)
 					{
 						_unit->setAttackTimer(spells[i].attackstoptimer, false);
@@ -1625,7 +1625,7 @@ class MagtheridonAI : public CreatureAIScript
 			if(!maxdist2cast) maxdist2cast = 100.0f;
 			if(!maxhp2cast) maxhp2cast = 100;
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				std::vector<Unit*> TargetTable;		/* From M4ksiu - Big THX to Capt who helped me with std stuff to make it simple and fully working <3 */
 				/* If anyone wants to use this function, then leave this note!										 */
@@ -1633,7 +1633,7 @@ class MagtheridonAI : public CreatureAIScript
 				{
 					if(((spells[i].targettype == TARGET_RANDOM_FRIEND && isFriendly(_unit, (*itr))) || (spells[i].targettype != TARGET_RANDOM_FRIEND && isHostile(_unit, (*itr)) && (*itr) != _unit)) && (*itr)->IsUnit())  // isAttackable(_unit, (*itr)) &&
 					{
-						Unit* RandomTarget = NULL;
+						Unit* RandomTarget = nullptr;
 						RandomTarget = TO_UNIT(*itr);
 
 						if(RandomTarget->isAlive() && _unit->GetDistance2dSq(RandomTarget) >= mindist2cast * mindist2cast && _unit->GetDistance2dSq(RandomTarget) <= maxdist2cast * maxdist2cast && ((RandomTarget->GetHealthPct() >= minhp2cast && RandomTarget->GetHealthPct() <= maxhp2cast && spells[i].targettype == TARGET_RANDOM_FRIEND) || (_unit->GetAIInterface()->getThreatByPtr(RandomTarget) > 0 && isHostile(_unit, RandomTarget))))

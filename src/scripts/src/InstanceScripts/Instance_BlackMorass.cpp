@@ -86,7 +86,7 @@ class CHRONOLORDDEJAAI : public CreatureAIScript
 			if(_unit->GetHealthPct() > 0)
 			{
 				uint32 sound = 0;
-				const char* text = NULL;
+				const char* text = nullptr;
 				switch(RandomUInt(1))
 				{
 					case 0:
@@ -127,10 +127,10 @@ class CHRONOLORDDEJAAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -239,7 +239,7 @@ class TEMPORUSAI : public CreatureAIScript
 			if(_unit->GetHealthPct() > 0)
 			{
 				uint32 sound = 0;
-				const char* text = NULL;
+				const char* text = nullptr;
 				switch(RandomUInt(1))
 				{
 					case 0:
@@ -280,10 +280,10 @@ class TEMPORUSAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;
@@ -392,7 +392,7 @@ class AEONUSAI : public CreatureAIScript
 			if(_unit->GetHealthPct() > 0)
 			{
 				uint32 sound = 0;
-				const char* text = NULL;
+				const char* text = nullptr;
 				switch(RandomUInt(1))
 				{
 					case 0:
@@ -433,10 +433,10 @@ class AEONUSAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					spells[i].casttime--;

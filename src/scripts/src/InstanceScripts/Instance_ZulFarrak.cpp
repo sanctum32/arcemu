@@ -80,7 +80,7 @@ class thekaAI : public CreatureAIScript
 			if(plaguecount >= randomplague && _unit->GetAIInterface()->getNextTarget())
 			{
 				plaguecount = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				target = _unit->GetAIInterface()->getNextTarget();
 				_unit->CastSpell(target, plague, true);
 			}
@@ -139,7 +139,7 @@ class antusulTriggerAI : public CreatureAIScript
 			_unit->GetAIInterface()->disable_melee = true;
 			_unit->SetUInt64Value(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_SELECTABLE);
 
-			Unit* antusul = NULL;
+			Unit* antusul = nullptr;
 			antusul = _unit->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(1815.030029f, 686.817017f, 14.519000f, 8127);
 			if(antusul)
 			{
@@ -165,7 +165,7 @@ class antusulAI : public CreatureAIScript
 
 		antusulAI(Creature* pCreature) : CreatureAIScript(pCreature)
 		{
-			add1 = add2 = add3 = add4 = add5 = add6 = trigger = NULL;
+			add1 = add2 = add3 = add4 = add5 = add6 = trigger = nullptr;
 			servant = dbcSpell.LookupEntry(servants);
 			//healing_ward = dbcSpell.LookupEntry(healingward);
 			//earthgrab_ward = dbcSpell.LookupEntry(earthgrabward);
@@ -173,7 +173,7 @@ class antusulAI : public CreatureAIScript
 
 		void OnCombatStart(Unit* mTarget)
 		{
-			add1 = add2 = add3 = add4 = add5 = add6 = trigger = NULL;
+			add1 = add2 = add3 = add4 = add5 = add6 = trigger = nullptr;
 			spawns = firstspawn = secondspawn = true;
 			spawns2 = attack = false;
 			/*healingwardcount = earthgrabcount = hmax = emax =*/
@@ -234,7 +234,7 @@ class antusulAI : public CreatureAIScript
 			}
 			if(attack)
 			{
-				Unit* Target = NULL;
+				Unit* Target = nullptr;
 				Target = _unit->GetAIInterface()->getNextTarget();
 				if(_unit->GetAIInterface()->getNextTarget())
 				{

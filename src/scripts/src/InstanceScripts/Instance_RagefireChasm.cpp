@@ -135,7 +135,7 @@ class BloodFilledOrb : public GameObjectAIScript
 				pPlayer->GetSession()->SendNotification("Request quest `The Path of the Adept`.");
 				return;
 			}
-			Creature* Zelemar = NULL;
+			Creature* Zelemar = nullptr;
 			Zelemar = _gameobject->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(-370.133f, 162.519f, -21.1299f, 17830);
 			if(Zelemar)
 				return;
@@ -145,7 +145,7 @@ class BloodFilledOrb : public GameObjectAIScript
 			if(Zelemar)
 			{
 				Zelemar->m_noRespawn = true;
-				Zelemar = NULL;
+				Zelemar = nullptr;
 			}
 		}
 };

@@ -316,8 +316,8 @@ class GundrakScript : public MoonInstanceScript
 
 			(*Iter).second.mState = State_Finished;
 
-			GameObject* pDoors = NULL;
-			GameObject* pAltar = NULL;
+			GameObject* pDoors = nullptr;
+			GameObject* pAltar = nullptr;
 			switch(pVictim->GetEntry())
 			{
 				case CN_MOORABI:

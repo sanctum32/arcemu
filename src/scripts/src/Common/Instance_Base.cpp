@@ -31,7 +31,7 @@ MoonInstanceScript::~MoonInstanceScript()
 Creature* MoonInstanceScript::GetCreatureBySqlId(uint32 pSqlId)
 {
 	if(pSqlId == 0)
-		return NULL;
+		return nullptr;
 
 	return mInstance->GetSqlIdCreature(pSqlId);
 };
@@ -39,7 +39,7 @@ Creature* MoonInstanceScript::GetCreatureBySqlId(uint32 pSqlId)
 Creature* MoonInstanceScript::GetCreatureByGuid(uint32 pGuid)
 {
 	if(pGuid == 0)
-		return NULL;
+		return nullptr;
 
 	return mInstance->GetCreature(pGuid);
 };
@@ -49,11 +49,11 @@ Creature*	MoonInstanceScript::FindClosestCreatureOnMap(uint32 pEntry, float pX, 
 	CreatureSet Creatures = FindCreaturesOnMap(pEntry);
 
 	if(Creatures.size() == 0)
-		return NULL;
+		return nullptr;
 	if(Creatures.size() == 1)
 		return *(Creatures.begin());
 
-	Creature* NearestCreature = NULL;
+	Creature* NearestCreature = nullptr;
 	float Distance, NearestDistance = 99999;
 	for(CreatureSet::iterator Iter = Creatures.begin(); Iter != Creatures.end(); ++Iter)
 	{
@@ -77,7 +77,7 @@ Creature* MoonInstanceScript::SpawnCreature(uint32 pEntry, float pX, float pY, f
 Creature* MoonInstanceScript::SpawnCreature(uint32 pEntry, float pX, float pY, float pZ, float pO, uint32 pFactionId)
 {
 	Creature* NewCreature = mInstance->GetInterface()->SpawnCreature(pEntry, pX, pY, pZ, pO, true, true, 0, 0);
-	if(NewCreature != NULL)
+	if(NewCreature != nullptr)
 		NewCreature->SetFaction(pFactionId);
 
 	return NewCreature;
@@ -85,12 +85,12 @@ Creature* MoonInstanceScript::SpawnCreature(uint32 pEntry, float pX, float pY, f
 
 CreatureSet MoonInstanceScript::FindCreaturesOnMap(uint32 pEntry)
 {
-	Creature* CurrentCreature = NULL;
+	Creature* CurrentCreature = nullptr;
 	CreatureSet ReturnSet;
 	for(std::vector< Creature* >::iterator CreatureIter = mInstance->CreatureStorage.begin(); CreatureIter != mInstance->CreatureStorage.end(); ++CreatureIter)
 	{
 		CurrentCreature = (*CreatureIter);
-		if(CurrentCreature != NULL)
+		if(CurrentCreature != nullptr)
 		{
 			if(CurrentCreature->GetEntry() == pEntry)
 				ReturnSet.insert(CurrentCreature);
@@ -105,11 +105,11 @@ GameObject* MoonInstanceScript::FindClosestGameObjectOnMap(uint32 pEntry, float 
 	GameObjectSet GameObjects = FindGameObjectsOnMap(pEntry);
 
 	if(GameObjects.size() == 0)
-		return NULL;
+		return nullptr;
 	if(GameObjects.size() == 1)
 		return *(GameObjects.begin());
 
-	GameObject* NearestObject = NULL;
+	GameObject* NearestObject = nullptr;
 	float Distance, NearestDistance = 99999;
 	for(GameObjectSet::iterator Iter = GameObjects.begin(); Iter != GameObjects.end(); ++Iter)
 	{
@@ -132,12 +132,12 @@ GameObject* MoonInstanceScript::SpawnGameObject(uint32 pEntry, float pX, float p
 
 GameObjectSet MoonInstanceScript::FindGameObjectsOnMap(uint32 pEntry)
 {
-	GameObject* CurrentObject = NULL;
+	GameObject* CurrentObject = nullptr;
 	GameObjectSet ReturnSet;
 	for(std::vector< GameObject* >::iterator GOIter = mInstance->GOStorage.begin(); GOIter != mInstance->GOStorage.end(); ++GOIter)
 	{
 		CurrentObject = (*GOIter);
-		if(CurrentObject != NULL)
+		if(CurrentObject != nullptr)
 		{
 			if(CurrentObject->GetEntry() == pEntry)
 				ReturnSet.insert(CurrentObject);
@@ -150,7 +150,7 @@ GameObjectSet MoonInstanceScript::FindGameObjectsOnMap(uint32 pEntry)
 GameObject* MoonInstanceScript::GetGameObjectBySqlId(uint32 pSqlId)
 {
 	if(pSqlId == 0)
-		return NULL;
+		return nullptr;
 
 	return mInstance->GetSqlIdGameObject(pSqlId);
 };
@@ -158,7 +158,7 @@ GameObject* MoonInstanceScript::GetGameObjectBySqlId(uint32 pSqlId)
 GameObject* MoonInstanceScript::GetGameObjectByGuid(uint32 pGuid)
 {
 	if(pGuid == 0)
-		return NULL;
+		return nullptr;
 
 	return mInstance->GetGameObject(pGuid);
 };
@@ -174,13 +174,13 @@ void MoonInstanceScript::AddGameObjectStateByEntry(uint32 pEntry, GameObjectStat
 	else
 		mGameObjects.insert(GameObjectEntryMap::value_type(pEntry, pState));
 
-	GameObject* CurrentObject = NULL;
+	GameObject* CurrentObject = nullptr;
 	if(!pUseQuery)
 	{
 		for(std::vector< GameObject* >::iterator GOIter = mInstance->GOStorage.begin(); GOIter != mInstance->GOStorage.end(); ++GOIter)
 		{
 			CurrentObject = (*GOIter);
-			if(CurrentObject != NULL)
+			if(CurrentObject != nullptr)
 			{
 				if(CurrentObject->GetEntry() == pEntry)
 					CurrentObject->SetState(pState);
@@ -190,12 +190,12 @@ void MoonInstanceScript::AddGameObjectStateByEntry(uint32 pEntry, GameObjectStat
 	else
 	{
 		QueryResult* Result = WorldDatabase.Query("SELECT id FROM gameobject_spawns WHERE entry = %u", pEntry);
-		if(Result != NULL)
+		if(Result != nullptr)
 		{
 			do
 			{
 				CurrentObject = GetGameObjectBySqlId(Result->Fetch()[ 0 ].GetUInt32());
-				if(CurrentObject != NULL)
+				if(CurrentObject != nullptr)
 					CurrentObject->SetState(pState);
 			}
 			while(Result->NextRow());
@@ -212,7 +212,7 @@ void MoonInstanceScript::AddGameObjectStateById(uint32 pId, GameObjectState pSta
 
 	GameObject* StateObject = GetGameObjectBySqlId(pId);
 	GameObjectEntryMap::iterator Iter;
-	if(StateObject != NULL)
+	if(StateObject != nullptr)
 	{
 		StateObject->SetState(pState);
 		Iter = mGameObjects.find(StateObject->GetEntry());
@@ -224,7 +224,7 @@ void MoonInstanceScript::AddGameObjectStateById(uint32 pId, GameObjectState pSta
 	else
 	{
 		QueryResult* Result = WorldDatabase.Query("SELECT entry FROM gameobject_spawns WHERE id = %u", pId);
-		if(Result != NULL)
+		if(Result != nullptr)
 		{
 			uint32 Entry = Result->Fetch()[ 0 ].GetUInt32();
 			Iter = mGameObjects.find(Entry);
@@ -240,7 +240,7 @@ void MoonInstanceScript::AddGameObjectStateById(uint32 pId, GameObjectState pSta
 
 float MoonInstanceScript::GetRangeToObject(Object* pObjectA, Object* pObjectB)
 {
-	if(pObjectA == NULL || pObjectB == NULL)
+	if(pObjectA == nullptr || pObjectB == nullptr)
 		return 0.0f;
 
 	return GetRangeToObject(pObjectA->GetPositionX(), pObjectA->GetPositionY(), pObjectA->GetPositionZ(), pObjectB->GetPositionX(), pObjectB->GetPositionY(), pObjectB->GetPositionZ());
@@ -248,7 +248,7 @@ float MoonInstanceScript::GetRangeToObject(Object* pObjectA, Object* pObjectB)
 
 float MoonInstanceScript::GetRangeToObject(Object* pObject, float pX, float pY, float pZ)
 {
-	if(pObject == NULL)
+	if(pObject == nullptr)
 		return 0.0f;
 
 	return GetRangeToObject(pObject->GetPositionX(), pObject->GetPositionY(), pObject->GetPositionZ(), pX, pY, pZ);
@@ -276,7 +276,7 @@ size_t MoonInstanceScript::GetPlayerCount()
 Player* MoonInstanceScript::GetPlayerByGuid(uint32 pGuid)
 {
 	if(pGuid == 0)
-		return NULL;
+		return nullptr;
 
 	return mInstance->GetPlayer(pGuid);
 };
@@ -376,14 +376,14 @@ void MoonInstanceScript::SetCellForcedStates(float pMinX, float pMaxX, float pMi
 		while(pMinY < pMaxY)
 		{
 			MapCell* CurrentCell = mInstance->GetCellByCoords(pMinX, pMinY);
-			if(pActivate && CurrentCell == NULL)
+			if(pActivate && CurrentCell == nullptr)
 			{
 				CurrentCell = mInstance->CreateByCoords(pMinX, pMinY);
-				if(CurrentCell != NULL)
+				if(CurrentCell != nullptr)
 					CurrentCell->Init(mInstance->GetPosX(pMinX), mInstance->GetPosY(pMinY), mInstance);
 			};
 
-			if(CurrentCell != NULL)
+			if(CurrentCell != nullptr)
 			{
 				if(pActivate)
 					mInstance->AddForcedCell(CurrentCell);
@@ -439,7 +439,7 @@ void MoonInstanceScript::OnGameObjectActivate(GameObject* pGameObject, Player* p
 void MoonInstanceScript::OnGameObjectPushToWorld(GameObject* pGameObject)
 {
 	// Dunno how part of those would happen
-	if(mGameObjects.size() == 0 || pGameObject == NULL)
+	if(mGameObjects.size() == 0 || pGameObject == nullptr)
 		return;
 
 	GameObjectEntryMap::iterator Iter = mGameObjects.find(pGameObject->GetEntry());
@@ -449,7 +449,7 @@ void MoonInstanceScript::OnGameObjectPushToWorld(GameObject* pGameObject)
 
 GameObject* MoonInstanceScript::GetObjectForOpenLock(Player* pCaster, Spell* pSpell, SpellEntry* pSpellEntry)
 {
-	return NULL;
+	return nullptr;
 };
 
 void MoonInstanceScript::SetLockOptions(uint32 pEntryId, GameObject* pGameObject)
@@ -467,7 +467,7 @@ void MoonInstanceScript::OnLoad()
 
 void MoonInstanceScript::UpdateEvent()
 {
-	//uint32 CurrentTime = static_cast< uint32 >( time( NULL ) );
+	//uint32 CurrentTime = static_cast< uint32 >( time( nullptr ) );
 	for(TimerArray::iterator TimerIter = mTimers.begin(); TimerIter != mTimers.end(); ++TimerIter)
 	{
 		TimerIter->second -= mUpdateFrequency;
@@ -481,14 +481,14 @@ void MoonInstanceScript::Destroy()
 
 void MoonInstanceScript::BuildEncounterMap()
 {
-	if(mInstance->pInstance == NULL)
+	if(mInstance->pInstance == nullptr)
 		return;
 
 	QueryResult* KillResult = WorldDatabase.Query("SELECT id, entry FROM creature_spawns WHERE map = %u AND entry IN ( SELECT entry FROM creature_names WHERE rank = 3 )", mInstance->GetMapId());
-	if(KillResult != NULL)
+	if(KillResult != nullptr)
 	{
 		uint32 Id = 0, Entry = 0;
-		Field* CurrentField = NULL;
+		Field* CurrentField = nullptr;
 		EncounterMap::iterator EncounterIter;
 		EncounterState State = State_NotStarted;
 		bool StartedInstance = mInstance->pInstance->m_killedNpcs.size() > 0;
@@ -521,7 +521,7 @@ void MoonInstanceScript::BuildEncounterMap()
 // Dynamic data creation that still involves MySQL
 void MoonInstanceScript::BuildEncounterMapWithEntries(IdVector pEntries)
 {
-	if(mInstance->pInstance == NULL || pEntries.size() == 0)
+	if(mInstance->pInstance == nullptr || pEntries.size() == 0)
 		return;
 
 	std::stringstream Query;
@@ -535,10 +535,10 @@ void MoonInstanceScript::BuildEncounterMapWithEntries(IdVector pEntries)
 
 	Query << " )";
 	QueryResult* KillResult = WorldDatabase.Query(Query.str().c_str());
-	if(KillResult != NULL)
+	if(KillResult != nullptr)
 	{
 		uint32 Id = 0, Entry = 0;
-		Field* CurrentField = NULL;
+		Field* CurrentField = nullptr;
 		EncounterMap::iterator EncounterIter;
 		EncounterState State = State_NotStarted;
 		bool StartedInstance = mInstance->pInstance->m_killedNpcs.size() > 0;
@@ -572,12 +572,12 @@ void MoonInstanceScript::BuildEncounterMapWithEntries(IdVector pEntries)
 void MoonInstanceScript::BuildEncounterMapWithIds(IdVector pIds)
 {
 	// Won't work with spawns that are not in world - would work well with instance fully loaded
-	if(mInstance->pInstance == NULL || pIds.size() == 0)
+	if(mInstance->pInstance == nullptr || pIds.size() == 0)
 		return;
 
 	uint32 CurrentId = 0;
 	EncounterState State = State_NotStarted;
-	Creature* Boss = NULL;
+	Creature* Boss = nullptr;
 	set< uint32 >::iterator Iter;
 	EncounterMap::iterator EncounterIter;
 	for(size_t i = 0; i < pIds.size(); ++i)
@@ -591,7 +591,7 @@ void MoonInstanceScript::BuildEncounterMapWithIds(IdVector pIds)
 			State = State_Finished;
 
 		Boss = mInstance->GetCreature(CurrentId);
-		if(Boss != NULL)
+		if(Boss != nullptr)
 		{
 			EncounterIter = mEncounters.find(Boss->GetEntry());
 			if(EncounterIter != mEncounters.end())

@@ -131,14 +131,14 @@ class MEATHOOK_AI : public CreatureAIScript
 				uint32 random_player = possible_targets[ Rand(uint32(possible_targets.size() - 1)) ];
 				return _unit->GetMapMgr()->GetPlayer(random_player);
 			}
-			return NULL;
+			return nullptr;
 		}
 
 		void CastScriptSpell(ScriptSpell* spell)
 		{
 			_unit->Root();
 			uint32 spellid = heroic ? spell->heroic_spellid : spell->normal_spellid;
-			Unit* spelltarget = NULL;
+			Unit* spelltarget = nullptr;
 			switch(spell->target)
 			{
 				case SPELL_TARGET_SELF:
@@ -148,7 +148,7 @@ class MEATHOOK_AI : public CreatureAIScript
 					break;
 				case SPELL_TARGET_GENERATE:
 					{
-						spelltarget = NULL;
+						spelltarget = nullptr;
 					}
 					break;
 				case SPELL_TARGET_CURRENT_ENEMY:
@@ -170,7 +170,7 @@ class MEATHOOK_AI : public CreatureAIScript
 		{
 			for(uint32 i = 0; i < spells.size(); ++i)
 			{
-				if(spells[ i ] != NULL)
+				if(spells[ i ] != nullptr)
 					delete spells[ i ];
 			};
 
@@ -315,7 +315,7 @@ class SALRAMM_THE_FLESHCRAFTER_AI : public CreatureAIScript
 				uint32 random_player = possible_targets[ Rand(uint32(possible_targets.size() - 1)) ];
 				return _unit->GetMapMgr()->GetPlayer(random_player);
 			}
-			return NULL;
+			return nullptr;
 		}
 
 		void CastScriptSpell(ScriptSpell* spell)
@@ -324,7 +324,7 @@ class SALRAMM_THE_FLESHCRAFTER_AI : public CreatureAIScript
 			uint32 spellid = heroic ? spell->heroic_spellid : spell->normal_spellid;
 			if(spellid == 0)
 				return;
-			Unit* spelltarget = NULL;
+			Unit* spelltarget = nullptr;
 			switch(spell->target)
 			{
 				case SPELL_TARGET_SELF:
@@ -334,7 +334,7 @@ class SALRAMM_THE_FLESHCRAFTER_AI : public CreatureAIScript
 					break;
 				case SPELL_TARGET_GENERATE:
 					{
-						spelltarget = NULL;
+						spelltarget = nullptr;
 					}
 					break;
 				case SPELL_TARGET_CURRENT_ENEMY:
@@ -361,7 +361,7 @@ class SALRAMM_THE_FLESHCRAFTER_AI : public CreatureAIScript
 		{
 			for(uint32 i = 0; i < spells.size(); ++i)
 			{
-				if(spells[ i ] != NULL)
+				if(spells[ i ] != nullptr)
 					delete spells[ i ];
 			};
 
@@ -494,7 +494,7 @@ class CHRONO_LORD_EPOCH_AI : public CreatureAIScript
 				uint32 random_player = possible_targets[ Rand(uint32(possible_targets.size() - 1)) ];
 				return _unit->GetMapMgr()->GetPlayer(random_player);
 			}
-			return NULL;
+			return nullptr;
 		}
 
 		void CastScriptSpell(ScriptSpell* spell)
@@ -503,7 +503,7 @@ class CHRONO_LORD_EPOCH_AI : public CreatureAIScript
 			uint32 spellid = heroic ? spell->heroic_spellid : spell->normal_spellid;
 			if(spellid == 0)
 				return;
-			Unit* spelltarget = NULL;
+			Unit* spelltarget = nullptr;
 			switch(spell->target)
 			{
 				case SPELL_TARGET_SELF:
@@ -513,7 +513,7 @@ class CHRONO_LORD_EPOCH_AI : public CreatureAIScript
 					break;
 				case SPELL_TARGET_GENERATE:
 					{
-						spelltarget = NULL;
+						spelltarget = nullptr;
 					}
 					break;
 				case SPELL_TARGET_CURRENT_ENEMY:
@@ -535,7 +535,7 @@ class CHRONO_LORD_EPOCH_AI : public CreatureAIScript
 		{
 			for(uint32 i = 0; i < spells.size(); ++i)
 			{
-				if(spells[ i ] != NULL)
+				if(spells[ i ] != nullptr)
 					delete spells[ i ];
 			};
 
@@ -629,7 +629,7 @@ class INFINITE_CORRUPTOR_AI : public CreatureAIScript
 				uint32 random_player = possible_targets[ Rand(uint32(possible_targets.size() - 1)) ];
 				return _unit->GetMapMgr()->GetPlayer(random_player);
 			}
-			return NULL;
+			return nullptr;
 		}
 
 		void CastScriptSpell(ScriptSpell* spell)
@@ -638,7 +638,7 @@ class INFINITE_CORRUPTOR_AI : public CreatureAIScript
 			uint32 spellid = heroic ? spell->heroic_spellid : spell->normal_spellid;
 			if(spellid == 0)
 				return;
-			Unit* spelltarget = NULL;
+			Unit* spelltarget = nullptr;
 			switch(spell->target)
 			{
 				case SPELL_TARGET_SELF:
@@ -648,7 +648,7 @@ class INFINITE_CORRUPTOR_AI : public CreatureAIScript
 					break;
 				case SPELL_TARGET_GENERATE:
 					{
-						spelltarget = NULL;
+						spelltarget = nullptr;
 					}
 					break;
 				case SPELL_TARGET_CURRENT_ENEMY:
@@ -670,7 +670,7 @@ class INFINITE_CORRUPTOR_AI : public CreatureAIScript
 		{
 			for(uint32 i = 0; i < spells.size(); ++i)
 			{
-				if(spells[ i ] != NULL)
+				if(spells[ i ] != nullptr)
 					delete spells[ i ];
 			};
 
@@ -812,11 +812,11 @@ class MALGANIS_AI : public CreatureAIScript
 			{
 				//this is ugly, better ideas?
 				scene = false;
-				Creature* citizen = NULL;
+				Creature* citizen = nullptr;
 				uint32 entry = 0;
 				for(uint32 i = 0; i != _unit->GetMapMgr()->m_CreatureHighGuid; ++i)
 				{
-					if(_unit->GetMapMgr()->CreatureStorage[i] != NULL)
+					if(_unit->GetMapMgr()->CreatureStorage[i] != nullptr)
 					{
 						entry = _unit->GetMapMgr()->CreatureStorage[i]->GetEntry();
 						if(entry == 31126 || entry == 31127 || entry == 28167 || entry == 28169)
@@ -824,7 +824,7 @@ class MALGANIS_AI : public CreatureAIScript
 							citizen = _unit->GetMapMgr()->CreatureStorage[i];
 							CreatureProto* cp = CreatureProtoStorage.LookupEntry(27737);//risen zombie
 							CreatureInfo* ci = CreatureNameStorage.LookupEntry(27737);
-							Creature* c = NULL;
+							Creature* c = nullptr;
 							if(cp && ci)
 							{
 								c = _unit->GetMapMgr()->CreateCreature(27737);
@@ -856,7 +856,7 @@ class MALGANIS_AI : public CreatureAIScript
 				uint32 random_player = possible_targets[ Rand(uint32(possible_targets.size() - 1)) ];
 				return _unit->GetMapMgr()->GetPlayer(random_player);
 			}
-			return NULL;
+			return nullptr;
 		}
 
 		void CastScriptSpell(ScriptSpell* spell)
@@ -865,7 +865,7 @@ class MALGANIS_AI : public CreatureAIScript
 			uint32 spellid = heroic ? spell->heroic_spellid : spell->normal_spellid;
 			if(spellid == 0)
 				return;
-			Unit* spelltarget = NULL;
+			Unit* spelltarget = nullptr;
 			switch(spell->target)
 			{
 				case SPELL_TARGET_SELF:
@@ -875,7 +875,7 @@ class MALGANIS_AI : public CreatureAIScript
 					break;
 				case SPELL_TARGET_GENERATE:
 					{
-						spelltarget = NULL;
+						spelltarget = nullptr;
 					}
 					break;
 				case SPELL_TARGET_CURRENT_ENEMY:
@@ -897,7 +897,7 @@ class MALGANIS_AI : public CreatureAIScript
 		{
 			for(uint32 i = 0; i < spells.size(); ++i)
 			{
-				if(spells[ i ] != NULL)
+				if(spells[ i ] != nullptr)
 					delete spells[ i ];
 			};
 
@@ -1205,7 +1205,7 @@ class ARTHAS_AI : public CreatureAIScript
 						//spawn Mal'Ganis
 						CreatureProto* cp = CreatureProtoStorage.LookupEntry(26533);
 						CreatureInfo* ci = CreatureNameStorage.LookupEntry(26533);
-						Creature* c = NULL;
+						Creature* c = nullptr;
 						if(cp && ci)
 						{
 							c = _unit->GetMapMgr()->CreateCreature(26533);

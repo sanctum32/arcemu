@@ -171,11 +171,11 @@ public:
 
 void SpellFunc_Charge(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	ShadowmoonRidingHoundAI* pHoundAI = (pCreatureAI != NULL) ? TO< ShadowmoonRidingHoundAI* >(pCreatureAI) : NULL;
-	if(pHoundAI != NULL)
+	ShadowmoonRidingHoundAI* pHoundAI = (pCreatureAI != nullptr) ? TO< ShadowmoonRidingHoundAI* >(pCreatureAI) : nullptr;
+	if(pHoundAI != nullptr)
 	{
 		Unit* pCurrentTarget = pHoundAI->GetUnit()->GetAIInterface()->getNextTarget();
-		if(pCurrentTarget != NULL && pCurrentTarget != pTarget)
+		if(pCurrentTarget != nullptr && pCurrentTarget != pTarget)
 		{
 			pHoundAI->GetUnit()->GetAIInterface()->AttackReaction(pTarget, 500);
 			pHoundAI->GetUnit()->GetAIInterface()->setNextTarget(pTarget);
@@ -312,7 +312,7 @@ public:
 			ParentClass::AIUpdate();
 
 			Unit* pTarget = _unit->GetAIInterface()->getNextTarget();
-			if(pTarget != NULL)
+			if(pTarget != nullptr)
 			{
 				if(GetRangeToUnit(pTarget) <= 30.0f)
 				{
@@ -327,8 +327,8 @@ public:
 
 void SpellFunc_RapidShot(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	IllidariHeartseekerAI* pHeartseeker = (pCreatureAI != NULL) ? TO< IllidariHeartseekerAI* >(pCreatureAI) : NULL;
-	if(pHeartseeker != NULL)
+	IllidariHeartseekerAI* pHeartseeker = (pCreatureAI != nullptr) ? TO< IllidariHeartseekerAI* >(pCreatureAI) : nullptr;
+	if(pHeartseeker != nullptr)
 	{
 		pHeartseeker->CastSpell(pHeartseeker->mRapidShot);
 	}
@@ -409,12 +409,12 @@ public:
 
 void SpellFunc_Gouge(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	IllidariBoneslicerAI* pBoneslicer = (pCreatureAI != NULL) ? TO< IllidariBoneslicerAI* >(pCreatureAI) : NULL;
-	if(pBoneslicer != NULL)
+	IllidariBoneslicerAI* pBoneslicer = (pCreatureAI != nullptr) ? TO< IllidariBoneslicerAI* >(pCreatureAI) : nullptr;
+	if(pBoneslicer != nullptr)
 	{
 		pBoneslicer->CastSpell(pBoneslicer->mGouge);
 		Unit* pSecondHated = pBoneslicer->GetUnit()->GetAIInterface()->GetSecondHated();
-		if(pSecondHated != NULL)
+		if(pSecondHated != nullptr)
 		{
 			pBoneslicer->GetUnit()->GetAIInterface()->AttackReaction(pSecondHated, 2000);
 			pBoneslicer->GetUnit()->GetAIInterface()->setNextTarget(pSecondHated);
@@ -533,7 +533,7 @@ public:
 			ParentClass::AIUpdate();
 
 			Unit* pTarget = _unit->GetAIInterface()->getNextTarget();
-			if(pTarget != NULL)
+			if(pTarget != nullptr)
 			{
 				if(GetRangeToUnit(pTarget) <= 30.0f)
 				{
@@ -602,7 +602,7 @@ public:
 		{
 			ParentClass::OnCombatStart(pTarget);
 			SpellDesc* pSpell = FindSpellById(ASHTONGUE_STALKER_BLIND);
-			if(pSpell != NULL)
+			if(pSpell != nullptr)
 			{
 				CastSpellNowNoScheduling(pSpell);
 			}
@@ -659,7 +659,7 @@ public:
 		{
 			ParentClass::OnCombatStart(pTarget);
 			SpellDesc* pCharge = FindSpellById(BONECHEWER_BEHEMOTH_BEHEMOTH_CHARGE);
-			if(pCharge != NULL)
+			if(pCharge != nullptr)
 			{
 				CastSpellNowNoScheduling(pCharge);
 			}
@@ -751,7 +751,7 @@ public:
 		{
 			ParentClass::OnCombatStart(pTarget);
 			SpellDesc* pIntervene = FindSpellById(BONECHEWER_SHIELD_DISCIPLE_INTERVENE);
-			if(pIntervene != NULL)
+			if(pIntervene != nullptr)
 			{
 				CastSpellNowNoScheduling(pIntervene);
 			}
@@ -782,7 +782,7 @@ public:
 		{
 			ParentClass::OnCombatStart(pTarget);
 			SpellDesc* pCharge = FindSpellById(BONECHEWER_SPECTATOR_CHARGE);
-			if(pCharge != NULL)
+			if(pCharge != nullptr)
 			{
 				CastSpellNowNoScheduling(pCharge);
 			}
@@ -867,7 +867,7 @@ public:
 		{
 			ParentClass::OnCombatStart(pTarget);
 			SpellDesc* pMark = FindSpellById(COILSKAR_HARPOONER_HARPOONERS_MARK);
-			if(pMark != NULL)
+			if(pMark != nullptr)
 			{
 				CastSpellNowNoScheduling(pMark);
 			}
@@ -952,7 +952,7 @@ public:
 			ParentClass::AIUpdate();
 
 			Unit* pTarget = _unit->GetAIInterface()->getNextTarget();
-			if(pTarget != NULL)
+			if(pTarget != nullptr)
 			{
 				if(GetRangeToUnit(pTarget) <= 40.0f)
 				{
@@ -994,7 +994,7 @@ public:
 			ParentClass::AIUpdate();
 
 			Unit* pTarget = _unit->GetAIInterface()->getNextTarget();
-			if(pTarget != NULL)
+			if(pTarget != nullptr)
 			{
 				if(GetRangeToUnit(pTarget) <= 40.0f)
 				{
@@ -1117,7 +1117,7 @@ public:
 			if(mIsShadowPriest && _unit->GetUInt32Value(UNIT_FIELD_HEALTH) <= 2500 && pDeath->mEnabled)
 			{
 				Spell* pCurrentSpell = _unit->GetCurrentSpell();
-				if(pCurrentSpell != NULL && pCurrentSpell->pSpellId == pDeath->mInfo->Id)
+				if(pCurrentSpell != nullptr && pCurrentSpell->pSpellId == pDeath->mInfo->Id)
 				{
 					pCurrentSpell->cancel();
 				}
@@ -1232,8 +1232,8 @@ public:
 
 void SpellFunc_Whirlwind(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	ImageOfDementiaAI* Dementia = (pCreatureAI != NULL) ? TO< ImageOfDementiaAI* >(pCreatureAI) : NULL;
-	if(Dementia != NULL)
+	ImageOfDementiaAI* Dementia = (pCreatureAI != nullptr) ? TO< ImageOfDementiaAI* >(pCreatureAI) : nullptr;
+	if(Dementia != nullptr)
 	{
 		Dementia->CastSpell(Dementia->mWhirlwind);
 		Dementia->Despawn(25000);
@@ -1308,7 +1308,7 @@ public:
 			ParentClass::AIUpdate();
 
 			Unit* pTarget = _unit->GetAIInterface()->getNextTarget();
-			if(pTarget != NULL)
+			if(pTarget != nullptr)
 			{
 				if(GetRangeToUnit(pTarget) <= 40.0f)
 				{
@@ -1323,12 +1323,12 @@ public:
 
 void SpellFunc_RaiseDead(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	ShadowmoonDeathshaperAI* pDeathshaper = (pCreatureAI != NULL) ? TO< ShadowmoonDeathshaperAI* >(pCreatureAI) : NULL;
-	if(pDeathshaper != NULL)
+	ShadowmoonDeathshaperAI* pDeathshaper = (pCreatureAI != nullptr) ? TO< ShadowmoonDeathshaperAI* >(pCreatureAI) : nullptr;
+	if(pDeathshaper != nullptr)
 	{
 		pDeathshaper->CastSpellNowNoScheduling(pDeathshaper->mRaiseDead);
 		MoonScriptCreatureAI* pAI = pDeathshaper->SpawnCreature(23371, pTarget->GetPositionX(), pTarget->GetPositionY(), pTarget->GetPositionZ(), pTarget->GetOrientation());
-		if(pAI != NULL)
+		if(pAI != nullptr)
 		{
 			pAI->GetUnit()->GetAIInterface()->StopMovement(2500);
 			pAI->DelayNextAttack(2500);
@@ -1388,7 +1388,7 @@ public:
 		{
 			ParentClass::AIUpdate();
 			Unit* pTarget = _unit->GetAIInterface()->getNextTarget();
-			if(pTarget != NULL)
+			if(pTarget != nullptr)
 			{
 				if(GetRangeToUnit(pTarget) <= 30.0f)
 				{
@@ -1497,8 +1497,8 @@ public:
 
 void SpellFunc_DefensiveStance(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	ShadowmoonWeaponMasterAI* pWeaponMaster = (pCreatureAI != NULL) ? TO< ShadowmoonWeaponMasterAI* >(pCreatureAI) : NULL;
-	if(pWeaponMaster != NULL)
+	ShadowmoonWeaponMasterAI* pWeaponMaster = (pCreatureAI != nullptr) ? TO< ShadowmoonWeaponMasterAI* >(pCreatureAI) : nullptr;
+	if(pWeaponMaster != nullptr)
 	{
 		pWeaponMaster->RemoveAura(SHADOWMOON_WEAPON_MASTER_BATTLE_AURA);
 		//SetDisplayWeaponIds(0, 0)	// Axe + Shield
@@ -1509,8 +1509,8 @@ void SpellFunc_DefensiveStance(SpellDesc* pThis, MoonScriptCreatureAI* pCreature
 
 void SpellFunc_BerserkerStance(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	ShadowmoonWeaponMasterAI* pWeaponMaster = (pCreatureAI != NULL) ? TO< ShadowmoonWeaponMasterAI* >(pCreatureAI) : NULL;
-	if(pWeaponMaster != NULL)
+	ShadowmoonWeaponMasterAI* pWeaponMaster = (pCreatureAI != nullptr) ? TO< ShadowmoonWeaponMasterAI* >(pCreatureAI) : nullptr;
+	if(pWeaponMaster != nullptr)
 	{
 		pWeaponMaster->RemoveAura(SHADOWMOON_WEAPON_MASTER_DEFENSIVE_AURA);
 		//SetDisplayWeaponIds(0, 0)	// Sword
@@ -1583,11 +1583,11 @@ public:
 
 void SpellFunc_StormBlink(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	StormFuryAI* pStormFuryAI = (pCreatureAI != NULL) ? TO< StormFuryAI* >(pCreatureAI) : NULL;
-	if(pStormFuryAI != NULL)
+	StormFuryAI* pStormFuryAI = (pCreatureAI != nullptr) ? TO< StormFuryAI* >(pCreatureAI) : nullptr;
+	if(pStormFuryAI != nullptr)
 	{
 		Unit* pCurrentTarget = pStormFuryAI->GetUnit()->GetAIInterface()->getNextTarget();
-		if(pCurrentTarget == NULL)
+		if(pCurrentTarget == nullptr)
 			return;
 
 		if(pTarget == pCurrentTarget)
@@ -1649,11 +1649,11 @@ public:
 
 void SpellFunc_SpawnAqueousSpawn(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	AqueousLordAI* pAqueousLordAI = (pCreatureAI != NULL) ? TO< AqueousLordAI* >(pCreatureAI) : NULL;
-	if(pAqueousLordAI != NULL)
+	AqueousLordAI* pAqueousLordAI = (pCreatureAI != nullptr) ? TO< AqueousLordAI* >(pCreatureAI) : nullptr;
+	if(pAqueousLordAI != nullptr)
 	{
 		MoonScriptCreatureAI* pSpawnAI = pAqueousLordAI->SpawnCreature(CN_AQUEOUS_SPAWN);
-		if(pSpawnAI != NULL)
+		if(pSpawnAI != nullptr)
 		{
 			pSpawnAI->AggroRandomUnit(500);
 			pSpawnAI->SetDespawnWhenInactive(true);
@@ -1876,7 +1876,7 @@ class NajentusAI : public CreatureAIScript
 			for(int i = 0; i < nrspells; i++)
 				spells[i].casttime = 0;
 
-			uint32 t = (uint32)time(NULL);
+			uint32 t = (uint32)time(nullptr);
 			spells[2].casttime = t + 60;
 			spells[3].casttime = t + 20;
 
@@ -1921,7 +1921,7 @@ class NajentusAI : public CreatureAIScript
 		void AIUpdate()
 		{
 			// Disabled till I find way to make it dispellable like on blizz
-			uint32 t = (uint32)time(NULL);
+			uint32 t = (uint32)time(nullptr);
 			/*if (t > spells[2].casttime)
 			{
 				_unit->setAttackTimer(spells[2].attackstoptimer, false);
@@ -1962,10 +1962,10 @@ class NajentusAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -1996,7 +1996,7 @@ class NajentusAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime)
 					{
 						_unit->setAttackTimer(spells[i].attackstoptimer, false);
@@ -2013,7 +2013,7 @@ class NajentusAI : public CreatureAIScript
 			if(!maxdist2cast) maxdist2cast = 100.0f;
 			if(!maxhp2cast) maxhp2cast = 100;
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				std::vector<Unit*> TargetTable;		/* From M4ksiu - Big THX to Capt who helped me with std stuff to make it simple and fully working <3 */
 				/* If anyone wants to use this function, then leave this note!										 */
@@ -2021,7 +2021,7 @@ class NajentusAI : public CreatureAIScript
 				{
 					if(((spells[i].targettype == TARGET_RANDOM_FRIEND && isFriendly(_unit, (*itr))) || (spells[i].targettype != TARGET_RANDOM_FRIEND && isHostile(_unit, (*itr)) && (*itr) != _unit)) && (*itr)->IsUnit())  // isAttackable(_unit, (*itr)) &&
 					{
-						Unit* RandomTarget = NULL;
+						Unit* RandomTarget = nullptr;
 						RandomTarget = TO_UNIT(*itr);
 
 						if(RandomTarget == _unit->GetAIInterface()->GetMostHated() && i == 3)
@@ -2165,7 +2165,7 @@ class SupremusAI : public CreatureAIScript
 
 			uint32 val = RandomUInt(1000);
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())//_unit->getAttackTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())//_unit->getAttackTarget())
 			{
 				if(m_MoltenFlame)
 				{
@@ -2209,7 +2209,7 @@ class SupremusAI : public CreatureAIScript
 
 			uint32 val = RandomUInt(1000);
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())//_unit->getAttackTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())//_unit->getAttackTarget())
 			{
 				if(m_MoltenPunch)
 				{
@@ -2394,14 +2394,14 @@ class GurtoggAI : public CreatureAIScript
 				spells[i].casttime = 0;
 			}
 
-			spells[2].casttime = (uint32)time(NULL) + 10;
+			spells[2].casttime = (uint32)time(nullptr) + 10;
 
 			_unit->SendChatMessage(CHAT_MSG_MONSTER_YELL, LANG_UNIVERSAL, "Horde will crush you!");
 			_unit->PlaySoundToSet(11432);
 
 			RegisterAIUpdateEvent(_unit->GetBaseAttackTime(MELEE));
 
-			PhaseTimer = (uint32)time(NULL) + 60;
+			PhaseTimer = (uint32)time(nullptr) + 60;
 			LastThreat = 0;
 			Phase = 1;
 		}
@@ -2449,7 +2449,7 @@ class GurtoggAI : public CreatureAIScript
 
 		void AIUpdate()
 		{
-			uint32 t = (uint32)time(NULL);
+			uint32 t = (uint32)time(nullptr);
 			if(Phase == 1 && t > PhaseTimer)
 			{
 				spells[7].casttime = 0;
@@ -2459,7 +2459,7 @@ class GurtoggAI : public CreatureAIScript
 			}
 
 			// Phase 1
-			if(Phase == 1 && _unit->GetAIInterface()->getNextTarget() && _unit->GetCurrentSpell() == NULL)
+			if(Phase == 1 && _unit->GetAIInterface()->getNextTarget() && _unit->GetCurrentSpell() == nullptr)
 			{
 				// Bloodboil
 				if(t > spells[2].casttime)
@@ -2500,12 +2500,12 @@ class GurtoggAI : public CreatureAIScript
 				}
 			}
 
-			if(Phase == 2 && _unit->GetAIInterface()->getNextTarget() && _unit->GetCurrentSpell() == NULL)
+			if(Phase == 2 && _unit->GetAIInterface()->getNextTarget() && _unit->GetCurrentSpell() == nullptr)
 			{
 				// Fel Rage check
 				if(t > spells[7].casttime - 62 && LastThreat != 0)
 				{
-					Unit* RageTarget = NULL;
+					Unit* RageTarget = nullptr;
 					RageTarget = _unit->GetAIInterface()->getNextTarget();
 					if(RageTarget->FindAura(FEL_RAGE1) && RageTarget->FindAura(FEL_RAGE2))
 					{
@@ -2519,7 +2519,7 @@ class GurtoggAI : public CreatureAIScript
 				// Acid Geyser
 				if(LastThreat != 0 && RandomUInt(5) == 1 && t > spells[6].casttime)
 				{
-					Unit* RageTarget = NULL;
+					Unit* RageTarget = nullptr;
 					RageTarget = _unit->GetAIInterface()->getNextTarget();
 					if(RageTarget->FindAura(FEL_RAGE1) || RageTarget->FindAura(FEL_RAGE2))
 					{
@@ -2555,7 +2555,7 @@ class GurtoggAI : public CreatureAIScript
 					{
 						if(isHostile(_unit, (*itr)) && (*itr) != _unit && (*itr)->IsUnit())
 						{
-							Unit* RandomTarget = NULL;
+							Unit* RandomTarget = nullptr;
 							RandomTarget = TO_UNIT(*itr);
 
 							if(RandomTarget->isAlive() && _unit->GetDistance2dSq(RandomTarget) >= 0.0f && _unit->GetDistance2dSq(RandomTarget) <= 6400.0f && _unit->GetAIInterface()->getThreatByPtr(RandomTarget) > 0 && isHostile(_unit, RandomTarget))
@@ -2615,10 +2615,10 @@ class GurtoggAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if((i == 3 || i == 4) && Phase != 1)
@@ -2650,7 +2650,7 @@ class GurtoggAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime)
 					{
 						_unit->setAttackTimer(spells[i].attackstoptimer, false);
@@ -2667,7 +2667,7 @@ class GurtoggAI : public CreatureAIScript
 			if(!maxdist2cast) maxdist2cast = 100.0f;
 			if(!maxhp2cast) maxhp2cast = 100;
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				std::vector<Unit*> TargetTable;		/* From M4ksiu - Big THX to Capt who helped me with std stuff to make it simple and fully working <3 */
 				/* If anyone wants to use this function, then leave this note!										 */
@@ -2675,7 +2675,7 @@ class GurtoggAI : public CreatureAIScript
 				{
 					if(((spells[i].targettype == TARGET_RANDOM_FRIEND && isFriendly(_unit, (*itr))) || (spells[i].targettype != TARGET_RANDOM_FRIEND && isHostile(_unit, (*itr)) && (*itr) != _unit)) && (*itr)->IsUnit())  // isAttackable(_unit, (*itr)) &&
 					{
-						Unit* RandomTarget = NULL;
+						Unit* RandomTarget = nullptr;
 						RandomTarget = TO_UNIT(*itr);
 
 						if(RandomTarget->isAlive() && _unit->GetDistance2dSq(RandomTarget) >= mindist2cast * mindist2cast && _unit->GetDistance2dSq(RandomTarget) <= maxdist2cast * maxdist2cast && ((RandomTarget->GetHealthPct() >= minhp2cast && RandomTarget->GetHealthPct() <= maxhp2cast && spells[i].targettype == TARGET_RANDOM_FRIEND) || (_unit->GetAIInterface()->getThreatByPtr(RandomTarget) > 0 && isHostile(_unit, RandomTarget))))
@@ -2787,7 +2787,7 @@ public:
 				RemoveAllAuras();
 				RemoveAuraOnPlayers(EOS_AURA_OF_SUFFERING);
 				MoonScriptCreatureAI* mRoS = GetNearestCreature(22856);
-				if(mRoS != NULL && mRoS->IsAlive())
+				if(mRoS != nullptr && mRoS->IsAlive())
 					MoveTo(mRoS);
 			}
 		}
@@ -2844,7 +2844,7 @@ public:
 				RemoveAllAuras();
 				RemoveAuraOnPlayers(EOD_AURA_OF_DESIRE);
 				MoonScriptCreatureAI* mRoS = GetNearestCreature(22856);
-				if(mRoS != NULL && mRoS->IsAlive())
+				if(mRoS != nullptr && mRoS->IsAlive())
 					MoveTo(mRoS);
 			}
 		}
@@ -3043,7 +3043,7 @@ public:
 								if(pSpawnedEnsalvedSoul)
 								{
 									pSpawnedEnsalvedSoul->AggroNearestPlayer();
-									pSpawnedEnsalvedSoul = NULL;
+									pSpawnedEnsalvedSoul = nullptr;
 								};
 							};
 							RemoveTimer(mEnslavedSoulTimer);
@@ -3051,7 +3051,7 @@ public:
 						if(SpawnedEnsalvedSoul)
 						{
 
-							Creature* creature = NULL;
+							Creature* creature = nullptr;
 							DeadSoulCount = 0;
 							for(set<Object*>::iterator itr = _unit->GetInRangeSetBegin(); itr != _unit->GetInRangeSetEnd(); ++itr)
 							{
@@ -3179,7 +3179,7 @@ class ShahrazAI : public CreatureAIScript
 			for(int i = 0; i < 6; i++)
 				spells[i].casttime = 0;
 
-			AuraChange = (uint32)time(NULL) + 15;
+			AuraChange = (uint32)time(nullptr) + 15;
 			Enraged = false;
 			SoundTimer = 5;
 
@@ -3253,7 +3253,7 @@ class ShahrazAI : public CreatureAIScript
 				Enraged = true;
 			}
 
-			uint32 t = (uint32)time(NULL);
+			uint32 t = (uint32)time(nullptr);
 
 			// In normal way it is applied to players all around enemy caster =/
 			if(t > AuraChange)
@@ -3312,10 +3312,10 @@ class ShahrazAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -3345,7 +3345,7 @@ class ShahrazAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime)
 					{
 						_unit->setAttackTimer(spells[i].attackstoptimer, false);
@@ -3362,7 +3362,7 @@ class ShahrazAI : public CreatureAIScript
 			if(!maxdist2cast) maxdist2cast = 100.0f;
 			if(!maxhp2cast) maxhp2cast = 100;
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				std::vector<Unit*> TargetTable;		/* From M4ksiu - Big THX to Capt who helped me with std stuff to make it simple and fully working <3 */
 				/* If anyone wants to use this function, then leave this note!										 */
@@ -3370,7 +3370,7 @@ class ShahrazAI : public CreatureAIScript
 				{
 					if(((spells[i].targettype == TARGET_RANDOM_FRIEND && isFriendly(_unit, (*itr))) || (spells[i].targettype != TARGET_RANDOM_FRIEND && isHostile(_unit, (*itr)) && (*itr) != _unit)) && (*itr)->IsUnit())  // isAttackable(_unit, (*itr)) &&
 					{
-						Unit* RandomTarget = NULL;
+						Unit* RandomTarget = nullptr;
 						RandomTarget = TO_UNIT(*itr);
 
 						if(RandomTarget->isAlive() && _unit->GetDistance2dSq(RandomTarget) >= mindist2cast * mindist2cast && _unit->GetDistance2dSq(RandomTarget) <= maxdist2cast * maxdist2cast && ((RandomTarget->GetHealthPct() >= minhp2cast && RandomTarget->GetHealthPct() <= maxhp2cast && spells[i].targettype == TARGET_RANDOM_FRIEND) || (_unit->GetAIInterface()->getThreatByPtr(RandomTarget) > 0 && isHostile(_unit, RandomTarget))))
@@ -3515,7 +3515,7 @@ class VerasAI : public MoonScriptCreatureAI
 			AddEmote(Event_OnCombatStart, "You wish to test me?", Text_Yell, 11524);
 
 			pGethois = TO< GathiosAI* >(GetNearestCreature(CN_GATHIOS_THE_SHATTERER));
-			if(pGethois != NULL)
+			if(pGethois != nullptr)
 				pGethois->AddEncounterCreature(_unit);
 		};
 
@@ -3554,7 +3554,7 @@ class ZerevorAI : public MoonScriptCreatureAI
 			AddEmote(Event_OnTargetDied, "Shorel'aran.", Text_Yell, 11441);
 
 			pGethois = TO< GathiosAI* >(GetNearestCreature(CN_GATHIOS_THE_SHATTERER));
-			if(pGethois != NULL)
+			if(pGethois != nullptr)
 				pGethois->AddEncounterCreature(_unit);
 		};
 
@@ -3592,13 +3592,13 @@ class MalandeAI : public MoonScriptCreatureAI
 			AddEmote(Event_OnTargetDied, "My work is done.", Text_Yell, 11483);
 
 			pGethois = TO< GathiosAI* >(GetNearestCreature(CN_GATHIOS_THE_SHATTERER));
-			if(pGethois != NULL)
+			if(pGethois != nullptr)
 				pGethois->AddEncounterCreature(_unit);
 		};
 
 		void OnDamageTaken(Unit* mAttacker, uint32 fAmount)
 		{
-			if(pGethois != NULL)
+			if(pGethois != nullptr)
 				pGethois->DealDamageToFriends(fAmount, _unit->GetEntry());
 		};
 
@@ -3671,7 +3671,7 @@ class TeronGorefiendAI : public CreatureAIScript
 			for(int i = 0; i < 4; i++)
 				spells[i].casttime = 0;
 
-			uint32 t = (uint32)time(NULL);
+			uint32 t = (uint32)time(nullptr);
 			spells[2].casttime = t + spells[2].cooldown;
 			spells[3].casttime = t + 10;
 
@@ -3715,7 +3715,7 @@ class TeronGorefiendAI : public CreatureAIScript
 
 		void AIUpdate()
 		{
-			uint32 t = (uint32)time(NULL);
+			uint32 t = (uint32)time(nullptr);
 			if(t > spells[2].casttime)
 			{
 				_unit->setAttackTimer(spells[2].attackstoptimer, false);
@@ -3740,10 +3740,10 @@ class TeronGorefiendAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -3773,7 +3773,7 @@ class TeronGorefiendAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime)
 					{
 						_unit->setAttackTimer(spells[i].attackstoptimer, false);
@@ -3790,7 +3790,7 @@ class TeronGorefiendAI : public CreatureAIScript
 			if(!maxdist2cast) maxdist2cast = 100.0f;
 			if(!maxhp2cast) maxhp2cast = 100;
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				std::vector<Unit*> TargetTable;		/* From M4ksiu - Big THX to Capt who helped me with std stuff to make it simple and fully working <3 */
 				/* If anyone wants to use this function, then leave this note!										 */
@@ -3798,7 +3798,7 @@ class TeronGorefiendAI : public CreatureAIScript
 				{
 					if(((spells[i].targettype == TARGET_RANDOM_FRIEND && isFriendly(_unit, (*itr))) || (spells[i].targettype != TARGET_RANDOM_FRIEND && isHostile(_unit, (*itr)) && (*itr) != _unit)) && (*itr)->IsUnit())  // isAttackable(_unit, (*itr)) &&
 					{
-						Unit* RandomTarget = NULL;
+						Unit* RandomTarget = nullptr;
 						RandomTarget = TO_UNIT(*itr);
 
 						if(RandomTarget->isAlive() && _unit->GetDistance2dSq(RandomTarget) >= mindist2cast * mindist2cast && _unit->GetDistance2dSq(RandomTarget) <= maxdist2cast * maxdist2cast && ((RandomTarget->GetHealthPct() >= minhp2cast && RandomTarget->GetHealthPct() <= maxhp2cast && spells[i].targettype == TARGET_RANDOM_FRIEND) || (_unit->GetAIInterface()->getThreatByPtr(RandomTarget) > 0 && isHostile(_unit, RandomTarget))))
@@ -3908,7 +3908,7 @@ class ShadeofakamaAI : public CreatureAIScript
 
 		void OnDied(Unit* mKiller)
 		{
-			Creature* cre = NULL;
+			Creature* cre = nullptr;
 			_unit->SendChatMessage(CHAT_MSG_MONSTER_YELL, LANG_UNIVERSAL, "I don't want to go back!");
 			_unit->PlaySoundToSet(11420);
 			cre = _unit->GetMapMgr()->GetInterface()->SpawnCreature(22990,
@@ -3923,7 +3923,7 @@ class ShadeofakamaAI : public CreatureAIScript
 		{
 			if(_unit->GetHealthPct() <= 85 && hm == 100)
 			{
-				Creature* cre = NULL;
+				Creature* cre = nullptr;
 				for(int i = 0; i < 2; i++)
 				{
 					cre = _unit->GetMapMgr()->GetInterface()->SpawnCreature(23421,
@@ -3939,7 +3939,7 @@ class ShadeofakamaAI : public CreatureAIScript
 			}
 			else if(_unit->GetHealthPct() <= 70 && hm == 85)
 			{
-				Creature* cre = NULL;
+				Creature* cre = nullptr;
 				for(int i = 0; i < 2; i++)
 				{
 					cre = _unit->GetMapMgr()->GetInterface()->SpawnCreature(23215,
@@ -3955,7 +3955,7 @@ class ShadeofakamaAI : public CreatureAIScript
 			}
 			else if(_unit->GetHealthPct() <= 55 && hm == 70)
 			{
-				Creature* cre = NULL;
+				Creature* cre = nullptr;
 				for(int i = 0; i < 2; i++)
 				{
 					cre = _unit->GetMapMgr()->GetInterface()->SpawnCreature(23216,
@@ -3971,7 +3971,7 @@ class ShadeofakamaAI : public CreatureAIScript
 			}
 			else if(_unit->GetHealthPct() <= 40 && hm == 55)
 			{
-				Creature* cre = NULL;
+				Creature* cre = nullptr;
 				for(int i = 0; i < 2; i++)
 				{
 					cre = _unit->GetMapMgr()->GetInterface()->SpawnCreature(23523,
@@ -3987,7 +3987,7 @@ class ShadeofakamaAI : public CreatureAIScript
 			}
 			else if(_unit->GetHealthPct() <= 25 && hm == 40)
 			{
-				Creature* cre = NULL;
+				Creature* cre = nullptr;
 				for(int i = 0; i < 5; i++)
 				{
 					cre = _unit->GetMapMgr()->GetInterface()->SpawnCreature(23318,
@@ -4003,7 +4003,7 @@ class ShadeofakamaAI : public CreatureAIScript
 			}
 			else if(_unit->GetHealthPct() <= 10 && hm == 25)
 			{
-				Creature* cre = NULL;
+				Creature* cre = nullptr;
 				for(int i = 0; i < 5; i++)
 				{
 					cre = _unit->GetMapMgr()->GetInterface()->SpawnCreature(23524,
@@ -4026,10 +4026,10 @@ class ShadeofakamaAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -4506,7 +4506,7 @@ public:
 			_unit->m_noRespawn = true;
 
 			Unit* pTarget = GetBestPlayerTarget();
-			if(pTarget != NULL)
+			if(pTarget != nullptr)
 			{
 				_unit->GetAIInterface()->AttackReaction(pTarget, 200000);
 				SetTargetToChannel(pTarget, SHADOW_DEMON_PURPLE_BEAM);
@@ -4522,7 +4522,7 @@ public:
 
 		void OnDied(Unit*  pKiller)
 		{
-			if(GetTargetToChannel() != NULL)
+			if(GetTargetToChannel() != nullptr)
 			{
 				Unit* pUnit = GetTargetToChannel();
 				pUnit->RemoveAura(SHADOW_DEMON_PARALYZE);
@@ -4541,7 +4541,7 @@ public:
 		{
 			// Ugly code :P
 			Unit* pTarget = _unit->GetAIInterface()->getNextTarget();
-			if(pTarget != NULL && GetTargetToChannel() != NULL && pTarget == GetTargetToChannel())
+			if(pTarget != nullptr && GetTargetToChannel() != nullptr && pTarget == GetTargetToChannel())
 			{
 				if(GetRangeToUnit(pTarget) <= 8.0f)
 				{
@@ -4589,7 +4589,7 @@ public:
 			SetScale(0.0f);
 
 			Unit* pTarget = GetBestPlayerTarget(TargetFilter_Closest);
-			if(pTarget != NULL)
+			if(pTarget != nullptr)
 			{
 				_unit->GetAIInterface()->SetUnitToFollow(pTarget);
 				_unit->GetAIInterface()->SetUnitToFollowAngle(2.0f);
@@ -4622,7 +4622,7 @@ public:
 				RemoveAIUpdateEvent();
 
 				Unit* pTarget = GetBestPlayerTarget();
-				if(pTarget != NULL)
+				if(pTarget != nullptr)
 				{
 					_unit->GetAIInterface()->setNextTarget(pTarget);
 					_unit->GetAIInterface()->AttackReaction(pTarget, 200);
@@ -4640,11 +4640,11 @@ public:
 
 void SpellFunc_Parasitic(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	ParasiticShadowfiendAI* Parasitic = (pCreatureAI != NULL) ? TO< ParasiticShadowfiendAI* >(pCreatureAI) : NULL;
-	if(Parasitic != NULL)
+	ParasiticShadowfiendAI* Parasitic = (pCreatureAI != nullptr) ? TO< ParasiticShadowfiendAI* >(pCreatureAI) : nullptr;
+	if(Parasitic != nullptr)
 	{
 		Parasitic->CastSpell(Parasitic->mParasiticDmg);
-		if(pTarget != NULL)						// not sure if target is really added here
+		if(pTarget != nullptr)						// not sure if target is really added here
 		{
 			// Workaround - we will spawn 2 Parasitic Shadowfiends on that player place
 			Parasitic->SpawnCreature(CN_PARASITIC_SHADOWFIEND, pTarget->GetPositionX(), pTarget->GetPositionY(), pTarget->GetPositionZ(), pTarget->GetOrientation(), false);
@@ -4663,7 +4663,7 @@ class SCRIPT_DECL AkamaGossip : public GossipScript
 		void GossipHello(Object* pObject, Player* pPlayer)
 		{
 			Creature* pAIOwner = TO_CREATURE(pObject);
-			if(pAIOwner->GetScript() == NULL)
+			if(pAIOwner->GetScript() == nullptr)
 				return;
 
 			MoonScriptCreatureAI* pAI = TO< MoonScriptCreatureAI* >(pAIOwner->GetScript());
@@ -4685,7 +4685,7 @@ class SCRIPT_DECL AkamaGossip : public GossipScript
 		void GossipSelectOption(Object* pObject, Player* pPlayer, uint32 Id, uint32 IntId, const char* EnteredCode)
 		{
 			Creature* pAIOwner = TO_CREATURE(pObject);
-			if(pAIOwner->GetScript() == NULL)
+			if(pAIOwner->GetScript() == nullptr)
 				return;
 
 			MoonScriptCreatureAI* pAI = TO< MoonScriptCreatureAI* >(pAIOwner->GetScript());
@@ -4752,8 +4752,8 @@ public:
 			_unit->SetUInt32Value(UNIT_NPC_FLAGS, 1);
 			_unit->SetDualWield(true);
 
-			mUdaloAI = mOlumAI = NULL;
-			mIllidanAI = NULL;
+			mUdaloAI = mOlumAI = nullptr;
+			mIllidanAI = nullptr;
 			mTimeLeft = mScenePart = 0;
 		}
 
@@ -4794,30 +4794,30 @@ public:
 
 		void ToIllidanEvent()
 		{
-			if(mScenePart > 6 && mScenePart < 15 && (mUdaloAI == NULL || mOlumAI == NULL))
+			if(mScenePart > 6 && mScenePart < 15 && (mUdaloAI == nullptr || mOlumAI == nullptr))
 			{
 				mScenePart = -1;
 			}
 
 			GameObject* pGate = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(774.7f, 304.6f, 314.85f, 185905);
 			Unit* pDoorTrigger = ForceCreatureFind(CN_DOOR_EVENT_TRIGGER, 771.5f, 304.7f, 319.0f);
-			if((mScenePart <= 15 && pGate == NULL) || mScenePart == -1)
+			if((mScenePart <= 15 && pGate == nullptr) || mScenePart == -1)
 			{
 				Emote("It's strange that Illidan doesn't protect himself against intruders.", Text_Say, 0);
-				SetTargetToChannel(NULL, 0);
+				SetTargetToChannel(nullptr, 0);
 				ForceWaypointMove(7);
 
-				if(mUdaloAI != NULL)
+				if(mUdaloAI != nullptr)
 				{
-					mUdaloAI->SetTargetToChannel(NULL, 0);
+					mUdaloAI->SetTargetToChannel(nullptr, 0);
 				}
-				if(mOlumAI != NULL)
+				if(mOlumAI != nullptr)
 				{
-					mOlumAI->SetTargetToChannel(NULL, 0);
+					mOlumAI->SetTargetToChannel(nullptr, 0);
 				}
 
 				RemoveAIUpdateEvent();
-				mUdaloAI = mOlumAI = NULL;
+				mUdaloAI = mOlumAI = nullptr;
 				mTimeLeft = DoorEventTimers[15];
 				mScenePart = 16;
 				return;
@@ -4837,14 +4837,14 @@ public:
 					_unit->Emote(EMOTE_ONESHOT_TALK);
 					break;
 				case 3:
-					if(pDoorTrigger != NULL)
+					if(pDoorTrigger != nullptr)
 					{
 						ApplyAura(AKAMA_DOOR_FAIL);
 						SetTargetToChannel(pDoorTrigger, AKAMA_DOOR_FAIL);
 					}
 					break;
 				case 4:
-					SetTargetToChannel(NULL, 0);
+					SetTargetToChannel(nullptr, 0);
 					break;
 				case 5:
 					Emote("I cannot do this alone...", Text_Say, 0);
@@ -4853,7 +4853,7 @@ public:
 				case 6:		// summoning two spirits to help Akama with breaking doors
 					mUdaloAI = SpawnCreature(23410, 751.884705f, 311.270050f, 312.121185f, 0.047113f);
 					mOlumAI  = SpawnCreature(23411, 751.687744f, 297.408600f, 312.124817f, 0.054958f);
-					if(mUdaloAI == NULL || mOlumAI == NULL)
+					if(mUdaloAI == nullptr || mOlumAI == nullptr)
 					{
 						pGate->SetState(0);
 						break;
@@ -4866,14 +4866,14 @@ public:
 					mOlumAI->Emote("Your people will always be with you.", Text_Say, 0);
 					break;
 				case 9:
-					if(pDoorTrigger != NULL)
+					if(pDoorTrigger != nullptr)
 					{
 						ApplyAura(AKAMA_DOOR_OPEN);
 						SetTargetToChannel(pDoorTrigger, AKAMA_DOOR_OPEN);
 					}
 					break;
 				case 10:
-					if(pDoorTrigger != NULL)
+					if(pDoorTrigger != nullptr)
 					{
 						mUdaloAI->ApplyAura(DEATHSWORN_DOOR_OPEN);
 						mUdaloAI->SetTargetToChannel(pDoorTrigger, DEATHSWORN_DOOR_OPEN);
@@ -4883,15 +4883,15 @@ public:
 					break;
 				case 11:
 					pGate->SetState(0);
-					if(pDoorTrigger != NULL)
+					if(pDoorTrigger != nullptr)
 					{
 						pDoorTrigger->CastSpell(pDoorTrigger, dbcSpell.LookupEntry(GATE_FAILURE), true);
 					}
 					break;
 				case 12:
-					SetTargetToChannel(NULL, 0);
-					mUdaloAI->SetTargetToChannel(NULL, 0);
-					mOlumAI->SetTargetToChannel(NULL, 0);
+					SetTargetToChannel(nullptr, 0);
+					mUdaloAI->SetTargetToChannel(nullptr, 0);
+					mOlumAI->SetTargetToChannel(nullptr, 0);
 					break;
 				case 13:
 					Emote("I thank you for your aid, my brothers. Our people will be redeemed!", Text_Say, 0);
@@ -4901,8 +4901,8 @@ public:
 					mUdaloAI->GetUnit()->Emote(EMOTE_ONESHOT_SALUTE);
 					mOlumAI->GetUnit()->Emote(EMOTE_ONESHOT_SALUTE);
 
-					mUdaloAI = NULL;
-					mOlumAI = NULL;
+					mUdaloAI = nullptr;
+					mOlumAI = nullptr;
 					break;
 				case 15:
 					ForceWaypointMove(7);
@@ -4927,16 +4927,16 @@ public:
 
 		void IllidanDialogEvent()
 		{
-			if(mIllidanAI == NULL)
+			if(mIllidanAI == nullptr)
 			{
 				Creature* pIllidan = TO_CREATURE(ForceCreatureFind(22917, 704.539001f, 305.282013f, 353.919006f));
-				if(pIllidan != NULL && pIllidan->GetScript() != NULL)
+				if(pIllidan != nullptr && pIllidan->GetScript() != nullptr)
 				{
 					mIllidanAI = TO< MoonScriptCreatureAI* >(pIllidan->GetScript());
 				}
 			}
 
-			if(mIllidanAI == NULL || !mIllidanAI->IsAlive())
+			if(mIllidanAI == nullptr || !mIllidanAI->IsAlive())
 			{
 				Emote("Not this time my friends.", Text_Say, 0);
 				CastSpellNowNoScheduling(mDespawn);
@@ -5002,11 +5002,11 @@ public:
 				case 15:
 					GameObject* pRightGate = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(745.07f, 241.802f, 354.292f, 200000);
 					GameObject* pLeftGate  = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(744.829f, 369.276f, 354.324f, 200001);
-					if(pRightGate != NULL)
+					if(pRightGate != nullptr)
 					{
 						pRightGate->SetState(1);
 					}
-					if(pLeftGate != NULL)
+					if(pLeftGate != nullptr)
 					{
 						pLeftGate->SetState(1);
 					}
@@ -5025,7 +5025,7 @@ public:
 					mIllidanAI->SetCanMove(true);
 
 					Unit* pTarget = FindClosestTargetToUnit(mIllidanAI->GetUnit());
-					if(pTarget == NULL)
+					if(pTarget == nullptr)
 					{
 						pTarget = _unit;
 					}
@@ -5062,13 +5062,13 @@ public:
 			{
 				CastSpellNowNoScheduling(mHealingPotion);
 			}
-			if(mIllidanAI != NULL && !mIllidanAI->IsAlive())
+			if(mIllidanAI != nullptr && !mIllidanAI->IsAlive())
 			{
-				mIllidanAI = NULL;
+				mIllidanAI = nullptr;
 			}
 			if(mScenePart <= 2)
 			{
-				if(mIllidanAI == NULL)
+				if(mIllidanAI == nullptr)
 				{
 					Emote("Not this time my friends.", Text_Say, 0);
 					if(!IsCasting())
@@ -5084,8 +5084,8 @@ public:
 					SetCanEnterCombat(false);
 					_unit->GetAIInterface()->SetAIState(STATE_IDLE);
 					// azolex to prevent compile error
-					uint32 nullfix = 0;
-					_unit->GetAIInterface()->setNextTarget(nullfix);
+					uint32 nullptrfix = 0;
+					_unit->GetAIInterface()->setNextTarget(nullptrfix);
 					_unit->GetAIInterface()->WipeTargetList();
 					_unit->GetAIInterface()->WipeHateList();
 					SetAllowMelee(false);
@@ -5098,7 +5098,7 @@ public:
 					ParentClass::AIUpdate();
 				}
 			}
-			if(mScenePart == 0 && mIllidanAI != NULL && mIllidanAI->GetHealthPercent() <= 85)
+			if(mScenePart == 0 && mIllidanAI != nullptr && mIllidanAI->GetHealthPercent() <= 85)
 			{
 				mTimeLeft = AkamaEscapeTimers[0];
 				mScenePart = 1;
@@ -5119,9 +5119,9 @@ public:
 						{
 							SetCanEnterCombat(false);
 							_unit->GetAIInterface()->SetAIState(STATE_IDLE);
-							// ugly code, trows compile error if left just null, this should do it ~ azolex
-							uint32 nullfix = 0;
-							_unit->GetAIInterface()->setNextTarget(nullfix);
+							// ugly code, trows compile error if left just nullptr, this should do it ~ azolex
+							uint32 nullptrfix = 0;
+							_unit->GetAIInterface()->setNextTarget(nullptrfix);
 							_unit->GetAIInterface()->WipeTargetList();
 							_unit->GetAIInterface()->WipeHateList();
 							SetAllowMelee(false);
@@ -5130,7 +5130,7 @@ public:
 							mIllidanAI->GetUnit()->GetAIInterface()->RemoveThreatByPtr(_unit);
 						}
 
-						mIllidanAI = NULL;
+						mIllidanAI = nullptr;
 						break;
 					case 3:
 						Emote("I will deal with these mongrels! Strike now, friends! Strike at the Betrayer!", Text_Yell, 11390);
@@ -5179,7 +5179,7 @@ public:
 						Emote("The Light will fill these dismal halls once again. I swear it.", Text_Yell, 11387);
 
 						Unit* pIllidan = ForceCreatureFind(22917);
-						if(pIllidan != NULL)
+						if(pIllidan != nullptr)
 						{
 							_unit->GetAIInterface()->setNextTarget(pIllidan);
 						}
@@ -5240,10 +5240,10 @@ public:
 		// A bit rewritten FindTarget function
 		Unit* FindClosestTargetToUnit(Unit* pSeeker)
 		{
-			if(pSeeker == NULL)
-				return NULL;
+			if(pSeeker == nullptr)
+				return nullptr;
 
-			Unit* pTarget = NULL;
+			Unit* pTarget = nullptr;
 			float distance = 70.0f;
 			float z_diff;
 
@@ -5322,7 +5322,7 @@ public:
 
 			mYellTimer = mScenePart = mTrapTimer = 0;
 			mSummonTrap = false;
-			mIllidanAI = NULL;
+			mIllidanAI = nullptr;
 		}
 
 		void OnCombatStart(Unit*  pTarget)
@@ -5340,7 +5340,7 @@ public:
 			SetBehavior(Behavior_Default);
 			//_unit->GetAIInterface()->SetAIState(STATE_IDLE);
 			SetWieldWeapon(false);
-			if(mIllidanAI != NULL)
+			if(mIllidanAI != nullptr)
 			{
 				SetPhase(3);
 				mScenePart = 1;
@@ -5379,7 +5379,7 @@ public:
 
 		void FightWithIllidan()
 		{
-			if(mIllidanAI == NULL)
+			if(mIllidanAI == nullptr)
 			{
 				CastSpellNowNoScheduling(mTeleport);
 				RemoveAIUpdateEvent();
@@ -5405,7 +5405,7 @@ public:
 				else if(IsTimerFinished(mTrapTimer))
 				{
 					Unit* pTarget = GetBestPlayerTarget();
-					if(pTarget != NULL)
+					if(pTarget != nullptr)
 					{
 						CastSpellNowNoScheduling(mTeleport);
 						_unit->SetPosition(pTarget->GetPositionX(), pTarget->GetPositionY(), pTarget->GetPositionZ(), pTarget->GetOrientation());		// does it really work?
@@ -5447,7 +5447,7 @@ public:
 
 		void FightWithDemon()
 		{
-			if(mIllidanAI == NULL)
+			if(mIllidanAI == nullptr)
 			{
 				CastSpellNowNoScheduling(mTeleport);
 				RemoveAIUpdateEvent();
@@ -5506,14 +5506,14 @@ public:
 
 		void DeathScene()
 		{
-			if(mIllidanAI == NULL && mScenePart <= 6)
+			if(mIllidanAI == nullptr && mScenePart <= 6)
 			{
 				CastSpellNowNoScheduling(mTeleport);
 				RemoveAIUpdateEvent();
 				Despawn(500, 0);
 				return;
 			}
-			if((mIllidanAI != NULL && mScenePart <= 6) || mScenePart > 6)
+			if((mIllidanAI != nullptr && mScenePart <= 6) || mScenePart > 6)
 			{
 				mTimeLeft -= mAIUpdateFrequency;
 				if(mTimeLeft > 0)
@@ -5525,7 +5525,7 @@ public:
 						Emote("Ah, it is finished. You are beaten.", Text_Yell, 11496);
 
 						mIllidanAI->GetUnit()->Emote(EMOTE_ONESHOT_CUSTOMSPELL06);
-						if(mIllidanAI->GetUnit()->GetCurrentSpell() != NULL)
+						if(mIllidanAI->GetUnit()->GetCurrentSpell() != nullptr)
 							mIllidanAI->GetUnit()->GetCurrentSpell()->cancel();
 						break;
 					case 2:
@@ -5542,11 +5542,11 @@ public:
 						{
 							GameObject* pRightGate = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(745.07f, 241.802f, 354.292f, 200000);
 							GameObject* pLeftGate  = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(744.829f, 369.276f, 354.324f, 200001);
-							if(pRightGate != NULL)
+							if(pRightGate != nullptr)
 							{
 								pRightGate->SetState(0);
 							}
-							if(pLeftGate != NULL)
+							if(pLeftGate != nullptr)
 							{
 								pLeftGate->SetState(0);
 							}
@@ -5563,7 +5563,7 @@ public:
 						{
 							Emote("Farewell, champions.", Text_Yell, 11498);
 							Creature* pAkama = TO_CREATURE(ForceCreatureFind(CN_AKAMA, ToIllidan[19].x, ToIllidan[19].y, ToIllidan[19].z));
-							if(pAkama != NULL)
+							if(pAkama != nullptr)
 							{
 								AkamaAI* pAkamaAI = TO< AkamaAI* >(pAkama->GetScript());
 								//pAkama->m_auracount[SPELL_AURA_MOD_INVISIBILITY] = true;						// Arc's
@@ -5753,7 +5753,7 @@ public:
 			_unit->SetEmoteState(0);
 			_unit->SetDualWield(true);
 
-			mFoA1 = mFoA2 = NULL;
+			mFoA1 = mFoA2 = nullptr;
 			mAllow = true;
 		}
 
@@ -5761,11 +5761,11 @@ public:
 		{
 			GameObject* pRightGate = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(745.07f, 241.802f, 354.292f, 200000);
 			GameObject* pLeftGate  = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(744.829f, 369.276f, 354.324f, 200001);
-			if(pRightGate != NULL)
+			if(pRightGate != nullptr)
 			{
 				pRightGate->SetState(1);
 			}
-			if(pLeftGate != NULL)
+			if(pLeftGate != nullptr)
 			{
 				pLeftGate->SetState(1);
 			}
@@ -5783,7 +5783,7 @@ public:
 			// General
 			_unit->SetEmoteState(0);
 			SetMoveType(Move_DontMoveWP);
-			SetTargetToChannel(NULL, 0);
+			SetTargetToChannel(nullptr, 0);
 			SetCanEnterCombat(true);
 			SetWieldWeapon(true);
 			SetAllowMelee(true);
@@ -5794,26 +5794,26 @@ public:
 			mAllow = true;
 
 			// Phase 2
-			if(mFoA1 != NULL)
+			if(mFoA1 != nullptr)
 			{
 				mFoA1->Despawn(0);
-				mFoA1 = NULL;
+				mFoA1 = nullptr;
 			}
-			if(mFoA2 != NULL)
+			if(mFoA2 != nullptr)
 			{
 				mFoA2->Despawn(0);
-				mFoA2 = NULL;
+				mFoA2 = nullptr;
 			}
 
 			Creature* pTrigger = TO_CREATURE(ForceCreatureFind(CN_FACE_TRIGGER, 677.399963f, 305.545044f, 353.192169f));
-			if(pTrigger != NULL)
+			if(pTrigger != nullptr)
 			{
 				pTrigger->Despawn(0, 0);
 			}
 			for(int i = 0; i < 2; ++i)
 			{
 				Creature* pBlade = TO_CREATURE(ForceCreatureFind(CN_BLADE_OF_AZZINOTH, UnitPos[i].x, UnitPos[i].y, UnitPos[i].z));
-				if(pBlade != NULL)
+				if(pBlade != nullptr)
 				{
 					pBlade->SetChannelSpellTargetGUID(0);
 					pBlade->SetChannelSpellId(0);
@@ -5829,17 +5829,17 @@ public:
 			{
 				GameObject* pRightGate = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(745.07f, 241.802f, 354.292f, 200000);
 				GameObject* pLeftGate  = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(744.829f, 369.276f, 354.324f, 200001);
-				if(pRightGate != NULL)
+				if(pRightGate != nullptr)
 				{
 					pRightGate->SetState(0);
 				}
-				if(pLeftGate != NULL)
+				if(pLeftGate != nullptr)
 				{
 					pLeftGate->SetState(0);
 				}
 
 				Creature* pMaiev = TO_CREATURE(ForceCreatureFind(CN_MAIEV));
-				if(pMaiev != NULL)
+				if(pMaiev != nullptr)
 				{
 					pMaiev->Despawn(0, 0);
 				}
@@ -5851,7 +5851,7 @@ public:
 		void OnDied(Unit*  pKiller)
 		{
 			Creature* pMaiev = TO_CREATURE(ForceCreatureFind(CN_MAIEV));
-			if(pMaiev != NULL && pMaiev->isAlive())
+			if(pMaiev != nullptr && pMaiev->isAlive())
 			{
 				_unit->SetHealth(1);
 				SetCanEnterCombat(false);
@@ -5867,11 +5867,11 @@ public:
 			{
 				GameObject* pRightGate = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(745.07f, 241.802f, 354.292f, 200000);
 				GameObject* pLeftGate  = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(744.829f, 369.276f, 354.324f, 200001);
-				if(pRightGate != NULL)
+				if(pRightGate != nullptr)
 				{
 					pRightGate->SetState(0);
 				}
-				if(pLeftGate != NULL)
+				if(pLeftGate != nullptr)
 				{
 					pLeftGate->SetState(0);
 				}
@@ -5888,13 +5888,13 @@ public:
 			{
 				Emote("ON HIT2!", Text_Yell, 0);
 				Unit* pTarget = _unit->GetAIInterface()->getNextTarget();
-				if(pTarget == NULL || !pTarget->IsPlayer())
+				if(pTarget == nullptr || !pTarget->IsPlayer())
 				{
 					pTarget = _unit->GetAIInterface()->GetSecondHated();
-					if(pTarget == NULL || !pTarget->IsPlayer())
+					if(pTarget == nullptr || !pTarget->IsPlayer())
 					{
 						pTarget = GetBestPlayerTarget(TargetFilter_Closest);
-						if(pTarget == NULL)
+						if(pTarget == nullptr)
 							return;
 					}
 				}
@@ -5910,11 +5910,11 @@ public:
 			if(mAttacker->IsCreature() && (mAttacker->GetEntry() == CN_MAIEV || mAttacker->GetEntry() == CN_AKAMA))
 			{
 				Unit* pTarget = _unit->GetAIInterface()->getNextTarget();
-				if(pTarget == NULL || !pTarget->IsPlayer())
+				if(pTarget == nullptr || !pTarget->IsPlayer())
 				{
 					pTarget = _unit->GetAIInterface()->GetSecondHated();
 				}
-				if(pTarget != NULL && pTarget->IsPlayer())
+				if(pTarget != nullptr && pTarget->IsPlayer())
 				{
 					_unit->GetAIInterface()->setNextTarget(pTarget);
 					_unit->GetAIInterface()->modThreatByPtr(pTarget, fAmount * 3);
@@ -5974,7 +5974,7 @@ public:
 			if(_unit->GetAIInterface()->Flying())
 			{
 				MoonScriptCreatureAI* pAI = SpawnCreature(CN_FACE_TRIGGER, 677.399963f, 305.545044f, 353.192169f, false);
-				if(pAI != NULL)
+				if(pAI != nullptr)
 				{
 					pAI->GetUnit()->m_noRespawn = true;
 
@@ -5993,16 +5993,16 @@ public:
 			else if(GetHealthPercent() <= 65 && !IsCasting())
 			{
 				Creature* pAkama = TO_CREATURE(ForceCreatureFind(CN_AKAMA));
-				if(pAkama != NULL && pAkama->GetScript() != NULL)
+				if(pAkama != nullptr && pAkama->GetScript() != nullptr)
 				{
 					AkamaAI* pAkamaAI = TO< AkamaAI* >(pAkama->GetScript());
 					if(pAkamaAI->mScenePart <= 2 && pAkamaAI->GetCanEnterCombat())
 					{
 						pAkamaAI->SetCanEnterCombat(false);
 						pAkamaAI->GetUnit()->GetAIInterface()->SetAIState(STATE_IDLE);
-						// ugly code, trows compile error if left just null, this should do it ~ azolex
-						uint32 nullfix = 0;
-						pAkamaAI->GetUnit()->GetAIInterface()->setNextTarget(nullfix);
+						// ugly code, trows compile error if left just nullptr, this should do it ~ azolex
+						uint32 nullptrfix = 0;
+						pAkamaAI->GetUnit()->GetAIInterface()->setNextTarget(nullptrfix);
 						pAkamaAI->GetUnit()->GetAIInterface()->WipeTargetList();
 						pAkamaAI->GetUnit()->GetAIInterface()->WipeHateList();
 						pAkamaAI->SetAllowMelee(false);
@@ -6046,7 +6046,7 @@ public:
 						{
 							Emote("Behold the flames of Azzinoth!", Text_Yell, 11480);
 							SpellDesc* mGlaiveThrow = FindSpellById(ILLIDAN_THROW_GLAIVE2);
-							if(mGlaiveThrow != NULL)
+							if(mGlaiveThrow != nullptr)
 							{
 								CastSpellNowNoScheduling(mGlaiveThrow);
 							}
@@ -6063,7 +6063,7 @@ public:
 						for(int i = 0; i < 2; ++i)
 						{
 							Creature* pBlade = _unit->GetMapMgr()->GetInterface()->SpawnCreature(CN_BLADE_OF_AZZINOTH, UnitPos[i].x, UnitPos[i].y, UnitPos[i].z, UnitPos[i].o, true, false, 0, 0);
-							if(pBlade != NULL)
+							if(pBlade != nullptr)
 							{
 								pBlade->SetUInt64Value(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_SELECTABLE);
 								pBlade->m_noRespawn = true;
@@ -6073,19 +6073,19 @@ public:
 					case 3:
 						mFoA1 = SpawnCreature(22997, 672.039246f, 326.748322f, 354.206390f, 0.207343f);
 						mFoA2 = SpawnCreature(22997, 673.008667f, 283.813660f, 354.267548f, 6.203853f);
-						if(mFoA1 != NULL)
+						if(mFoA1 != nullptr)
 						{
 							Unit* pBlade = ForceCreatureFind(CN_BLADE_OF_AZZINOTH, UnitPos[0].x, UnitPos[0].y, UnitPos[0].z);
-							if(pBlade != NULL)
+							if(pBlade != nullptr)
 							{
 								pBlade->SetChannelSpellTargetGUID(mFoA1->GetUnit()->GetGUID());
 								pBlade->SetChannelSpellId(TEAR_OF_AZZINOTH_CHANNEL);
 							}
 						}
-						if(mFoA2 != NULL)
+						if(mFoA2 != nullptr)
 						{
 							Unit* pBlade = _unit->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(UnitPos[1].x, UnitPos[1].y, UnitPos[1].z, CN_BLADE_OF_AZZINOTH);
-							if(pBlade != NULL)
+							if(pBlade != nullptr)
 							{
 								pBlade->SetChannelSpellTargetGUID(mFoA2->GetUnit()->GetGUID());
 								pBlade->SetChannelSpellId(TEAR_OF_AZZINOTH_CHANNEL);
@@ -6107,7 +6107,7 @@ public:
 						for(int i = 0 ; i < 2; ++i)
 						{
 							Creature* Blade = TO_CREATURE(ForceCreatureFind(CN_BLADE_OF_AZZINOTH, UnitPos[i].x, UnitPos[i].y, UnitPos[i].z));
-							if(Blade != NULL)
+							if(Blade != nullptr)
 							{
 								Blade->Despawn(0, 0);
 							}
@@ -6116,7 +6116,7 @@ public:
 					case 6:
 						{
 							SpellDesc* mGlaiveReturns = FindSpellById(ILLIDAN_GLAIVE_RETURNS);
-							if(mGlaiveReturns != NULL)
+							if(mGlaiveReturns != nullptr)
 								CastSpellNowNoScheduling(mGlaiveReturns);
 
 							ApplyAura(ILLIDAN_RAKE);
@@ -6131,7 +6131,7 @@ public:
 					case 8:
 						{
 							Creature* pTrigger = TO_CREATURE(ForceCreatureFind(CN_FACE_TRIGGER, 677.399963f, 305.545044f, 353.192169f));
-							if(pTrigger != NULL)
+							if(pTrigger != nullptr)
 							{
 								pTrigger->Despawn(0, 0);
 							}
@@ -6165,42 +6165,42 @@ public:
 
 			mMovementTimer -= mAIUpdateFrequency;
 			mFireWallTimer -= mAIUpdateFrequency;
-			if(mFoA1 != NULL)
+			if(mFoA1 != nullptr)
 			{
 				if(!mFoA1->IsAlive())
 				{
 					Unit* pBlade = ForceCreatureFind(CN_BLADE_OF_AZZINOTH, UnitPos[0].x, UnitPos[0].y, UnitPos[0].z);
-					if(pBlade != NULL)
+					if(pBlade != nullptr)
 					{
 						pBlade->SetChannelSpellTargetGUID(0);
 						pBlade->SetChannelSpellId(0);
 					}
 
-					mFoA1 = NULL;
+					mFoA1 = nullptr;
 				}
 			}
-			if(mFoA2 != NULL)
+			if(mFoA2 != nullptr)
 			{
 				if(!mFoA2->IsAlive())
 				{
 					Unit* pBlade = ForceCreatureFind(CN_BLADE_OF_AZZINOTH, UnitPos[1].x, UnitPos[1].y, UnitPos[1].z);
-					if(pBlade != NULL)
+					if(pBlade != nullptr)
 					{
 						pBlade->SetChannelSpellTargetGUID(0);
 						pBlade->SetChannelSpellId(0);
 					}
 
-					mFoA2 = NULL;
+					mFoA2 = nullptr;
 				}
 			}
 			if(GetMoveType() != Move_WantedWP && !IsCasting())
 			{
 				if(_unit->GetChannelSpellId() == 0)
 				{
-					if(mFoA1 == NULL && mFoA2 == NULL)
+					if(mFoA1 == nullptr && mFoA2 == nullptr)
 					{
 						Unit* pTrigger = ForceCreatureFind(CN_FACE_TRIGGER, 677.399963f, 305.545044f, 353.192169f);
-						if(pTrigger != NULL)
+						if(pTrigger != nullptr)
 						{
 							_unit->GetAIInterface()->setNextTarget(pTrigger);
 						}
@@ -6246,7 +6246,7 @@ public:
 						}
 
 						Creature* pTrigger = _unit->GetMapMgr()->GetInterface()->SpawnCreature(CN_EYE_BEAM_TRIGGER, EyeBeamPaths[FireWall].x, EyeBeamPaths[FireWall].y, EyeBeamPaths[FireWall].z, EyeBeamPaths[FireWall].o, true, false, 0, 0);
-						if(pTrigger != NULL && pTrigger->GetScript() != NULL)
+						if(pTrigger != nullptr && pTrigger->GetScript() != nullptr)
 						{
 							Emote("Stare into the eyes of the Betrayer!", Text_Yell, 11481);
 							SetTargetToChannel(pTrigger, ILLIDAN_EYE_BLAST1);
@@ -6273,7 +6273,7 @@ public:
 					}
 					else if(mMiscEventPart == 2 && mFireWallTimer <= 0)
 					{
-						SetTargetToChannel(NULL, 0);
+						SetTargetToChannel(nullptr, 0);
 						RemoveAura(ILLIDAN_EYE_BLAST1);
 						_unit->GetAIInterface()->setNextTarget(GetBestPlayerTarget(TargetFilter_Closest));
 
@@ -6314,7 +6314,7 @@ public:
 				{
 					ClearHateList();
 					Unit* pTarget = GetBestPlayerTarget();
-					if(pTarget != NULL)
+					if(pTarget != nullptr)
 					{
 						_unit->GetAIInterface()->AttackReaction(pTarget, 5000);
 					}
@@ -6417,7 +6417,7 @@ public:
 			float newposy = _unit->GetPositionY() + ychange;
 
 			MoonScriptCreatureAI* pMaievAI = SpawnCreature(CN_MAIEV, newposx, newposy, _unit->GetPositionZ() + 0.5f, 2.177125f);
-			if(pMaievAI == NULL)
+			if(pMaievAI == nullptr)
 			{
 				UnstuckFromShadowPrison();
 				return false;
@@ -6445,11 +6445,11 @@ public:
 			if(mTimeLeft > 0)
 				return;
 
-			MaievAI* pMaievAI = NULL;
+			MaievAI* pMaievAI = nullptr;
 			if(mScenePart > 3)
 			{
 				Creature* pMaiev = TO_CREATURE(ForceCreatureFind(CN_MAIEV));
-				if(pMaiev != NULL && pMaiev->GetScript() != NULL)
+				if(pMaiev != nullptr && pMaiev->GetScript() != nullptr)
 				{
 					pMaievAI = TO< MaievAI* >(pMaiev->GetScript());
 				}
@@ -6656,7 +6656,7 @@ public:
 				mMiscEventPart = 1;
 				mTimeLeft = Descend[0].mTimer;
 			}
-			else if(_unit->GetAIInterface()->getNextTarget() != NULL)
+			else if(_unit->GetAIInterface()->getNextTarget() != nullptr)
 			{
 				Unit* pTarget = _unit->GetAIInterface()->getNextTarget();
 				if(GetRangeToUnit(pTarget) <= 80.0f)
@@ -6682,7 +6682,7 @@ public:
 							Unit* pUnit = TO< Unit* >(*itr);
 							MoonScriptCreatureAI* pAI = SpawnCreature(CN_FLAME_BURST, (*itr)->GetPositionX(), (*itr)->GetPositionY(), (*itr)->GetPositionZ(), 0, true);
 							_unit->CastSpell(pUnit, ILLIDAN_FLAME_BURST2, true);
-							if(pAI != NULL)
+							if(pAI != nullptr)
 							{
 								float Distance = GetRangeToUnit(pUnit);
 								if(Distance == 0.0f)
@@ -6755,7 +6755,7 @@ public:
 					mParasiticTimer = 30000;
 					return;
 				}
-				if(mYellTimer <= 0 && _unit->GetAIInterface()->getNextTarget() != NULL)
+				if(mYellTimer <= 0 && _unit->GetAIInterface()->getNextTarget() != nullptr)
 				{
 					Unit* pTarget = _unit->GetAIInterface()->getNextTarget();
 					if(pTarget->IsCreature() && pTarget->GetEntry() == CN_MAIEV)
@@ -6776,10 +6776,10 @@ public:
 			{
 				ClearHateList();
 				Unit* pTarget = _unit->GetAIInterface()->getNextTarget();
-				if(pTarget != NULL && (!pTarget->IsCreature() || pTarget->GetEntry() != CN_FACE_TRIGGER))
+				if(pTarget != nullptr && (!pTarget->IsCreature() || pTarget->GetEntry() != CN_FACE_TRIGGER))
 				{
 					Creature* pTrigger = TO_CREATURE(ForceCreatureFind(CN_FACE_TRIGGER, 677.399963f, 305.545044f, 353.192169f));
-					if(pTrigger != NULL)
+					if(pTrigger != nullptr)
 					{
 						_unit->GetAIInterface()->setNextTarget(pTrigger);
 					}
@@ -6795,35 +6795,35 @@ public:
 		void Destroy()
 		{
 			Creature* pAkama = TO_CREATURE(ForceCreatureFind(CN_AKAMA));
-			if(pAkama != NULL && pAkama->GetScript() != NULL)
+			if(pAkama != nullptr && pAkama->GetScript() != nullptr)
 			{
 				AkamaAI* pAI = TO< AkamaAI* >(pAkama->GetScript());
-				if(pAI != NULL)
+				if(pAI != nullptr)
 				{
 					if(pAI->mIllidanAI == this)
-						pAI->mIllidanAI = NULL;
+						pAI->mIllidanAI = nullptr;
 				}
 			}
 
 			Creature* pMaiev = TO_CREATURE(ForceCreatureFind(CN_MAIEV));
-			if(pMaiev != NULL && pMaiev->GetScript() != NULL)
+			if(pMaiev != nullptr && pMaiev->GetScript() != nullptr)
 			{
 				MaievAI* pAI = TO< MaievAI* >(pMaiev->GetScript());
-				if(pAI != NULL)
+				if(pAI != nullptr)
 				{
 					if(pAI->mIllidanAI == this)
-						pAI->mIllidanAI = NULL;
+						pAI->mIllidanAI = nullptr;
 				}
 			}
 
-			// commented - due to the creature not being in world when this is called, mapmgr == null -> access violation
+			// commented - due to the creature not being in world when this is called, mapmgr == nullptr -> access violation
 			/*		GameObject* pRightGate = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(745.07f, 241.802f, 354.292f, 200000);
 					GameObject* pLeftGate  = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(744.829f, 369.276f, 354.324f, 200001);
-					if (pRightGate != NULL)
+					if (pRightGate != nullptr)
 					{
 						pRightGate->SetState(0);
 					}
-					if (pLeftGate != NULL)
+					if (pLeftGate != nullptr)
 					{
 						pLeftGate->SetState(0);
 					}*/
@@ -6875,11 +6875,11 @@ public:
 
 void SpellFunc_Illidan_Parasitic(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	IllidanStormrageAI* Illidan = (pCreatureAI != NULL) ? TO< IllidanStormrageAI* >(pCreatureAI) : NULL;
-	if(Illidan != NULL)
+	IllidanStormrageAI* Illidan = (pCreatureAI != nullptr) ? TO< IllidanStormrageAI* >(pCreatureAI) : nullptr;
+	if(Illidan != nullptr)
 	{
 		Illidan->CastSpell(Illidan->mParasiticDmg);
-		if(pTarget != NULL)						// not sure if target is really added here
+		if(pTarget != nullptr)						// not sure if target is really added here
 		{
 			// Workaround - we will spawn 2 Parasitic Shadowfiends on that player place
 			Illidan->SpawnCreature(CN_PARASITIC_SHADOWFIEND, pTarget->GetPositionX(), pTarget->GetPositionY(), pTarget->GetPositionZ(), pTarget->GetOrientation(), false);
@@ -6940,13 +6940,13 @@ public:
 		void AIUpdate()
 		{
 			Unit* pIllidan = ForceCreatureFind(22917);
-			if(pIllidan != NULL)
+			if(pIllidan != nullptr)
 			{
 				IllidanStormrageAI* pAI = TO< IllidanStormrageAI* >(TO_CREATURE(pIllidan)->GetScript());
 				if(pAI->mMiscEventPart != 0 && mTriggerAIList.size() == 0)
 				{
 					GameObject* pGameObject = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(_unit->GetPositionX(), _unit->GetPositionY(), _unit->GetPositionZ(), GO_CAGE_TRAP);
-					if(pGameObject != NULL)
+					if(pGameObject != nullptr)
 					{
 						pGameObject->Despawn(0, 0);
 					}
@@ -6963,7 +6963,7 @@ public:
 					for(int i = 0; i < 8; ++i)
 					{
 						MoonScriptCreatureAI* pTriggerAI = SpawnCreature(CN_CAGE_TRAP_TRIGGER, _unit->GetPositionX() + PositionAdds[i][0], _unit->GetPositionY() + PositionAdds[i][1], _unit->GetPositionZ(), _unit->GetOrientation());
-						if(pTriggerAI != NULL)
+						if(pTriggerAI != nullptr)
 						{
 							pTriggerAI->GetUnit()->SetUInt64Value(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_SELECTABLE);
 							pTriggerAI->GetUnit()->GetAIInterface()->m_canMove = false;
@@ -7000,7 +7000,7 @@ public:
 				else if(mHasTrapped || !pIllidan->isAlive())
 				{
 					GameObject* pGameObject = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(_unit->GetPositionX(), _unit->GetPositionY(), _unit->GetPositionZ(), GO_CAGE_TRAP);
-					if(pGameObject != NULL)
+					if(pGameObject != nullptr)
 					{
 						pGameObject->Despawn(0, 0);
 					}
@@ -7023,7 +7023,7 @@ public:
 					for(size_t i = 0; i < mTriggerAIList.size(); ++i)
 					{
 						MoonScriptCreatureAI* pTriggerAI = mTriggerAIList[i];
-						pTriggerAI->SetTargetToChannel(NULL, 0);
+						pTriggerAI->SetTargetToChannel(nullptr, 0);
 						pTriggerAI->Despawn(0);
 					}
 
@@ -7036,7 +7036,7 @@ public:
 			else
 			{
 				GameObject* pGameObject = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(_unit->GetPositionX(), _unit->GetPositionY(), _unit->GetPositionZ(), GO_CAGE_TRAP);
-				if(pGameObject != NULL)
+				if(pGameObject != nullptr)
 				{
 					pGameObject->Despawn(0, 0);
 				}
@@ -7072,7 +7072,7 @@ class CageTrapGO : public GameObjectAIScript
 		{
 			_gameobject->SetUInt32Value(GAMEOBJECT_FLAGS, 1);
 			Creature* pTrigger = _gameobject->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(_gameobject->GetPositionX(), _gameobject->GetPositionY(), _gameobject->GetPositionZ(), CN_CAGE_TRAP_DISTURB_TRIGGER);
-			if(pTrigger != NULL && pTrigger->GetScript() != NULL)
+			if(pTrigger != nullptr && pTrigger->GetScript() != nullptr)
 			{
 				CageTrapTriggerAI* pTriggerAI = TO< CageTrapTriggerAI* >(pTrigger->GetScript());
 				pTriggerAI->mIsActivated = true;
@@ -7100,15 +7100,15 @@ public:
 		void Destroy()
 		{
 			Creature* pAkama = TO_CREATURE(ForceCreatureFind(22990));
-			if(pAkama != NULL && pAkama->GetScript() != NULL)
+			if(pAkama != nullptr && pAkama->GetScript() != nullptr)
 			{
 				AkamaAI* pAI = TO< AkamaAI* >(pAkama->GetScript());
-				if(pAI != NULL)
+				if(pAI != nullptr)
 				{
 					if(pAI->mUdaloAI == this)
-						pAI->mUdaloAI = NULL;
+						pAI->mUdaloAI = nullptr;
 					else if(pAI->mOlumAI == this)
-						pAI->mOlumAI = NULL;
+						pAI->mOlumAI = nullptr;
 				}
 			}
 
@@ -7143,7 +7143,7 @@ public:
 			_unit->m_noRespawn = true;
 
 			Unit* pTarget = GetBestPlayerTarget(TargetFilter_Closest);
-			if(pTarget != NULL)
+			if(pTarget != nullptr)
 			{
 				_unit->GetAIInterface()->AttackReaction(pTarget, 200);
 				OnCombatStart(pTarget);
@@ -7161,7 +7161,7 @@ public:
 			// Uh... so ugly, but that's what Wiki says
 			Unit* pBlade1 = ForceCreatureFind(22996, UnitPos[0].x, UnitPos[0].y, UnitPos[0].z);
 			Unit* pBlade2 = ForceCreatureFind(22996, UnitPos[1].x, UnitPos[1].y, UnitPos[1].z);
-			if(pBlade1 != NULL && pBlade2 != NULL && mChargeSpellFunc->mLastCastTime + mChargeSpellFunc->mCooldown <= (uint32)time(NULL))
+			if(pBlade1 != nullptr && pBlade2 != nullptr && mChargeSpellFunc->mLastCastTime + mChargeSpellFunc->mCooldown <= (uint32)time(nullptr))
 			{
 				for(set< Object* >::iterator itr = _unit->GetInRangePlayerSetBegin(); itr != _unit->GetInRangePlayerSetEnd(); ++itr)
 				{
@@ -7184,15 +7184,15 @@ public:
 		void Destroy()
 		{
 			Creature* pIllidan = TO_CREATURE(ForceCreatureFind(22917));
-			if(pIllidan != NULL && pIllidan->GetScript() != NULL)
+			if(pIllidan != nullptr && pIllidan->GetScript() != nullptr)
 			{
 				IllidanStormrageAI* pAI = TO< IllidanStormrageAI* >(pIllidan->GetScript());
-				if(pAI != NULL)
+				if(pAI != nullptr)
 				{
 					if(pAI->mFoA1 == this)
-						pAI->mFoA1 = NULL;
+						pAI->mFoA1 = nullptr;
 					else if(pAI->mFoA2 == this)
-						pAI->mFoA2 = NULL;
+						pAI->mFoA2 = nullptr;
 				}
 			}
 
@@ -7211,7 +7211,7 @@ public:
 
 void SpellFunc_FlameOfAzzinothFlameBlast(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	FlameOfAzzinothAI* FlameOfAzzinoth = (pCreatureAI) ? TO< FlameOfAzzinothAI* >(pCreatureAI) : NULL;
+	FlameOfAzzinothAI* FlameOfAzzinoth = (pCreatureAI) ? TO< FlameOfAzzinothAI* >(pCreatureAI) : nullptr;
 	if(FlameOfAzzinoth)
 	{
 		FlameOfAzzinoth->CastSpell(FlameOfAzzinoth->mFlameBlast);
@@ -7221,7 +7221,7 @@ void SpellFunc_FlameOfAzzinothFlameBlast(SpellDesc* pThis, MoonScriptCreatureAI*
 
 void SpellFunc_FlameOfAzzinothCharge(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	FlameOfAzzinothAI* FlameOfAzzinoth = (pCreatureAI) ? TO< FlameOfAzzinothAI* >(pCreatureAI) : NULL;
+	FlameOfAzzinothAI* FlameOfAzzinoth = (pCreatureAI) ? TO< FlameOfAzzinothAI* >(pCreatureAI) : nullptr;
 	if(FlameOfAzzinoth)
 	{
 		FlameOfAzzinoth->CastSpell(FlameOfAzzinoth->mCharge);

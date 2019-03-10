@@ -79,10 +79,10 @@ class AVIANDARKHAWKAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -177,10 +177,10 @@ class AVIANRIPPERAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -288,10 +288,10 @@ class AVIANWARHAWKAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -400,10 +400,10 @@ class COBALTSERPENTAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -504,10 +504,10 @@ class TIMELOSTCONTROLLERAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -608,10 +608,10 @@ class TIMELOSTSCRYERAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -706,10 +706,10 @@ class TIMELOSTSHADOWMAGEAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -810,10 +810,10 @@ class SETHEKKGUARDAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -907,10 +907,10 @@ class SETHEKKINITIATEAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -1011,10 +1011,10 @@ class SETHEKKORACLEAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -1115,10 +1115,10 @@ class SETHEKKPROPHETAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -1219,10 +1219,10 @@ class SETHEKKRAVENGUARDAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -1316,10 +1316,10 @@ class SETHEKKSHAMANAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -1420,10 +1420,10 @@ class SETHEKKTALONLORDAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -1499,17 +1499,17 @@ class LakkaAI : public MoonScriptCreatureAI
 					{
 						SetMoveType(Move_WantedWP);
 						SetWaypointToMove(2);
-						Player* pPlayer	= NULL;
-						QuestLogEntry* pQuest	= NULL;
+						Player* pPlayer	= nullptr;
+						QuestLogEntry* pQuest	= nullptr;
 						for(set<Object*>::iterator itr = _unit->GetInRangeSetBegin(); itr != _unit->GetInRangeSetEnd(); ++itr)
 						{
 							if((*itr)->IsPlayer())
 							{
 								pPlayer = TO_PLAYER((*itr));
-								if(pPlayer != NULL)
+								if(pPlayer != nullptr)
 								{
 									pQuest = pPlayer->GetQuestLogForEntry(10097);
-									if(pQuest != NULL && pQuest->GetMobCount(1) < 1)
+									if(pQuest != nullptr && pQuest->GetMobCount(1) < 1)
 									{
 										pQuest->SetMobCount(1, 1);
 										pQuest->SendUpdateAddKill(1);
@@ -1703,13 +1703,13 @@ class DARKWEAVERSYTHAI : public CreatureAIScript
 			GameObject* LakkasCage = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(-160.813f, 157.043f, 0.194095f, 183051);
 			Creature* mLakka = _unit->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(-160.813f, 157.043f, 0.194095f, 18956);
 
-			if(LakkasCage != NULL)
+			if(LakkasCage != nullptr)
 			{
 				LakkasCage->SetState(0);
 				LakkasCage->SetUInt32Value(GAMEOBJECT_FLAGS, LakkasCage->GetUInt32Value(GAMEOBJECT_FLAGS) - 1);
 			}
 
-			if(mLakka != NULL && mLakka->GetScript())
+			if(mLakka != nullptr && mLakka->GetScript())
 			{
 				MoonScriptCreatureAI* pLakkaAI = TO< MoonScriptCreatureAI* >(mLakka->GetScript());
 				mLakka->GetAIInterface()->SetAIState(STATE_SCRIPTMOVE);
@@ -1723,7 +1723,7 @@ class DARKWEAVERSYTHAI : public CreatureAIScript
 
 		void AIUpdate()
 		{
-			uint32 t = (uint32)time(NULL);
+			uint32 t = (uint32)time(nullptr);
 			if(t > spells[4].casttime && ((_unit->GetHealthPct() <= 75 && Summons == 0) || (_unit->GetHealthPct() <= 50 && Summons == 1) || (_unit->GetHealthPct() <= 25 && Summons == 2)))
 			{
 				_unit->setAttackTimer(1500, false);
@@ -1756,10 +1756,10 @@ class DARKWEAVERSYTHAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -1788,7 +1788,7 @@ class DARKWEAVERSYTHAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime)
 					{
 						_unit->setAttackTimer(spells[i].attackstoptimer, false);
@@ -1868,10 +1868,10 @@ class TALONKINGIKISSAI : public CreatureAIScript
 		{
 			for(int i = 0; i < nrspells; i++)
 				spells[i].casttime = 0;
-			uint32 t = (uint32)time(NULL);
+			uint32 t = (uint32)time(nullptr);
 			spells[1].casttime = t + RandomUInt(5) + 10;
 
-			if(_unit->GetCurrentSpell() == NULL)
+			if(_unit->GetCurrentSpell() == nullptr)
 			{
 				_unit->GetAIInterface()->StopMovement(1);
 				_unit->setAttackTimer(3000, false);
@@ -1935,7 +1935,7 @@ class TALONKINGIKISSAI : public CreatureAIScript
 			_unit->PlaySoundToSet(10560);
 
 			GameObject* IkissDoor = _unit->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(43.079f, 149.505f, 0.034f, 183398);
-			if(IkissDoor != NULL)
+			if(IkissDoor != nullptr)
 				IkissDoor->SetState(0);
 
 			RemoveAIUpdateEvent();
@@ -1963,10 +1963,10 @@ class TALONKINGIKISSAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -2005,7 +2005,7 @@ class TALONKINGIKISSAI : public CreatureAIScript
 						return;
 					}
 
-					uint32 t = (uint32)time(NULL);
+					uint32 t = (uint32)time(nullptr);
 					if(val > comulativeperc && val <= (comulativeperc + spells[i].perctrigger) && t > spells[i].casttime)
 					{
 						_unit->setAttackTimer(spells[i].attackstoptimer, false);
@@ -2023,7 +2023,7 @@ class TALONKINGIKISSAI : public CreatureAIScript
 			if(!maxdist2cast) maxdist2cast = 100.0f;
 			if(!maxhp2cast) maxhp2cast = 100;
 
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				std::vector<Unit*> TargetTable;		/* From M4ksiu - Big THX to Capt who helped me with std stuff to make it simple and fully working <3 */
 				/* If anyone wants to use this function, then leave this note!										 */
@@ -2031,7 +2031,7 @@ class TALONKINGIKISSAI : public CreatureAIScript
 				{
 					if(((spells[i].targettype == TARGET_RANDOM_FRIEND && isFriendly(_unit, (*itr))) || (spells[i].targettype != TARGET_RANDOM_FRIEND && isHostile(_unit, (*itr)) && (*itr) != _unit)) && (*itr)->IsUnit())  // isAttackable(_unit, (*itr)) &&
 					{
-						Unit* RandomTarget = NULL;
+						Unit* RandomTarget = nullptr;
 						RandomTarget = TO_UNIT(*itr);
 
 						if(RandomTarget->isAlive() && _unit->GetDistance2dSq(RandomTarget) >= mindist2cast * mindist2cast && _unit->GetDistance2dSq(RandomTarget) <= maxdist2cast * maxdist2cast && ((RandomTarget->GetHealthPct() >= minhp2cast && RandomTarget->GetHealthPct() <= maxhp2cast && spells[i].targettype == TARGET_RANDOM_FRIEND) || (_unit->GetAIInterface()->getThreatByPtr(RandomTarget) > 0 && isHostile(_unit, RandomTarget))))
@@ -2077,7 +2077,7 @@ class TALONKINGIKISSAI : public CreatureAIScript
 			{
 				if(isHostile(_unit, (*itr)) && (*itr) != _unit && (*itr)->IsUnit())
 				{
-					Unit* RandomTarget = NULL;
+					Unit* RandomTarget = nullptr;
 					RandomTarget = TO_UNIT(*itr);
 					if(RandomTarget->isAlive() && _unit->GetDistance2dSq(RandomTarget) >= 0.0f && _unit->GetDistance2dSq(RandomTarget) <= 900.0f && _unit->GetAIInterface()->getThreatByPtr(RandomTarget) > 0)
 					{
@@ -2215,7 +2215,7 @@ class ANZUAI : public CreatureAIScript
 
 			if(Banished)
 			{
-				uint32 t = (uint32)time(NULL);
+				uint32 t = (uint32)time(nullptr);
 				if(t > spells[4].casttime)
 				{
 					_unit->RemoveAura(BANISH);
@@ -2229,7 +2229,7 @@ class ANZUAI : public CreatureAIScript
 					{
 						if((*itr) != _unit && (*itr)->IsCreature())
 						{
-							Creature* Check = NULL;
+							Creature* Check = nullptr;
 							Check = TO_CREATURE(*itr);
 
 							if(Check->GetEntry() != 23132)
@@ -2256,15 +2256,15 @@ class ANZUAI : public CreatureAIScript
 		{
 			_unit->CastSpell(_unit, spells[4].info, spells[4].instant);
 
-			spells[4].casttime = (uint32)time(NULL) + 60;
+			spells[4].casttime = (uint32)time(nullptr) + 60;
 
 			/*for (int i = 0; i < 15; i++)
 			{
-				Unit* Bird = NULL;
+				Unit* Bird = nullptr;
 				Bird = _unit->GetMapMgr()->GetInterface()->SpawnCreature(23132, _unit->GetPositionX(), _unit->GetPositionY(), _unit->GetPositionZ(), _unit->GetOrientation(), true, false, 0, 0);
 				if (Bird)
 				{
-					Unit* target = NULL;
+					Unit* target = nullptr;
 					target = FindTarget();
 					if (target)
 						_unit->GetAIInterface()->AttackReaction(target, 1, 0);
@@ -2276,10 +2276,10 @@ class ANZUAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -2324,7 +2324,7 @@ class ANZUAI : public CreatureAIScript
 		// A bit rewritten FindTarget function
 		Unit* FindTarget()
 		{
-			Unit* target = NULL;
+			Unit* target = nullptr;
 			float distance = 80.0f;
 			float z_diff;
 

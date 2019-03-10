@@ -60,7 +60,7 @@ class SCRIPT_DECL EasyFunctions
 		void WaypointCreate(Creature* pCreature , float x, float y, float z, float o, uint32 waittime, uint32 flags, uint32 modelid)
 		{
 			PrintMessage("Function call: WaypointCreate()");
-			ARCEMU_ASSERT(pCreature != NULL);
+			ARCEMU_ASSERT(pCreature != nullptr);
 
 			if(!pCreature->m_custom_waypoint_map)
 				pCreature->m_custom_waypoint_map = new WayPointMap;
@@ -88,7 +88,7 @@ class SCRIPT_DECL EasyFunctions
 		// makes the creatures AI to use the custom waypoints.
 		void EnableWaypoints(Creature* creat)
 		{
-			ARCEMU_ASSERT(creat != NULL);
+			ARCEMU_ASSERT(creat != nullptr);
 			if(!creat->m_custom_waypoint_map)
 				return;
 
@@ -99,16 +99,16 @@ class SCRIPT_DECL EasyFunctions
 		void DeleteWaypoints(Creature* creat)
 		{
 			PrintMessage("Function call: DeleteWaypoints()");
-			ARCEMU_ASSERT(creat != NULL);
+			ARCEMU_ASSERT(creat != nullptr);
 
-			if(creat->m_custom_waypoint_map == NULL)
+			if(creat->m_custom_waypoint_map == nullptr)
 				return;
 
 			WayPointMap::iterator i = creat->m_custom_waypoint_map->begin();
 
 			for(; i != creat->m_custom_waypoint_map->end(); ++i)
 			{
-				if((*i) != NULL)
+				if((*i) != nullptr)
 					delete(*i);
 			}
 
@@ -118,13 +118,13 @@ class SCRIPT_DECL EasyFunctions
 		Creature* SpawnCreature(Player* pThis, uint32 entry, float posX, float posY, float posZ, float posO, uint32 duration = 0, uint32 phase = 1)
 		{
 			PrintMessage("Function call: SpawnCreature()");
-			ARCEMU_ASSERT(pThis != NULL);
+			ARCEMU_ASSERT(pThis != nullptr);
 			ARCEMU_ASSERT(pThis->IsInWorld());
 
 			CreatureProto* p = CreatureProtoStorage.LookupEntry(entry);
 
-			if(p == NULL)
-				return NULL;
+			if(p == nullptr)
+				return nullptr;
 
 			Creature* pCreature = pThis->GetMapMgr()->CreateCreature(entry);
 			pCreature->m_spawn = 0;
@@ -140,7 +140,7 @@ class SCRIPT_DECL EasyFunctions
 		void DeleteSpawned(Creature* creat)
 		{
 			PrintMessage("Function call: DeleteSpawned()");
-			if(creat == NULL)
+			if(creat == nullptr)
 				return;
 
 			creat->DeleteMe();
@@ -153,12 +153,12 @@ class SCRIPT_DECL EasyFunctions
 		{
 			PrintMessage("Function call: SpawnCreatureExtended()");
 
-			if(pThis == NULL)
-				return NULL;
+			if(pThis == nullptr)
+				return nullptr;
 
 			CreatureProto* p = CreatureProtoStorage.LookupEntry(entry);
-			if(p == NULL)
-				return NULL;
+			if(p == nullptr)
+				return nullptr;
 
 			Creature* pCreature  = pThis->GetMapMgr()->CreateCreature(entry);
 			pCreature->m_spawn = 0;
@@ -178,7 +178,7 @@ class SCRIPT_DECL EasyFunctions
 		void GameobjectDelete(GameObject* pC, uint32 duration)
 		{
 			PrintMessage("Function call: GameobjectDelete()");
-			if(pC == NULL)
+			if(pC == nullptr)
 				return;
 
 			pC->Despawn(duration, 0);
@@ -187,12 +187,12 @@ class SCRIPT_DECL EasyFunctions
 		GameObject* SpawnGameobject(Player* plr, uint32 entry_id, float x, float y, float z, float o, float scale, float orientation1, float orientation2, float orientation3, float orientation4)
 		{
 			PrintMessage("Function call: SpawnGameobject()");
-			if(plr == NULL)
-				return NULL;
+			if(plr == nullptr)
+				return nullptr;
 
 			GameObjectInfo* goi = GameObjectNameStorage.LookupEntry(entry_id);
-			if(goi == NULL)
-				return NULL;
+			if(goi == nullptr)
+				return nullptr;
 
 			GameObject* pC = plr->GetMapMgr()->CreateGameObject(entry_id);
 			//pC->spawnid=0;
@@ -207,10 +207,10 @@ class SCRIPT_DECL EasyFunctions
 		void MoveToPlayer(Player* plr, Creature* creat)
 		{
 			PrintMessage("Function call: MoveToPlayer()");
-			if(plr == NULL)
+			if(plr == nullptr)
 				return;
 
-			if(creat == NULL)
+			if(creat == nullptr)
 				return;
 
 			creat->GetAIInterface()->MoveTo(plr->GetPositionX(), plr->GetPositionY(), plr->GetPositionZ(), plr->GetOrientation());
@@ -220,9 +220,9 @@ class SCRIPT_DECL EasyFunctions
 		void CreateCustomWaypointMap(Creature* creat)
 		{
 			PrintMessage("Function call: CreateCustomWaypointMap()");
-			ARCEMU_ASSERT(creat != NULL);
+			ARCEMU_ASSERT(creat != nullptr);
 
-			if(creat->m_custom_waypoint_map == NULL)
+			if(creat->m_custom_waypoint_map == nullptr)
 			{
 				creat->m_custom_waypoint_map = new WayPointMap;
 			}
@@ -235,26 +235,26 @@ class SCRIPT_DECL EasyFunctions
 		bool AddItem(uint32 pEntry, Player* pPlayer, uint32 pCount = 1)
 		{
 			PrintMessage("Function call: AddItem( %u )", pEntry);
-			if(pPlayer == NULL || pEntry == 0 || pCount == 0)
+			if(pPlayer == nullptr || pEntry == 0 || pCount == 0)
 				return false;
 
 			Item* ItemStack = pPlayer->GetItemInterface()->FindItemLessMax(pEntry, pCount, false);
-			if(ItemStack == NULL)
+			if(ItemStack == nullptr)
 			{
 				ItemPrototype* ItemProto = ItemPrototypeStorage.LookupEntry(pEntry);
-				if(ItemProto == NULL)
+				if(ItemProto == nullptr)
 					return false;
 
 				SlotResult Result = pPlayer->GetItemInterface()->FindFreeInventorySlot(ItemProto);
 				if(!Result.Result)
 				{
-					pPlayer->GetItemInterface()->BuildInventoryChangeError(NULL, NULL, INV_ERR_INVENTORY_FULL);
+					pPlayer->GetItemInterface()->BuildInventoryChangeError(nullptr, nullptr, INV_ERR_INVENTORY_FULL);
 					return false;
 				}
 				else
 				{
 					Item* NewItem = objmgr.CreateItem(pEntry, pPlayer);
-					if(NewItem == NULL)
+					if(NewItem == nullptr)
 						return false;
 
 					if(ItemProto->MaxCount < pCount)
@@ -263,7 +263,7 @@ class SCRIPT_DECL EasyFunctions
 					NewItem->SetStackCount(pCount);
 					if(pPlayer->GetItemInterface()->SafeAddItem(NewItem, Result.ContainerSlot, Result.Slot) == ADD_ITEM_RESULT_ERROR)
 					{
-						NewItem = NULL;
+						NewItem = nullptr;
 						return false;
 					};
 
@@ -311,15 +311,15 @@ class SCRIPT_DECL EasyFunctions
 
 		Creature* getNpcQuester(Player* plr, uint32 npcid)
 		{
-			if(plr == NULL || plr->GetMapMgr() == NULL || plr->GetMapMgr()->GetInterface() == NULL)
-				return NULL;
+			if(plr == nullptr || plr->GetMapMgr() == nullptr || plr->GetMapMgr()->GetInterface() == nullptr)
+				return nullptr;
 			return plr->GetMapMgr()->GetInterface()->GetCreatureNearestCoords(plr->GetPositionX(), plr->GetPositionY(), plr->GetPositionZ(), npcid);
 		}
 
 		GameObject* getGOQuester(Player* plr, uint32 goid)
 		{
-			if(plr == NULL || plr->GetMapMgr() == NULL || plr->GetMapMgr()->GetInterface() == NULL)
-				return NULL;
+			if(plr == nullptr || plr->GetMapMgr() == nullptr || plr->GetMapMgr()->GetInterface() == nullptr)
+				return nullptr;
 			return plr->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(plr->GetPositionX(), plr->GetPositionY(), plr->GetPositionZ(), goid);
 		}
 
@@ -330,7 +330,7 @@ class SCRIPT_DECL EasyFunctions
 
 		void KillMobForQuest(Player* pPlayer, QuestLogEntry* pQuest, uint32 pRequiredMobCount)
 		{
-			if(pPlayer == NULL)
+			if(pPlayer == nullptr)
 				return;
 
 			uint32 i = pRequiredMobCount;
@@ -347,7 +347,7 @@ class SCRIPT_DECL EasyFunctions
 
 		void KillMobForQuest(Player* pPlayer, uint32 pQuestId, uint32 pRequiredMobCount)
 		{
-			if(pPlayer == NULL)
+			if(pPlayer == nullptr)
 				return;
 
 			uint32 i = pRequiredMobCount;

@@ -156,22 +156,22 @@ class OmorTheUnscarredAI : public MoonScriptCreatureAI
 		void AIUpdate()
 		{
 			SpellDesc* pShield = FindSpellById(OMOR_THE_UNSCARRED_DEMONIC_SHIELD);
-			if(GetHealthPercent() <= 20 && pShield != NULL && !pShield->mEnabled)
+			if(GetHealthPercent() <= 20 && pShield != nullptr && !pShield->mEnabled)
 			{
 				pShield->mEnabled = true;
 			}
 
 			Unit* pTarget = _unit->GetAIInterface()->getNextTarget();
-			if(pTarget != NULL)
+			if(pTarget != nullptr)
 			{
 				if(GetRangeToUnit(pTarget) > 10.0f)
 				{
 					pTarget = GetBestPlayerTarget(TargetFilter_Closest);
-					if(pTarget != NULL)
+					if(pTarget != nullptr)
 					{
 						if(GetRangeToUnit(pTarget) > 10.0f)
 						{
-							pTarget = NULL;
+							pTarget = nullptr;
 						}
 						else
 						{
@@ -184,10 +184,10 @@ class OmorTheUnscarredAI : public MoonScriptCreatureAI
 						return;
 				}
 
-				if(pTarget == NULL)
+				if(pTarget == nullptr)
 				{
 					SpellDesc* pWhip = FindSpellById(OMOR_THE_UNSCARRED_SHADOW_WHIP);	// used for now
-					if(pWhip != NULL)
+					if(pWhip != nullptr)
 					{
 						pWhip->mLastCastTime = 0;
 						CastSpellNowNoScheduling(pWhip);

@@ -121,7 +121,7 @@ public:
 
 void SpellFunc_Kalecgos_WildMagic(SpellDesc* pThis, MoonScriptCreatureAI* pCreatureAI, Unit* pTarget, TargetType pType)
 {
-	KalecgosAI* Kalecgos = ( pCreatureAI ) ? (KalecgosAI*)pCreatureAI : NULL;
+	KalecgosAI* Kalecgos = ( pCreatureAI ) ? (KalecgosAI*)pCreatureAI : nullptr;
 	if( Kalecgos )
 	{
 		//TODO
@@ -271,7 +271,7 @@ public:
 		void OnDied(Unit* pKiller)
 		{
 			MoonScriptCreatureAI* mGrandWarlockAlythess = GetNearestCreature(CN_GRAND_WARLOCK_ALYTHESS);
-			if(mGrandWarlockAlythess != NULL && mGrandWarlockAlythess->IsAlive())
+			if(mGrandWarlockAlythess != nullptr && mGrandWarlockAlythess->IsAlive())
 			{
 				mGrandWarlockAlythess->Emote("Sacrolash!", Text_Yell, 12492);
 			}
@@ -309,7 +309,7 @@ public:
 		void OnDied(Unit* pKiller)
 		{
 			MoonScriptCreatureAI* mLadySacrolash = GetNearestCreature(CN_LADY_SACROLASH);
-			if(mLadySacrolash != NULL && mLadySacrolash->IsAlive())
+			if(mLadySacrolash != nullptr && mLadySacrolash->IsAlive())
 			{
 				mLadySacrolash->Emote("Alythess! Your fire burns within me!", Text_Yell, 12488);
 			}

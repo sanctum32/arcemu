@@ -355,10 +355,10 @@ class MograineAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -558,10 +558,10 @@ class WhitemaneAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -704,10 +704,10 @@ class FairbanksAI : public CreatureAIScript
 
 		void SpellCast(float val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())
 			{
 				float comulativeperc = 0;
-				Unit* target = NULL;
+				Unit* target = nullptr;
 				for(int i = 0; i < nrspells; i++)
 				{
 					if(!spells[i].perctrigger) continue;
@@ -765,7 +765,7 @@ class ScarletTorch : public GameObjectAIScript
 		void OnActivate(Player* pPlayer)
 		{
 			GameObject* SecretDoor = pPlayer->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(1167.79f, 1347.26f, 31.5494f, 97700);
-			if(SecretDoor != NULL)
+			if(SecretDoor != nullptr)
 			{
 				if(SecretDoor->GetState() == 1)
 					SecretDoor->SetState(0);
@@ -784,7 +784,7 @@ class ArmoryLever : public GameObjectAIScript
 		void OnActivate(Player* pPlayer)
 		{
 			GameObject* ArmoryDoor = pPlayer->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(2886.31f, -827.261f, 160.336f, 101851);
-			if(ArmoryDoor != NULL)
+			if(ArmoryDoor != nullptr)
 			{
 				if(ArmoryDoor->GetState() == 1)
 					ArmoryDoor->SetState(0);
@@ -803,7 +803,7 @@ class CathedralLever: public GameObjectAIScript
 		void OnActivate(Player* pPlayer)
 		{
 			GameObject* CathedralDoor = pPlayer->GetMapMgr()->GetInterface()->GetGameObjectNearestCoords(2908.18f, -818.203f, 160.332f, 101850);
-			if(CathedralDoor != NULL)
+			if(CathedralDoor != nullptr)
 			{
 				if(CathedralDoor->GetState() == 1)
 					CathedralDoor->SetState(0);

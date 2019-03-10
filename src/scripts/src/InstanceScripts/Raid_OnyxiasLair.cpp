@@ -266,7 +266,7 @@ class OnyxiaAI : public CreatureAIScript
 			{
 				m_phase = 2;
 				_unit->SetCastSpeedMod(0.01f);
-				if(_unit->GetCurrentSpell() != NULL)
+				if(_unit->GetCurrentSpell() != nullptr)
 					_unit->GetCurrentSpell()->cancel();
 
 				_unit->GetAIInterface()->SetAllowedToEnterCombat(false);
@@ -288,7 +288,7 @@ class OnyxiaAI : public CreatureAIScript
 			{
 				m_phase = 3;
 				_unit->SetCastSpeedMod(1.0f);
-				if(_unit->GetCurrentSpell() != NULL)
+				if(_unit->GetCurrentSpell() != nullptr)
 					_unit->GetCurrentSpell()->cancel();
 				_unit->GetAIInterface()->m_canMove = true;
 				_unit->GetAIInterface()->SetAllowedToEnterCombat(false);
@@ -352,7 +352,7 @@ class OnyxiaAI : public CreatureAIScript
 			m_whelpCooldown--;
 			if(!m_whelpCooldown)
 			{
-				Creature* cre = NULL;
+				Creature* cre = nullptr;
 				for(int i = 0; i < 6; i++)
 				{
 					cre = _unit->GetMapMgr()->GetInterface()->SpawnCreature(11262,
@@ -392,7 +392,7 @@ class OnyxiaAI : public CreatureAIScript
 			m_aoeFearCooldown--;
 			if(!m_whelpCooldown)
 			{
-				Creature* cre = NULL;
+				Creature* cre = nullptr;
 				for(int i = 0; i < 6; i++)
 				{
 					cre = _unit->GetMapMgr()->GetInterface()->SpawnCreature(11262,
@@ -464,7 +464,7 @@ class OnyxiaAI : public CreatureAIScript
 
 		void SpellCast(uint32 val)
 		{
-			if(_unit->GetCurrentSpell() == NULL && _unit->GetAIInterface()->getNextTarget())//_unit->getAttackTarget())
+			if(_unit->GetCurrentSpell() == nullptr && _unit->GetAIInterface()->getNextTarget())//_unit->getAttackTarget())
 			{
 				if(m_fBreath)
 				{
