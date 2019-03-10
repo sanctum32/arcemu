@@ -426,6 +426,13 @@ class SERVER_DECL CreatureAIScript
 		////////////////////////////////////////////////////
 		virtual void OnLastPassengerLeft( Unit *passenger ){}
 
+		// Scriptable data sharing between scripts
+		virtual void SetData(uint32 index, uint32 data) {}
+		virtual uint32 GetData(uint32 index) const { return 0; }
+
+		// Used for guid data passing
+		virtual void SetGuidData(uint32 guidType, uint64 guid) {}
+		virtual uint64 GetGuidData(uint32 guidType) const { return 0; }
 
 	protected:
 		Creature* _unit;
