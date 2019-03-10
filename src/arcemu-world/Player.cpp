@@ -825,10 +825,9 @@ bool Player::Create(WorldPacket & data)
 
 	m_FirstLogin = true;
 
-	skilllineentry* se;
 	for(std::list<CreateInfo_SkillStruct>::iterator ss = info->skills.begin(); ss != info->skills.end(); ++ss)
 	{
-		se = dbcSkillLine.LookupEntry(ss->skillid);
+		const skilllineentry* se = dbcSkillLine.LookupEntry(ss->skillid);
 		if(se->type != SKILL_TYPE_LANGUAGE)
 			_AddSkillLine(se->id, ss->currentval, ss->maxval);
 	}
@@ -868,7 +867,7 @@ bool Player::Create(WorldPacket & data)
 	}
 
 	sHookInterface.OnCharacterCreate(this);
-	load_health = GetHealth();
+	load_health = GetMaxHealth();
 	load_mana = GetMaxPower(POWER_TYPE_MANA);
 	return true;
 }
@@ -3680,18 +3679,6 @@ void Player::OnPushToWorld()
 
 	Unit::OnPushToWorld();
 
-	if(m_FirstLogin)
-	{
-		if(class_ == DEATHKNIGHT)
-			startlevel = static_cast<uint8>(max(55, sWorld.StartingLevel));
-		else startlevel = static_cast<uint8>(sWorld.StartingLevel);
-
-		sHookInterface.OnFirstEnterWorld(this);
-		LevelInfo* Info = objmgr.GetLevelInfo(getRace(), getClass(), startlevel);
-		ApplyLevelInfo(Info, startlevel);
-		m_FirstLogin = false;
-	}
-
 	sHookInterface.OnEnterWorld(this);
 	CALL_INSTANCE_SCRIPT_EVENT(m_mapMgr, OnZoneChange)(this, m_zoneId, 0);
 	CALL_INSTANCE_SCRIPT_EVENT(m_mapMgr, OnPlayerEnter)(this);
@@ -3727,6 +3714,18 @@ void Player::OnPushToWorld()
 
 	SetHealth((load_health > m_uint32Values[UNIT_FIELD_MAXHEALTH] ? m_uint32Values[UNIT_FIELD_MAXHEALTH] : load_health));
 	SetPower(POWER_TYPE_MANA, (load_mana > GetMaxPower(POWER_TYPE_MANA) ? GetMaxPower(POWER_TYPE_MANA) : load_mana));
+
+	if (m_FirstLogin)
+	{
+		if (class_ == DEATHKNIGHT)
+			startlevel = static_cast<uint8>(max(55, sWorld.StartingLevel));
+		else startlevel = static_cast<uint8>(sWorld.StartingLevel);
+
+		sHookInterface.OnFirstEnterWorld(this);
+		LevelInfo* Info = objmgr.GetLevelInfo(getRace(), getClass(), startlevel);
+		ApplyLevelInfo(Info, startlevel);
+		m_FirstLogin = false;
+	}
 
 	if(!GetSession()->HasGMPermissions())
 		GetItemInterface()->CheckAreaItems();
@@ -8294,6 +8293,8 @@ void Player::ApplyLevelInfo(LevelInfo* Info, uint32 Level)
 	smsg_TalentsInfo(false);
 
 	LOG_DETAIL("Player %s set parameters to level %u", GetName(), Level);
+	if (m_FirstLogin)
+		SetHealth(GetMaxHealth());
 }
 
 void Player::BroadcastMessage(const char* Format, ...)
