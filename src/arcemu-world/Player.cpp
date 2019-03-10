@@ -810,7 +810,7 @@ bool Player::Create(WorldPacket & data)
 	SetGold(sWorld.GoldStartAmount);
 
 
-	for(uint32 x = 0; x < 7; x++)
+	for(uint8 x = 0; x < 7; x++)
 		SetFloatValue(PLAYER_FIELD_MOD_DAMAGE_DONE_PCT + x, 1.00);
 
 	SetUInt32Value(PLAYER_FIELD_WATCHED_FACTION_INDEX, 0xEEEEEEEE);
@@ -869,7 +869,7 @@ bool Player::Create(WorldPacket & data)
 
 	sHookInterface.OnCharacterCreate(this);
 	load_health = GetHealth();
-	load_mana = GetPower(POWER_TYPE_MANA);
+	load_mana = GetMaxPower(POWER_TYPE_MANA);
 	return true;
 }
 
