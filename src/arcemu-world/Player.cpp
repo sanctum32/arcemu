@@ -3713,7 +3713,8 @@ void Player::OnPushToWorld()
 	sWeatherMgr.SendWeather(this);
 
 	SetHealth((load_health > m_uint32Values[UNIT_FIELD_MAXHEALTH] ? m_uint32Values[UNIT_FIELD_MAXHEALTH] : load_health));
-	SetPower(POWER_TYPE_MANA, (load_mana > GetMaxPower(POWER_TYPE_MANA) ? GetMaxPower(POWER_TYPE_MANA) : load_mana));
+	if (GetPowerType() == POWER_TYPE_MANA)
+		SetPower(POWER_TYPE_MANA, (load_mana > GetMaxPower(POWER_TYPE_MANA) ? GetMaxPower(POWER_TYPE_MANA) : load_mana));
 
 	if (m_FirstLogin)
 	{
@@ -3724,6 +3725,13 @@ void Player::OnPushToWorld()
 		sHookInterface.OnFirstEnterWorld(this);
 		LevelInfo* Info = objmgr.GetLevelInfo(getRace(), getClass(), startlevel);
 		ApplyLevelInfo(Info, startlevel);
+		SetHealth(GetMaxHealth());
+		if (GetPowerType() == POWER_TYPE_MANA)
+			SetPower(POWER_TYPE_MANA, GetMaxPower(POWER_TYPE_MANA));
+
+		if (GetPowerType() == POWER_TYPE_ENERGY)
+			SetPower(POWER_TYPE_ENERGY, GetMaxPower(POWER_TYPE_ENERGY));
+
 		m_FirstLogin = false;
 	}
 
@@ -8293,8 +8301,6 @@ void Player::ApplyLevelInfo(LevelInfo* Info, uint32 Level)
 	smsg_TalentsInfo(false);
 
 	LOG_DETAIL("Player %s set parameters to level %u", GetName(), Level);
-	if (m_FirstLogin)
-		SetHealth(GetMaxHealth());
 }
 
 void Player::BroadcastMessage(const char* Format, ...)
