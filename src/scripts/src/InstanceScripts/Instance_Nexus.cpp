@@ -489,6 +489,7 @@ class TelestraArcaneAI : public MoonScriptBossAI
 
 class OrmorokAI : public MoonScriptBossAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(OrmorokAI, MoonScriptBossAI);
 		OrmorokAI(Creature* pCreature) : MoonScriptBossAI(pCreature)
 		{
@@ -543,6 +544,7 @@ class OrmorokAI : public MoonScriptBossAI
 
 class CrystalSpikeAI : public MoonScriptBossAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(CrystalSpikeAI, MoonScriptBossAI);
 		CrystalSpikeAI(Creature* pCreature) : MoonScriptBossAI(pCreature) {};
 
@@ -601,6 +603,7 @@ class CrystalSpikeAI : public MoonScriptBossAI
 
 class KeristraszaAI : public MoonScriptBossAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(KeristraszaAI, MoonScriptBossAI);
 		KeristraszaAI(Creature* pCreature) : MoonScriptBossAI(pCreature)
 		{

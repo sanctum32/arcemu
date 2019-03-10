@@ -30,6 +30,7 @@
 #define CN_DEVOURING_ECTOPLASM		3638
 class DevouringEctoplasmAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(DevouringEctoplasmAI, MoonScriptCreatureAI);
 		DevouringEctoplasmAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -42,6 +43,7 @@ class DevouringEctoplasmAI : public MoonScriptCreatureAI
 #define CN_DRUID_FANG				3840
 class DruidFangAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(DruidFangAI, MoonScriptCreatureAI);
 		DruidFangAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -99,6 +101,7 @@ class DruidFangAI : public MoonScriptCreatureAI
 
 class LadyAnacondraAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(LadyAnacondraAI, MoonScriptCreatureAI);
 		LadyAnacondraAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -118,6 +121,7 @@ class LadyAnacondraAI : public MoonScriptCreatureAI
 
 class LordCobrahnAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(LordCobrahnAI, MoonScriptCreatureAI);
 		LordCobrahnAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -154,6 +158,7 @@ class LordCobrahnAI : public MoonScriptCreatureAI
 #define CN_LORD_PYTHAS				3670
 class LordPythasAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(LordPythasAI, MoonScriptCreatureAI);
 		LordPythasAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -172,6 +177,7 @@ class LordPythasAI : public MoonScriptCreatureAI
 #define CN_LORD_SERPENTIS			3673
 class LordSerpentisAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(LordSerpentisAI, MoonScriptCreatureAI);
 		LordSerpentisAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -188,6 +194,7 @@ class LordSerpentisAI : public MoonScriptCreatureAI
 #define CN_VERDAN_EVERLIVING		5775
 class VerdanEverlivingAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(VerdanEverlivingAI, MoonScriptCreatureAI);
 		VerdanEverlivingAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -200,6 +207,7 @@ class VerdanEverlivingAI : public MoonScriptCreatureAI
 #define CN_SKUM						3674
 class SkumAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(SkumAI, MoonScriptCreatureAI);
 		SkumAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -226,6 +234,7 @@ class SkumAI : public MoonScriptCreatureAI
 #define CN_MUTANUS				3654
 class MutanusAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(MutanusAI, MoonScriptCreatureAI);
 		MutanusAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -351,6 +360,7 @@ class DofNaralexGossip : public GossipScript
 // Disciple of Naralex AI by Soulshifter
 class DofNaralexAI : public MoonScriptBossAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(DofNaralexAI, MoonScriptBossAI);
 		DofNaralexAI(Creature* pCreature) : MoonScriptBossAI(pCreature)
 		{
@@ -451,6 +461,7 @@ class DofNaralexAI : public MoonScriptBossAI
 // Deviate Moccasin
 class DeviateMoccasinAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(DeviateMoccasinAI, MoonScriptCreatureAI);
 		DeviateMoccasinAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -460,6 +471,7 @@ class DeviateMoccasinAI : public MoonScriptCreatureAI
 // Nightmare Ectoplasm
 class EctoplasmAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(EctoplasmAI, MoonScriptCreatureAI);
 		EctoplasmAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{

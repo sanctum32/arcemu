@@ -40,6 +40,7 @@
 
 class KrikthirAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(KrikthirAI, MoonScriptCreatureAI);
 		KrikthirAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -99,6 +100,7 @@ class KrikthirAI : public MoonScriptCreatureAI
 
 class HadronoxAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(HadronoxAI, MoonScriptCreatureAI);
 		HadronoxAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -129,6 +131,7 @@ class HadronoxAI : public MoonScriptCreatureAI
 
 class GashraAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(GashraAI, MoonScriptCreatureAI);
 		GashraAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -147,6 +150,7 @@ class GashraAI : public MoonScriptCreatureAI
 
 class NarjilAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(NarjilAI, MoonScriptCreatureAI);
 		NarjilAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -166,6 +170,7 @@ class NarjilAI : public MoonScriptCreatureAI
 
 class SilthikAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(SilthikAI, MoonScriptCreatureAI);
 		SilthikAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -184,6 +189,7 @@ class SilthikAI : public MoonScriptCreatureAI
 
 class AnubShadowcasterAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(AnubShadowcasterAI, MoonScriptCreatureAI);
 		AnubShadowcasterAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{

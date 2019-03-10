@@ -27,6 +27,7 @@
 
 class DarkRuneStormcallerAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(DarkRuneStormcallerAI, MoonScriptCreatureAI);
 		DarkRuneStormcallerAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -44,6 +45,7 @@ class DarkRuneStormcallerAI : public MoonScriptCreatureAI
 
 class IronGolemCustodianAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(IronGolemCustodianAI, MoonScriptCreatureAI);
 		IronGolemCustodianAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -61,6 +63,7 @@ class IronGolemCustodianAI : public MoonScriptCreatureAI
 
 class DarkRuneProtectorAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(DarkRuneProtectorAI, MoonScriptCreatureAI);
 		DarkRuneProtectorAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -77,6 +80,7 @@ class DarkRuneProtectorAI : public MoonScriptCreatureAI
 
 class LesserAirElementalAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(LesserAirElementalAI, MoonScriptCreatureAI);
 		LesserAirElementalAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -93,6 +97,7 @@ class LesserAirElementalAI : public MoonScriptCreatureAI
 
 class DarkRuneWorkerAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(DarkRuneWorkerAI, MoonScriptCreatureAI);
 		DarkRuneWorkerAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -110,6 +115,7 @@ class DarkRuneWorkerAI : public MoonScriptCreatureAI
 
 class DarkRuneWarriorAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(DarkRuneWarriorAI, MoonScriptCreatureAI);
 		DarkRuneWarriorAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -128,6 +134,7 @@ class DarkRuneWarriorAI : public MoonScriptCreatureAI
 
 class DarkRuneTheurgistAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(DarkRuneTheurgistAI, MoonScriptCreatureAI);
 		DarkRuneTheurgistAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -145,6 +152,7 @@ class DarkRuneTheurgistAI : public MoonScriptCreatureAI
 
 class DarkRuneShaperAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(DarkRuneShaperAI, MoonScriptCreatureAI);
 		DarkRuneShaperAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -160,6 +168,7 @@ class DarkRuneShaperAI : public MoonScriptCreatureAI
 
 class DarkRuneScholarAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(DarkRuneScholarAI, MoonScriptCreatureAI);
 		DarkRuneScholarAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -176,6 +185,7 @@ class DarkRuneScholarAI : public MoonScriptCreatureAI
 
 class DarkRuneGiantAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(DarkRuneGiantAI, MoonScriptCreatureAI);
 		DarkRuneGiantAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -194,6 +204,7 @@ class DarkRuneGiantAI : public MoonScriptCreatureAI
 
 class DarkRuneConstructAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(DarkRuneConstructAI, MoonScriptCreatureAI);
 		DarkRuneConstructAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -211,6 +222,7 @@ class DarkRuneConstructAI : public MoonScriptCreatureAI
 
 class DarkLightningConstructAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(DarkLightningConstructAI, MoonScriptCreatureAI);
 		DarkLightningConstructAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -227,6 +239,7 @@ class DarkLightningConstructAI : public MoonScriptCreatureAI
 
 class ForgedIronTroggAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(ForgedIronTroggAI, MoonScriptCreatureAI);
 		ForgedIronTroggAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -244,6 +257,7 @@ class ForgedIronTroggAI : public MoonScriptCreatureAI
 
 class MaidenOfGriefAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(MaidenOfGriefAI, MoonScriptCreatureAI);
 		MaidenOfGriefAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -284,6 +298,7 @@ class MaidenOfGriefAI : public MoonScriptCreatureAI
 
 class KrystallusAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(KrystallusAI, MoonScriptCreatureAI);
 		KrystallusAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{

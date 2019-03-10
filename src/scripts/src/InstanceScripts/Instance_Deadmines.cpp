@@ -162,6 +162,7 @@ protected:
 
 class RhahkZorAI : public MoonScriptCreatureAI
 {
+public:
 	MOONSCRIPT_FACTORY_FUNCTION(RhahkZorAI, MoonScriptCreatureAI);
 	RhahkZorAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 	{
@@ -300,6 +301,7 @@ protected:
 // VanCleef
 class VanCleefAI : public MoonScriptBossAI
 {
+public:
 	MOONSCRIPT_FACTORY_FUNCTION(VanCleefAI, MoonScriptBossAI);
 	VanCleefAI(Creature* pCreature) : MoonScriptBossAI(pCreature)
 	{

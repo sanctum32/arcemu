@@ -44,6 +44,7 @@
 
 class WatchkeeperGargolmarAI : public MoonScriptBossAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(WatchkeeperGargolmarAI, MoonScriptBossAI);
 		WatchkeeperGargolmarAI(Creature* pCreature) : MoonScriptBossAI(pCreature)
 		{

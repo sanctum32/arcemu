@@ -30,6 +30,7 @@
 #define CN_RAGEFIRE_SHAMAN			11319
 class RagefireShamanAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(RagefireShamanAI, MoonScriptCreatureAI);
 		RagefireShamanAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -44,6 +45,7 @@ class RagefireShamanAI : public MoonScriptCreatureAI
 #define CN_RAGEFIRE_TROGG			11318
 class RagefireTroggAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(RagefireTroggAI, MoonScriptCreatureAI);
 		RagefireTroggAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -56,6 +58,7 @@ class RagefireTroggAI : public MoonScriptCreatureAI
 #define CN_SEARING_BLADE_WARLOCK	11324
 class SearingBladeWarlockAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(SearingBladeWarlockAI, MoonScriptCreatureAI);
 		SearingBladeWarlockAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -69,6 +72,7 @@ class SearingBladeWarlockAI : public MoonScriptCreatureAI
 #define CN_SEARING_BLADE_ENFORCER	11323
 class SearingBladeEnforcerAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(SearingBladeEnforcerAI, MoonScriptCreatureAI);
 		SearingBladeEnforcerAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -81,6 +85,7 @@ class SearingBladeEnforcerAI : public MoonScriptCreatureAI
 #define CN_BLADE_CULTIST			11322
 class BladeCultistAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(BladeCultistAI, MoonScriptCreatureAI);
 		BladeCultistAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -93,6 +98,7 @@ class BladeCultistAI : public MoonScriptCreatureAI
 #define CN_MOLTEN_ELEMENTAL			11321
 class MoltenElementalAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(MoltenElementalAI, MoonScriptCreatureAI);
 		MoltenElementalAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -105,6 +111,7 @@ class MoltenElementalAI : public MoonScriptCreatureAI
 #define CN_EARTHBORER				11320
 class EarthborerAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(EarthborerAI, MoonScriptCreatureAI);
 		EarthborerAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -149,6 +156,7 @@ class BloodFilledOrb : public GameObjectAIScript
 #define CN_OGGLEFLINT	11517
 class OggleflintAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(OggleflintAI, MoonScriptCreatureAI);
 		OggleflintAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -161,6 +169,7 @@ class OggleflintAI : public MoonScriptCreatureAI
 #define CN_TARAGAMAN	11520
 class TaragamanAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(TaragamanAI, MoonScriptCreatureAI);
 		TaragamanAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -175,6 +184,7 @@ class TaragamanAI : public MoonScriptCreatureAI
 #define CN_JERGOSH			11518
 class JergoshAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(JergoshAI, MoonScriptCreatureAI);
 		JergoshAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -189,6 +199,7 @@ class JergoshAI : public MoonScriptCreatureAI
 #define CN_BAZZALAN	11519
 class BazzalanAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(BazzalanAI, MoonScriptCreatureAI);
 		BazzalanAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{

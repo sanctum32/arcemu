@@ -9,6 +9,7 @@ Team  : Sun++
 //Black Cat
 class BlackCat : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(BlackCat, MoonScriptCreatureAI);
 		BlackCat(Creature* pCreature) : MoonScriptCreatureAI(pCreature) {}
 
@@ -62,11 +63,12 @@ static LocationExtra WaypointGoldshire[] =
 
 class HeadlessHorsemanAI : public MoonScriptCreatureAI
 {
-		MOONSCRIPT_FACTORY_FUNCTION(HeadlessHorsemanAI, MoonScriptCreatureAI);
-		HeadlessHorsemanAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
-		{
-			//Scarlet Monastery Boss
-		}
+public:
+	MOONSCRIPT_FACTORY_FUNCTION(HeadlessHorsemanAI, MoonScriptCreatureAI);
+	HeadlessHorsemanAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
+	{
+		//Scarlet Monastery Boss
+	}
 };
 
 // Headless Horseman - Fire
@@ -74,11 +76,12 @@ class HeadlessHorsemanAI : public MoonScriptCreatureAI
 
 class HeadlessHorsemanFireAI : public MoonScriptCreatureAI
 {
-		MOONSCRIPT_FACTORY_FUNCTION(HeadlessHorsemanFireAI, MoonScriptCreatureAI);
-		HeadlessHorsemanFireAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
-		{
-			_unit->CastSpell(_unit, 42971, true);
-		}
+public:
+	MOONSCRIPT_FACTORY_FUNCTION(HeadlessHorsemanFireAI, MoonScriptCreatureAI);
+	HeadlessHorsemanFireAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
+	{
+		_unit->CastSpell(_unit, 42971, true);
+	}
 };
 
 // Shade of the HorsemanAI
@@ -94,6 +97,7 @@ class HeadlessHorsemanFireAI : public MoonScriptCreatureAI
  */
 class ShadeOfTheHorsemanAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(ShadeOfTheHorsemanAI, MoonScriptCreatureAI);
 		ShadeOfTheHorsemanAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -174,6 +178,7 @@ class ShadeOfTheHorsemanAI : public MoonScriptCreatureAI
 
 class HeadlessHorsemanWispInvisAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(HeadlessHorsemanWispInvisAI, MoonScriptCreatureAI);
 		HeadlessHorsemanWispInvisAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature) {}
 

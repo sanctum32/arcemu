@@ -29,6 +29,7 @@
 #define CN_SPRINGVALE 4278
 class SpringvaleAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(SpringvaleAI, MoonScriptCreatureAI);
 		SpringvaleAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -68,6 +69,7 @@ class SpringvaleAI : public MoonScriptCreatureAI
 #define CN_BLINDWATCHER 4279
 class BlindWatcherAI : public MoonScriptBossAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(BlindWatcherAI, MoonScriptBossAI);
 		BlindWatcherAI(Creature* pCreature) : MoonScriptBossAI(pCreature)
 		{
@@ -117,6 +119,7 @@ static Location VWSpawns[] =
 };
 class FenrusAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(FenrusAI, MoonScriptCreatureAI);
 		FenrusAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -148,6 +151,7 @@ class FenrusAI : public MoonScriptCreatureAI
 #define CN_VOIDWALKER 4627
 class VoidWalkerAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(VoidWalkerAI, MoonScriptCreatureAI);
 		VoidWalkerAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -168,6 +172,7 @@ class VoidWalkerAI : public MoonScriptCreatureAI
 #define CN_ARUGAL 4275
 class ArugalAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(ArugalAI, MoonScriptCreatureAI);
 		ArugalAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -189,6 +194,7 @@ class ArugalAI : public MoonScriptCreatureAI
 #define CN_NENDOS 3927
 class NandosAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(NandosAI, MoonScriptCreatureAI);
 		NandosAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature) {}
 
@@ -208,6 +214,7 @@ class NandosAI : public MoonScriptCreatureAI
 #define CN_RETHILGORE 3914
 class RETHILGOREAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(RETHILGOREAI, MoonScriptCreatureAI);
 		RETHILGOREAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature) {}
 		void OnDied(Unit*  pKiller)

@@ -27,7 +27,6 @@
 #define DEFAULT_DESPAWN_TIMER		2000	//milliseconds
 
 #define MOONSCRIPT_FACTORY_FUNCTION(ClassName, ParentClassName)\
-public:\
 	ADD_CREATURE_FACTORY_FUNCTION(ClassName);\
 	typedef ParentClassName ParentClass;
 

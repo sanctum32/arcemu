@@ -379,6 +379,7 @@ class StarScryerAI : public CreatureAIScript
 
 class AstromancerAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(AstromancerAI, MoonScriptCreatureAI);
 		AstromancerAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -1738,6 +1739,7 @@ void SpellFunc_Solarian_Reappear(SpellDesc* pThis, MoonScriptCreatureAI* pCreatu
 
 class HighAstromancerSolarianAI : public MoonScriptBossAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(HighAstromancerSolarianAI, MoonScriptBossAI);
 		HighAstromancerSolarianAI(Creature* pCreature) : MoonScriptBossAI(pCreature)
 		{
@@ -1873,6 +1875,7 @@ void SpellFunc_Solarian_Reappear(SpellDesc* pThis, MoonScriptCreatureAI* pCreatu
 
 class SolariumAgentAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(SolariumAgentAI, MoonScriptCreatureAI);
 		SolariumAgentAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -1887,6 +1890,7 @@ class SolariumAgentAI : public MoonScriptCreatureAI
 
 class SolariumPriestAI : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(SolariumPriestAI, MoonScriptCreatureAI);
 		SolariumPriestAI(Creature* pCreature) : MoonScriptCreatureAI(pCreature)
 		{
@@ -1903,6 +1907,7 @@ class SolariumPriestAI : public MoonScriptCreatureAI
 
 class SolariumSpotLight : public MoonScriptCreatureAI
 {
+public:
 		MOONSCRIPT_FACTORY_FUNCTION(SolariumSpotLight, MoonScriptCreatureAI);
 		SolariumSpotLight(Creature* pCreature) : MoonScriptCreatureAI(pCreature) { SetCanEnterCombat(false); }
 };
