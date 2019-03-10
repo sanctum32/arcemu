@@ -38,14 +38,15 @@ const char* gGraveyardFormat							= "uffffuuuux";
 const char* gTeleportCoordFormat						= "uxufffx";
 const char* gPvPAreaFormat								= "ush";
 const char* gFishingFormat								= "uuu";
-const char* gWorldMapInfoFormat						= "uuuuuufffusuuuuuuuufu";
+const char* gWorldMapInfoFormat						    = "uuuuuufffusuuuuuuuufu";
 const char* gZoneGuardsFormat							= "uuu";
 const char* gUnitModelSizeFormat						= "ufu";
-const char* gWorldStringTableFormat					= "us";  // p2wow added [for worldserver common message storage]
+const char* gWorldStringTableFormat					    = "us";  // p2wow added [for worldserver common message storage]
 const char* gWorldBroadCastFormat						= "usu"; // announce message
-const char* gBattleMasterFormat						= "uu";
-const char* gSpellClickSpellsFormat					= "uu";
-const char* gTotemDisplayIDsFormat                     = "uuuu";
+const char* gBattleMasterFormat						    = "uu";
+const char* gSpellClickSpellsFormat					    = "uu";
+const char* gTotemDisplayIDsFormat                      = "uuuu";
+const char* gCreatureScriptTextFormat                   = "uuus";
 
 /** SQLStorage symbols
  */
@@ -71,7 +72,7 @@ SERVER_DECL SQLStorage<WorldBroadCast, HashMapStorageContainer<WorldBroadCast> >
 SERVER_DECL SQLStorage<BGMaster, HashMapStorageContainer<BGMaster> >						BGMasterStorage;
 SERVER_DECL SQLStorage< SpellClickSpell, HashMapStorageContainer< SpellClickSpell > >		SpellClickSpellStorage;
 SERVER_DECL SQLStorage< TotemDisplayIdEntry, HashMapStorageContainer< TotemDisplayIdEntry > > TotemDisplayIdStorage;
-
+SERVER_DECL SQLStorage< CreatureScriptTextStruct, HashMapStorageContainer< CreatureScriptTextStruct > > CreatureScriptTextStorage;
 
 SERVER_DECL set<string> ExtraMapCreatureTables;
 SERVER_DECL set<string> ExtraMapGameObjectTables;
@@ -560,7 +561,10 @@ void Storage_FillTaskList(TaskList & tl)
 	make_task(BGMasterStorage, BGMaster, HashMapStorageContainer, "battlemasters", gBattleMasterFormat);
 	make_task(SpellClickSpellStorage, SpellClickSpell, HashMapStorageContainer, "spellclickspells", gSpellClickSpellsFormat);
 	make_task(TotemDisplayIdStorage, TotemDisplayIdEntry, HashMapStorageContainer, "totemdisplayids", gTotemDisplayIDsFormat);
+    make_task(CreatureScriptTextStorage, CreatureScriptTextStruct, HashMapStorageContainer, "creature_script_texts", gCreatureScriptTextFormat);
 }
+
+#undef make_task
 
 void Storage_Cleanup()
 {

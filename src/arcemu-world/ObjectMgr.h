@@ -217,6 +217,14 @@ struct InstanceReputationModifier
 	vector<InstanceReputationMod> mods;
 };
 
+struct CreatureScriptTextStruct
+{
+    uint32 entry;
+    uint32 text_type;
+    uint32 soundId;
+    const char* text;
+};
+
 enum AREATABLE_FLAGS
 {
     AREA_CITY_AREA          = 0x20,
