@@ -460,6 +460,14 @@ class SERVER_DECL GameObjectAIScript
 		void RegisterAIUpdateEvent(uint32 frequency);
 		void ModifyAIUpdateEvent(uint32 newfrequency);
 		void RemoveAIUpdateEvent();
+
+		// Scriptable data sharing between scripts
+		virtual void SetData(uint32 index, uint32 data) {}
+		virtual uint32 GetData(uint32 index) const { return 0; }
+
+		// Used for guid data passing
+		virtual void SetGuidData(uint32 guidType, uint64 guid) {}
+		virtual uint64 GetGuidData(uint32 guidType) const { return 0; }
 	protected:
 
 		GameObject* _gameobject;
